@@ -34,9 +34,6 @@
     <ClInclude Include="GameCode\Game\Game.h">
       <Filter>Engine\Game</Filter>
     </ClInclude>
-    <ClInclude Include="GameCode\Manager\InputManager.h">
-      <Filter>Engine\Manager</Filter>
-    </ClInclude>
     <ClInclude Include="GameCode\Manager\TimeManager.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
@@ -57,6 +54,9 @@
     </ClInclude>
     <ClInclude Include="GameCode\Config\Utils.h">
       <Filter>Config</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCode\Manager\InputManager.h">
+      <Filter>Engine\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

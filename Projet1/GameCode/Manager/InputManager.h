@@ -1,5 +1,6 @@
 #pragma once
 #include "./Manager/TimeManager.h"
+#include "./Input/InputMap.h"
 #include "./Input/EnumInput.h"
 #include <vector>
 
