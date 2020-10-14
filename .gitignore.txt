@@ -36,3 +36,7 @@
 *.tlog
 *.suo
 *.ipch
+*.tlog
+*.idb
+*.ilk
+*.pbd
