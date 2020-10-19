@@ -13,7 +13,10 @@ int main()
 	11 - Sulli
 	7 - Jeremie Thiffault
 	8 - Mathieu Bienvenu
+	9 - Matis
 	14.Billy Osmont
+	
+
 	*/
 	std::string gameName = "MyGame";
 	GameView::Game myGame(800, 600, gameName);
