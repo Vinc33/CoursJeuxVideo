@@ -11,6 +11,7 @@ int main()
 	3 - Maxime
 	4 - Francis
 	6 - Nicolas Occupation Double
+	7 - Jeremie Thiffault
 	8 - Mathieu Bienvenu
 	*/
 	std::string gameName = "MyGame";
