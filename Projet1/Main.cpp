@@ -5,7 +5,6 @@ using namespace sf;
 int main()
 {
 	/*Noms des étudiants
-	
 	1.Vincent Morin
 	2 - Tanya
 	3 - Maxime
@@ -13,6 +12,8 @@ int main()
 	6 - Nicolas Occupation Double
 	7 - Jeremie Thiffault
 	8 - Mathieu Bienvenu
+	9 - Matis
+	11 - Sulli
 	14.Billy Osmont
 	20. Michael PP
 	*/
