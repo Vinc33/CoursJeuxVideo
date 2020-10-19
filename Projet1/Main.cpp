@@ -5,9 +5,9 @@ using namespace sf;
 int main()
 {
 	/*Noms des étudiants
-	
 	1.Vincent Morin
 	2 - Tanya
+	12 - Fabrice LONTIO
 	*/
 	std::string gameName = "MyGame";
 	GameView::Game myGame(800, 600, gameName);
