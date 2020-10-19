@@ -6,8 +6,9 @@ int main()
 {
 	/*Noms des étudiants
 	
-	1.Vincent Morin
-	2 - Tanya
+	1  - Vincent Morin
+	2  - Tanya
+	11 - Sulli
 	*/
 	std::string gameName = "MyGame";
 	GameView::Game myGame(800, 600, gameName);
