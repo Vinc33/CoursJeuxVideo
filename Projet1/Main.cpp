@@ -10,11 +10,12 @@ int main()
 	3 - Maxime
 	4 - Francis
 	6 - Nicolas Occupation Double
-	11 - Sulli
 	7 - Jeremie Thiffault
 	8 - Mathieu Bienvenu
 	9 - Matis
+	11 - Sulli
 	14.Billy Osmont
+	
 	
 
 	*/
