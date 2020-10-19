@@ -8,6 +8,7 @@ int main()
 	
 	1.Vincent Morin
 	2 - Tanya
+	3 - Maxime
 	4 - Francis
 	6 - Nicolas Occupation Double
 	*/
