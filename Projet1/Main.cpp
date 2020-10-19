@@ -12,6 +12,7 @@ int main()
 	4 - Francis
 	6 - Nicolas Occupation Double
 	7 - Jeremie Thiffault
+	14.Billy Osmont
 	*/
 	std::string gameName = "MyGame";
 	GameView::Game myGame(800, 600, gameName);
