@@ -8,6 +8,7 @@ int main()
 	
 	1.Vincent Morin
 	2 - Tanya
+	6 - Nicolas Occupation Double
 	*/
 	std::string gameName = "MyGame";
 	GameView::Game myGame(800, 600, gameName);
