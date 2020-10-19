@@ -12,6 +12,7 @@ int main()
 	4 - Francis
 	6 - Nicolas Occupation Double
 	7 - Jeremie Thiffault
+	8 - Mathieu Bienvenu
 	9 - Matis
 	14.Billy Osmont
 	
