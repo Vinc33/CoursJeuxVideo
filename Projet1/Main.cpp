@@ -9,6 +9,7 @@ int main()
 	1.Vincent Morin
 	2 - Tanya
 	4 - Francis
+	9 - Matis
 	*/
 	std::string gameName = "MyGame";
 	GameView::Game myGame(800, 600, gameName);
