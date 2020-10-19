@@ -9,6 +9,7 @@ int main()
 	2 - Tanya
 	3 - Maxime
 	4 - Francis
+	5 - Alex
 	6 - Nicolas Occupation Double
 	7 - Jeremie Thiffault
 	8 - Mathieu Bienvenu
