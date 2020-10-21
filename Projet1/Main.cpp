@@ -14,21 +14,14 @@ int main()
 	7 - Jeremie Thiffault
 	8 - Mathieu Bienvenu
 	9 - Matis
-<<<<<<< HEAD
-=======
 	10-Marc-Olivier Maltais
->>>>>>> PremiereBranche_Marc-OlivierMaltais
 	11 - Sulli
 	14.Billy Osmont
 	12 - Fabrice LONTIO
 	13 - Nicolas B-G
 	14 . Billy Osmont 
 	20. Michael PP
-<<<<<<< HEAD
 
-	
-=======
->>>>>>> PremiereBranche_Marc-OlivierMaltais
 	*/
 	std::string gameName = "MyGame";
 	GameView::Game myGame(800, 600, gameName);
