@@ -21,7 +21,7 @@ int main()
 	13 - Nicolas B-G
 	14 . Billy Osmont 
 	20. Michael PP
-
+	21 - Gilly Willy
 	*/
 	std::string gameName = "MyGame";
 	GameView::Game myGame(800, 600, gameName);
