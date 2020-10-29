@@ -8,6 +8,9 @@ Player::Player()
 	velocity.y = 1.0;
 	acceleration.x = 0;
 	acceleration.y = 0;
+	direction = DROITE;
+	weapon = new Weapon();
+	invincibleTimer = 0;
 }
 
 Player::Player(std::string nom)
@@ -18,7 +21,7 @@ Player::Player(std::string nom)
 
 Player::~Player()
 {
-
+	delete weapon;
 }
 
 //Gets
@@ -35,6 +38,18 @@ Vector2f Player::getAcceleration()
 int Player::getHealth()
 {
 	return health;
+}
+
+Direction Player::getDirection()
+{
+	return direction;
+}
+
+int Player::getInvincibleTimer(int reelTime)
+{
+	int timer = reelTime - invincibleTimer;
+	timer < 0 ? timer = 0 : timer = timer;
+	return timer;
 }
 
 //Sets
@@ -57,6 +72,16 @@ void Player::setVelocity(Vector2f addition)
 	velocity.y += addition.y;
 }
 
+void Player::setDirection(Direction direction)
+{
+	this->direction = direction;
+}
+
+void Player::setInvincibleTimer(int value)
+{
+	invincibleTimer = value;
+}
+
 //Methods
 void Player::move(Vector2f movement)
 {
@@ -73,4 +98,11 @@ void Player::substractHealth(int substract)
 void Player::addHealth(int addition)
 {
 	setHealth(health + addition);
+}
+
+bool Player::getIsInvincible()
+{
+	if (invincibleTimer > 0)		//deviendra : si le temps est plus grand que le timer 
+		return true;
+	return false;
 }
