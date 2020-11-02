@@ -2,13 +2,11 @@
 #include <SFML\Graphics\Sprite.hpp>
 #include <SFML/System/Vector2.hpp>
 
-using namespace sf;
-
-class Bullet : public Sprite
+class Bullet : public sf::Sprite
 {
 	//Attributs
 private:
-	Vector2f velocity;
+	sf::Vector2f velocity;
 public:
 
 	//Methods

@@ -3,9 +3,8 @@
 #include <list>
 #include "Bullet.h"
 
-using namespace sf;
 
-class Weapon : public Sprite
+class Weapon : public sf::Sprite
 {
 	//Attributs
 public:

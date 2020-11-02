@@ -17,6 +17,16 @@ Player::Player(std::string nom)
 	Player();
 }
 
+Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Direction direction, Weapon* weapon)
+{
+	this->nom = nom;
+	this->health = health;
+	this->velocity = velocity;
+	this->acceleration = acceleration;
+	this->direction = direction;
+	this->weapon = weapon;
+}
+
 Player::~Player()
 {
 	delete weapon;

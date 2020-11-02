@@ -5,9 +5,9 @@
 #include "enums.h"
 #include "Weapon.h"
 
-using namespace sf;
+using sf::Vector2f;
 
-class Player : public Sprite
+class Player : public sf::Sprite
 {
 	//attributs
 private:
@@ -25,14 +25,15 @@ private:
 public:
 	//Constructors/Desctructor
 	Player();
+	Player(std::string nom, int health,Vector2f velocity, Vector2f acceleration, Direction direction, Weapon* weapon);
 	Player(std::string nom);
 	~Player();
 	
 	//gets
-	Vector2f getAcceleration();
-	Vector2f getVelocity();
-	Direction getDirection();
-	int getHealth();
+	inline Vector2f getAcceleration();
+	inline Vector2f getVelocity();
+	inline Direction getDirection();
+	inline int getHealth();
 	int getInvincibleTimer(int reelTime);
 	
 	//sets
@@ -46,8 +47,6 @@ public:
 	void move(Vector2f movement);
 	void substractHealth(int substract);
 	void addHealth(int addition);
-	Direction getDirection();
-	void setDirection(Direction direction);
 	bool getIsInvincible();
 };
 
