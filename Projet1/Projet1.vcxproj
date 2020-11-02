@@ -142,7 +142,6 @@
     <ClCompile Include="GameCode\Manager\TimeManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Vecteur.cpp" />
     <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +158,6 @@
     <ClInclude Include="GameCode\Manager\InputManager.h" />
     <ClInclude Include="GameCode\Manager\TimeManager.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Vecteur.h" />
     <ClInclude Include="Weapon.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
