@@ -4,6 +4,7 @@
 #include <SFML\System\Vector2.hpp>
 #include "enums.h"
 #include "Weapon.h"
+#include "Vecteur.h"
 
 using namespace sf;
 
@@ -11,8 +12,8 @@ class Player : public Sprite
 {
 	//attributs
 private:
-	Vector2f acceleration;
-	Vector2f velocity;
+	Vecteur* acceleration;
+	Vecteur* velocity;
 	int health;
 	std::string nom;
 	Direction direction;
@@ -29,21 +30,21 @@ public:
 	~Player();
 	
 	//gets
-	Vector2f getAcceleration();
-	Vector2f getVelocity();
+	Vecteur* getAcceleration();
+	Vecteur* getVelocity();
 	Direction getDirection();
 	int getHealth();
 	int getInvincibleTimer(int reelTime);
 	
 	//sets
 	void setAcceleration(float addition);
-	void setVelocity(Vector2f addition);
+	void setVelocity(Vecteur addition);
 	void setHealth(int addition);
 	void setDirection(Direction direction);
 	void setInvincibleTimer(int value);
 	
 	//Methods
-	void move(Vector2f movement);
+	void move(Vecteur movement);
 	void substractHealth(int substract);
 	void addHealth(int addition);
 	Direction getDirection();

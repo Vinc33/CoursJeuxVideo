@@ -4,10 +4,8 @@
 Player::Player()
 {
 	health = 100;
-	velocity.x = 1.0;
-	velocity.y = 1.0;
-	acceleration.x = 0;
-	acceleration.y = 0;
+	velocity = new Vecteur(1.0, 1.0);
+	acceleration = new Vecteur(0.0, 0.0);
 	direction = DROITE;
 	weapon = new Weapon();
 	invincibleTimer = 0;
@@ -25,12 +23,12 @@ Player::~Player()
 }
 
 //Gets
-Vector2f Player::getVelocity()
+Vecteur* Player::getVelocity()
 {
 	return velocity;
 }
 
-Vector2f Player::getAcceleration()
+Vecteur* Player::getAcceleration()
 {
 	return acceleration;
 }
@@ -62,14 +60,14 @@ void Player::setHealth(int addition)
 
 void Player::setAcceleration(float addition)
 {
-	acceleration.x += addition;
-	acceleration.y += addition;
+	acceleration->x += addition;
+	acceleration->y += addition;
 }
 
-void Player::setVelocity(Vector2f addition)
+void Player::setVelocity(Vecteur addition)
 {
-	velocity.x += addition.x;
-	velocity.y += addition.y;
+	velocity->x += addition.x;
+	velocity->y += addition.y;
 }
 
 void Player::setDirection(Direction direction)
@@ -83,10 +81,10 @@ void Player::setInvincibleTimer(int value)
 }
 
 //Methods
-void Player::move(Vector2f movement)
+void Player::move(Vecteur movement)
 {
-	float x = velocity.x + acceleration.x + movement.x + getPosition().x;
-	float y = velocity.y + acceleration.y + movement.y + getPosition().y;
+	float x = velocity->x + acceleration->x + movement.x + getPosition().x;
+	float y = velocity->y + acceleration->y + movement.y + getPosition().y;
 	setPosition(x,y);
 }
 
