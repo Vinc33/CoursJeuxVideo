@@ -26,6 +26,10 @@
     <ClCompile Include="GameCode\Config\Settings.cpp">
       <Filter>Config</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Weapon.cpp" />
+    <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Vecteur.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCode\Game\GameState.h">
@@ -58,6 +62,11 @@
     <ClInclude Include="GameCode\Manager\InputManager.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
+    <ClInclude Include="Player.h" />
+    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="Bullet.h" />
+    <ClInclude Include="enums.h" />
+    <ClInclude Include="Vecteur.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

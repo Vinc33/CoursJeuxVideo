@@ -1,37 +1,37 @@
-#include "Vecteur.h"
+#include "Vector2f.h"
 
 //Constructors/Destructor
-Vecteur::Vecteur(float x, float y)
+Vector2f::Vector2f(float x, float y)
 {
 	this->x = x;
 	this->y = y;
 }
 
-Vecteur::~Vecteur()
+Vector2f::~Vector2f()
 {
 
 }
 
 //Méthodes
-void Vecteur::Add(Vecteur vecteur)
+void Vector2f::Add(Vector2f Vector2f)
 {
-	this->x += vecteur.x;
-	this->y += vecteur.y;
+	this->x += Vector2f.x;
+	this->y += Vector2f.y;
 }
 
-void Vecteur::Substract(Vecteur vecteur)
+void Vector2f::Substract(Vector2f Vector2f)
 {
-	this->x -= vecteur.x;
-	this->y -= vecteur.y;
+	this->x -= Vector2f.x;
+	this->y -= Vector2f.y;
 }
 
-void Vecteur::Multiply(float scalair)
+void Vector2f::Multiply(float scalair)
 {
 	this->x *= scalair;
 	this->y *= scalair;
 }
 
-void Vecteur::Divide(float scalair)
+void Vector2f::Divide(float scalair)
 {
 	this->x /= scalair;
 	this->y /= scalair;

@@ -8,7 +8,7 @@ class Bullet : public Sprite
 {
 	//Attributs
 private:
-	Vecteur velocity;
+	Vector2f velocity;
 public:
 
 	//Methods

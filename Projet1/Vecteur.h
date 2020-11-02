@@ -1,5 +1,5 @@
 #pragma once
-class Vecteur
+class Vector2f
 {
 	//Attributs
 public:
@@ -8,10 +8,10 @@ public:
 
 	//Methods
 public:
-	Vecteur(float x, float y);
-	~Vecteur();
-	void Add(Vecteur vecteur);
-	void Substract(Vecteur vecteur);
+	Vector2f(float x, float y);
+	~Vector2f();
+	void Add(Vector2f Vector2f);
+	void Substract(Vector2f Vector2f);
 	void Multiply(float scalair);
 	void Divide(float scalaire);
 };
