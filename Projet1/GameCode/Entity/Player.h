@@ -2,7 +2,7 @@
 #include <SFML\Graphics\Sprite.hpp>
 #include <string>
 #include <SFML\System\Vector2.hpp>
-#include "enums.h"
+#include "Utils/enums.h"
 #include "Weapon.h"
 
 using sf::Vector2f;

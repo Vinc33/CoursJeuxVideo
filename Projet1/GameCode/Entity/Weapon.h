@@ -14,6 +14,8 @@ private:
 
 	//Methodes
 public:
+	Weapon();
+	~Weapon();
 	void updateBullets();
 	void fire(float bulletVelocity);
 private:
