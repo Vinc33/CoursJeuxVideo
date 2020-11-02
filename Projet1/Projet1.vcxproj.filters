@@ -21,10 +21,19 @@
       <Filter>Engine\Input</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Config\Utils.cpp">
-      <Filter>Config</Filter>
+      <Filter>Engine\Entity\Config</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Config\Settings.cpp">
-      <Filter>Config</Filter>
+      <Filter>Engine\Entity\Config</Filter>
+    </ClCompile>
+    <ClCompile Include="Bullet.cpp">
+      <Filter>Engine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Engine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Weapon.cpp">
+      <Filter>Engine\Entity</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -49,14 +58,26 @@
     <ClInclude Include="GameCode\Input\EnumInput.h">
       <Filter>Engine\Input</Filter>
     </ClInclude>
-    <ClInclude Include="GameCode\Config\Settings.h">
-      <Filter>Config</Filter>
-    </ClInclude>
     <ClInclude Include="GameCode\Config\Utils.h">
-      <Filter>Config</Filter>
+      <Filter>Engine\Entity\Config</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Manager\InputManager.h">
       <Filter>Engine\Manager</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCode\Config\Settings.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Bullet.h">
+      <Filter>Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Weapon.h">
+      <Filter>Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="enums.h">
+      <Filter>Engine\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -66,16 +87,19 @@
     <Filter Include="Engine\Entity">
       <UniqueIdentifier>{58c83756-3989-42ee-b7f2-9aab3ecf3ecb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Engine\Manager">
-      <UniqueIdentifier>{273367c0-9094-4b0f-8fe6-e79d6ad59243}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Engine\Game">
       <UniqueIdentifier>{fa6e1a34-dfeb-41fa-bb7c-4d4d8c030220}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Utils">
+      <UniqueIdentifier>{5c0efdcb-71f9-4def-bf25-153b533b2a72}</UniqueIdentifier>
     </Filter>
     <Filter Include="Engine\Input">
       <UniqueIdentifier>{417d964a-7161-4043-ab2c-a1733883df7b}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Config">
+    <Filter Include="Engine\Manager">
+      <UniqueIdentifier>{273367c0-9094-4b0f-8fe6-e79d6ad59243}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Entity\Config">
       <UniqueIdentifier>{0d9bc47b-fdb7-41b0-9b17-677a2f33f3d7}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
