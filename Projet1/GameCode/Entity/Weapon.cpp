@@ -6,7 +6,7 @@ Weapon::Weapon()
 
 }
 
-Weapon::Weapon()
+Weapon::~Weapon()
 {
 
 }

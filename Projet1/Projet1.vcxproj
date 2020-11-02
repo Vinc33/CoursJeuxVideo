@@ -131,9 +131,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="GameCode\Config\Settings.cpp" />
     <ClCompile Include="GameCode\Config\Utils.cpp" />
+    <ClCompile Include="GameCode\Entity\Bullet.cpp" />
+    <ClCompile Include="GameCode\Entity\Player.cpp" />
+    <ClCompile Include="GameCode\Entity\Weapon.cpp" />
     <ClCompile Include="GameCode\Game\Game.cpp" />
     <ClCompile Include="GameCode\Game\GameState.cpp" />
     <ClCompile Include="GameCode\Input\KeyboardMap.cpp" />
@@ -141,14 +143,13 @@
     <ClCompile Include="GameCode\Manager\InputManager.cpp" />
     <ClCompile Include="GameCode\Manager\TimeManager.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Weapon.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bullet.h" />
-    <ClInclude Include="enums.h" />
     <ClInclude Include="GameCode\Config\Settings.h" />
     <ClInclude Include="GameCode\Config\Utils.h" />
+    <ClInclude Include="GameCode\Entity\Bullet.h" />
+    <ClInclude Include="GameCode\Entity\Player.h" />
+    <ClInclude Include="GameCode\Entity\Weapon.h" />
     <ClInclude Include="GameCode\Game\Game.h" />
     <ClInclude Include="GameCode\Game\GameState.h" />
     <ClInclude Include="GameCode\Input\EnumInput.h" />
@@ -157,8 +158,7 @@
     <ClInclude Include="GameCode\Manager\AssetManager.h" />
     <ClInclude Include="GameCode\Manager\InputManager.h" />
     <ClInclude Include="GameCode\Manager\TimeManager.h" />
-    <ClInclude Include="Player.h" />
-    <ClInclude Include="Weapon.h" />
+    <ClInclude Include="GameCode\Utils\enums.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

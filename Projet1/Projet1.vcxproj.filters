@@ -26,13 +26,13 @@
     <ClCompile Include="GameCode\Config\Settings.cpp">
       <Filter>Engine\Entity\Config</Filter>
     </ClCompile>
-    <ClCompile Include="Bullet.cpp">
+    <ClCompile Include="GameCode\Entity\Bullet.cpp">
       <Filter>Engine\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="GameCode\Entity\Player.cpp">
       <Filter>Engine\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="Weapon.cpp">
+    <ClCompile Include="GameCode\Entity\Weapon.cpp">
       <Filter>Engine\Entity</Filter>
     </ClCompile>
   </ItemGroup>
@@ -67,16 +67,16 @@
     <ClInclude Include="GameCode\Config\Settings.h">
       <Filter>Engine\Input</Filter>
     </ClInclude>
-    <ClInclude Include="Bullet.h">
+    <ClInclude Include="GameCode\Entity\Bullet.h">
       <Filter>Engine\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Player.h">
+    <ClInclude Include="GameCode\Entity\Player.h">
       <Filter>Engine\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="Weapon.h">
+    <ClInclude Include="GameCode\Entity\Weapon.h">
       <Filter>Engine\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="enums.h">
+    <ClInclude Include="GameCode\Utils\enums.h">
       <Filter>Engine\Utils</Filter>
     </ClInclude>
   </ItemGroup>
