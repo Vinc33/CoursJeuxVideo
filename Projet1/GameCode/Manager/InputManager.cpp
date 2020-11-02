@@ -1,8 +1,8 @@
 #include "./Manager/InputManager.h"
 #include "./Input/KeyboardMap.h"
 #include <SFML/Window/Joystick.hpp>
+#include <iostream>
 
-vector<InputMap*> InputManager::players = vector<InputMap*>();
 
 InputManager::InputManager()
 {
@@ -11,13 +11,11 @@ InputManager::InputManager()
 
 InputManager::~InputManager()
 {
-	for (InputMap* map : players)
-		delete map;
 }
 
 void InputManager::init()
 {
-	players.push_back(new KeyboardMap());
+	KeyboardMap keyboardMap();
 }
 
 void InputManager::update()
@@ -25,35 +23,18 @@ void InputManager::update()
 	sf::Joystick::update();
 }
 
-bool InputManager::getKeyState(int playerID, INPUT key)
+char InputManager::getPressedKeyChar(sf::Event event) //Retourner le char d'une touche
 {
-	switch (key)
-	{
-	case KEYUP:
-		return players[playerID]->getUp();
-		break;
-	case KEYDOWN:
-		return players[playerID]->getDown();
-		break;
-	case KEYLEFT:
-		return players[playerID]->getLeft();
-		break;
-	case KEYRIGHT:
-		return players[playerID]->getRight();
-		break;
-	case KEYATTACK:
-		return players[playerID]->getAttack();
-		break;
-	case KEYJUMP:
-		return players[playerID]->getJump();
-		break;
-	case KEYSKILL1:
-		return players[playerID]->getSkill1();
-		break;
-	case KEYSKILL2:
-		return players[playerID]->getSkill2();
-		break;
-	default:
-		break;
-	}
+	if (event.key.code >= 0 && event.key.code <= 25)
+		return (char)(event.key.code + 65); // Lettres de A - Z
+	else if (event.key.code >= 26 && event.key.code <= 35)
+		return (char)(event.key.code + 22); // Chiffres de 0 - 9
+	else if (event.key.code == 57) // Barre espace
+		return ' ';
+	else return '?';
+}
+
+sf::Keyboard::Key InputManager::getPressedKeyCode(sf::Event event) //Retourner la touche
+{
+	return static_cast<sf::Keyboard::Key>(event.key.code);
 }

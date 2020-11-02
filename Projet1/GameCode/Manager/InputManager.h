@@ -1,7 +1,7 @@
 #pragma once
 #include "./Manager/TimeManager.h"
-#include "./Input/InputMap.h"
-#include "./Input/EnumInput.h"
+#include "SFML/Window/Keyboard.hpp"
+#include "SFML/Window/Event.hpp"
 #include <vector>
 
 using namespace std;
@@ -16,9 +16,9 @@ public:
 
 	static void update();
 
-	static bool getKeyState(int playerID, INPUT key);
+	static char getPressedKeyChar(sf::Event event); //Retourne le charactère en char des lettres A-Z et numéros 0-9(pas numpad)[Affichage]
 
-private:
-	static vector<InputMap*> players;
+	static sf::Keyboard::Key getPressedKeyCode(sf::Event event); //Retourne la clé des lettres A-Z et numéros 0-9(pas numpad)[Logique]
+
 };
 

@@ -40,7 +40,7 @@ namespace GameView
 
 	protected:
 		//ViewManager* camera;
-		GameState* currentState;
+		//GameState* currentState;
 
 	};
 }
