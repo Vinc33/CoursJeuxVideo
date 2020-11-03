@@ -70,8 +70,9 @@ namespace GameView
 		{
 			//boucle de jeu
 			timeManager.update();
-			//	currentState->updateInput();
-			//	currentState->update();
+			myTest->update();
+		//	currentState->updateInput();
+		//	currentState->update();
 			render();
 
 			updateEvent();
