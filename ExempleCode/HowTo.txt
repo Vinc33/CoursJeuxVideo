@@ -1,0 +1,22 @@
+How to:
+	
+Load an asset :
+
+1- make sure the preLoad function is called in the init of the game (load a text file with texture needed)
+2- add the texture in the config file 
+3- check the preLoadAssetExemple in this folder to know how to write the right path for the sprite/spritesheet
+
+Use an animation:
+
+1-Add the animation in the class 
+2-
+
+
+Use Time:
+
+the delta time is a mandatory element in the game
+To access delta time, just use TimeManager::DeltaTime  ( static element, create once, can be access this way)
+
+
+KeyBoard
+

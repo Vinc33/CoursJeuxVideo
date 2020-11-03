@@ -1,0 +1,2 @@
+Assets/Sprite/SteamMan/SteamMan.png steamMan|
+Assets/Sprite/SteamMan/SteamMan_walk.png steamManWalk

@@ -4,6 +4,7 @@
 #include "./Manager/InputManager.h"
 #include "./Manager/TimeManager.h"
 #include "GameState.h"
+#include "Entity/BaseEntity.h"
 
 using namespace sf;
 
@@ -37,6 +38,7 @@ namespace GameView
 		TimeManager timeManager;
 		const unsigned int FPS = 60;
 		GameDataRef data = std::make_shared<GameData>();
+		BaseEntity* myTest;
 
 	protected:
 		//ViewManager* camera;

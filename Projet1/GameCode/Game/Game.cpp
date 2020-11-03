@@ -8,6 +8,7 @@ static bool debug = false;
 static bool debug = true;
 #endif
 
+
 //initialize static variables
 
 namespace GameView
@@ -20,6 +21,7 @@ namespace GameView
 
 	Game::~Game()
 	{
+		delete myTest;
 	}
 
 	void Game::init()
@@ -27,6 +29,7 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
+		myTest = new BaseEntity("steamMan");
 	}
 
 	void Game::updateEvent()
@@ -58,7 +61,7 @@ namespace GameView
 
 	void Game::updateLogic()
 	{
-		//mettre les collision ici
+		//mettre les collision ici 
 	}
 
 	void Game::update()
@@ -89,6 +92,7 @@ namespace GameView
 	{
 		data->window.clear(Color::Black);
 
+		myTest->render(data->window);
 
 		data->window.display();
 	}
