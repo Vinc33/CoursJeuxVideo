@@ -41,6 +41,9 @@
     <ClCompile Include="GameCode\Entity\BaseEntity.cpp">
       <Filter>Engine\Entity</Filter>
     </ClCompile>
+    <ClCompile Include="AnimateEntity.cpp">
+      <Filter>Engine\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCode\Game\GameState.h">
@@ -89,6 +92,9 @@
       <Filter>Engine\Entity</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Entity\BaseEntity.h">
+      <Filter>Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimateEntity.h">
       <Filter>Engine\Entity</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,9 +11,9 @@ public:
 	virtual ~BaseEntity() {}
 			
 	virtual void update() {}
-	void render(sf::RenderTarget& target);
+	virtual void render(sf::RenderTarget& target);
 
-private:
+protected:
 	sf::Sprite sprite;
 };
 
