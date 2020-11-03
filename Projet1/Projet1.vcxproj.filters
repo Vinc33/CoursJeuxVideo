@@ -40,13 +40,7 @@
     <ClInclude Include="GameCode\Manager\AssetManager.h">
       <Filter>Engine\Manager</Filter>
     </ClInclude>
-    <ClInclude Include="GameCode\Input\InputMap.h">
-      <Filter>Engine\Input</Filter>
-    </ClInclude>
     <ClInclude Include="GameCode\Input\KeyboardMap.h">
-      <Filter>Engine\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCode\Input\EnumInput.h">
       <Filter>Engine\Input</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Config\Settings.h">

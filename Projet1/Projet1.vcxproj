@@ -146,8 +146,6 @@
     <ClInclude Include="GameCode\Config\Utils.h" />
     <ClInclude Include="GameCode\Game\Game.h" />
     <ClInclude Include="GameCode\Game\GameState.h" />
-    <ClInclude Include="GameCode\Input\EnumInput.h" />
-    <ClInclude Include="GameCode\Input\InputMap.h" />
     <ClInclude Include="GameCode\Input\KeyboardMap.h" />
     <ClInclude Include="GameCode\Manager\AssetManager.h" />
     <ClInclude Include="GameCode\Manager\InputManager.h" />
