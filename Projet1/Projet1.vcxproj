@@ -87,11 +87,11 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\SFML-2.5.1\include;./GameCode</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\TGUI-0.8\include;..\SFML-2.5.1\include;./GameCode</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\TGUI-0.8\lib;..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-system-d.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;tgui-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
     </Link>
@@ -119,20 +119,26 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>..\SFML-2.5.1\include;./GameCode</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\TGUI-0.8\include;..\SFML-2.5.1\include;./GameCode</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalLibraryDirectories>..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
-      <AdditionalDependencies>sfml-window.lib;sfml-graphics.lib;sfml-main.lib;sfml-audio.lib;sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\TGUI-0.8\lib;..\SFML-2.5.1\lib</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-window.lib;sfml-graphics.lib;sfml-main.lib;sfml-audio.lib;sfml-system.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;tgui.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <EntryPointSymbol>
       </EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnimateEntity.cpp" />
     <ClCompile Include="GameCode\Config\Settings.cpp" />
     <ClCompile Include="GameCode\Config\Utils.cpp" />
+    <ClCompile Include="GameCode\Entity\Animation.cpp" />
+    <ClCompile Include="GameCode\Entity\BaseEntity.cpp" />
+    <ClCompile Include="GameCode\Entity\Bullet.cpp" />
+    <ClCompile Include="GameCode\Entity\Player.cpp" />
+    <ClCompile Include="GameCode\Entity\Weapon.cpp" />
     <ClCompile Include="GameCode\Game\Game.cpp" />
     <ClCompile Include="GameCode\Game\GameState.cpp" />
     <ClCompile Include="GameCode\Input\KeyboardMap.cpp" />
@@ -142,14 +148,21 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnimateEntity.h" />
     <ClInclude Include="GameCode\Config\Settings.h" />
     <ClInclude Include="GameCode\Config\Utils.h" />
+    <ClInclude Include="GameCode\Entity\Animation.h" />
+    <ClInclude Include="GameCode\Entity\BaseEntity.h" />
+    <ClInclude Include="GameCode\Entity\Bullet.h" />
+    <ClInclude Include="GameCode\Entity\Player.h" />
+    <ClInclude Include="GameCode\Entity\Weapon.h" />
     <ClInclude Include="GameCode\Game\Game.h" />
     <ClInclude Include="GameCode\Game\GameState.h" />
     <ClInclude Include="GameCode\Input\KeyboardMap.h" />
     <ClInclude Include="GameCode\Manager\AssetManager.h" />
     <ClInclude Include="GameCode\Manager\InputManager.h" />
     <ClInclude Include="GameCode\Manager\TimeManager.h" />
+    <ClInclude Include="GameCode\Utils\enums.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -4,6 +4,9 @@
 #include "./Manager/InputManager.h"
 #include "./Manager/TimeManager.h"
 #include "GameState.h"
+#include "Entity/BaseEntity.h"
+#include <TGUI/TGUI.hpp>
+
 
 using namespace sf;
 
@@ -12,6 +15,7 @@ namespace GameView
 	struct GameData
 	{
 		sf::RenderWindow window;
+		tgui::Gui gui{ window };
 	};
 
 	typedef std::shared_ptr<GameData> GameDataRef;
@@ -33,10 +37,14 @@ namespace GameView
 		void updateEvent();
 		void render();
 
+		//Fonction test, à enlever
+		static void signalHandler();
+
 		//Variables
 		TimeManager timeManager;
 		const unsigned int FPS = 60;
 		GameDataRef data = std::make_shared<GameData>();
+		BaseEntity* myTest;
 
 	protected:
 		//ViewManager* camera;
