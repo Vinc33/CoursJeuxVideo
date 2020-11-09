@@ -31,6 +31,7 @@ namespace GameView
 		AssetManager::init();
 		InputManager::init();
 		player = new Player("steamMan", 48, 48);
+		player->setPosition(400, 400);
 	}
 
 	void Game::updateEvent()
@@ -110,15 +111,10 @@ namespace GameView
 			timeManager.update();
 		//	currentState->updateInput();
 		//	currentState->update();
-			//render();
+			render();
 			//	currentState->updateInput();
 			//	currentState->update();
-			//render();
 			updateEvent();
-
-			data->window.clear();
-			data->gui.draw(); // Draw all widgets
-			data->window.display();
 
 		}
 	}

@@ -54,8 +54,6 @@ int Player::getInvincibleTimer(int reelTime)
 	timer < 0 ? timer = 0 : timer = timer;
 	return timer;
 }
-
-//Sets
 #pragma endregion Gets
 
 //Sets
@@ -87,6 +85,11 @@ void Player::setDirection(Direction direction)
 void Player::setInvincibleTimer(int value)
 {
 	invincibleTimer = value;
+}
+
+void Player::setPosition(float x, float y)
+{
+	sprite.setPosition(x, y);
 }
 #pragma endregion Sets
 

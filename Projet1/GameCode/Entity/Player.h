@@ -6,6 +6,7 @@
 #include "Weapon.h"
 #include "AnimateEntity.h"
 
+
 using sf::Vector2f;
 
 class Player : public AnimateEntity
@@ -42,6 +43,7 @@ public:
 	void setHealth(int addition);
 	void setDirection(Direction direction);
 	void setInvincibleTimer(int value);
+	void setPosition(float x, float y);
 	
 	//Methods
 	void move(Vector2f movement);
