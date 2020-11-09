@@ -41,7 +41,7 @@
     <ClCompile Include="GameCode\Entity\BaseEntity.cpp">
       <Filter>Engine\Entity</Filter>
     </ClCompile>
-    <ClCompile Include="AnimateEntity.cpp">
+    <ClCompile Include="GameCode\Entity\AnimateEntity.cpp">
       <Filter>Engine\Entity</Filter>
     </ClCompile>
   </ItemGroup>
@@ -60,9 +60,6 @@
     </ClInclude>
     <ClInclude Include="GameCode\Input\KeyboardMap.h">
       <Filter>Engine\Input</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCode\Config\Settings.h">
-      <Filter>Config</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Config\Utils.h">
       <Filter>Engine\Entity\Config</Filter>
@@ -91,7 +88,8 @@
     <ClInclude Include="GameCode\Entity\BaseEntity.h">
       <Filter>Engine\Entity</Filter>
     </ClInclude>
-    <ClInclude Include="AnimateEntity.h">
+    <ClInclude Include="GameCode\Config\Settings.h" />
+    <ClInclude Include="GameCode\Entity\AnimateEntity.h">
       <Filter>Engine\Entity</Filter>
     </ClInclude>
   </ItemGroup>

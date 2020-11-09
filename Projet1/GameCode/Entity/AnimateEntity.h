@@ -9,6 +9,7 @@ class AnimateEntity :public BaseEntity
 {
 public:
 	AnimateEntity(std::string spriteName, int largeur, int hauteur);
+	//AnimateEntity();
 	~AnimateEntity(){}//destructeur
 	
 	void updateAnimateEntity() {}
@@ -16,10 +17,10 @@ public:
 	void addAnim(Animation* anim, std::string animName) { animMap[animName] = anim; }
 	void setAnim(std::string animToPlay) { currentAnim = animMap[animToPlay]; }
 
-	virtual void render(sf::RenderTarget& target);
+	//virtual void render(sf::RenderTarget& target);
 
 private:
 	Animation* currentAnim;
-	map<string, Animation*> animMap;
+	std::map<std::string, Animation*> animMap;
 };
 

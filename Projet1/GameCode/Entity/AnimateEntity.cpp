@@ -8,7 +8,12 @@ AnimateEntity::AnimateEntity(std::string spriteName, int largeur, int hauteur) :
 	currentAnim = 0;
 }
 
-void AnimateEntity::render(sf::RenderTarget& target)
+/*AnimateEntity::AnimateEntity()
 {
-	sprite.setTextureRect(currentAnim->getFrame());
-}
+
+}*/
+
+/*void AnimateEntity::render(sf::RenderTarget& target)
+{
+	//sprite.setTextureRect(currentAnim->getFrame());
+}*/

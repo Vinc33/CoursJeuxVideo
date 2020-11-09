@@ -17,11 +17,12 @@ namespace GameView
 	{
 		data->window.setVerticalSyncEnabled(true);
 		data->window.create(VideoMode(width, height), titleScreen, Style::Close | Style::Titlebar);
+		Vector2f vecteurDeplacement (0.0, 0.0);
 	}
 
 	Game::~Game()
 	{
-		delete myTest;
+		delete player;
 	}
 
 	void Game::init()
@@ -29,7 +30,7 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
-		myTest = new BaseEntity("steamMan");
+		player = new Player("steamMan", 48, 48);
 	}
 
 	void Game::updateEvent()
@@ -49,15 +50,18 @@ namespace GameView
 			//currentState->updateEvent(event); //Gamestate
 			if (event.type == Event::KeyPressed)
 			{
-				cout << InputManager::getPressedKeyChar(event) << endl; //Player va prendre valeur de la clé(getPressedKeyCode(event)) et définir son mouvement
+				//cout << InputManager::getPressedKeyChar(event) << endl; //Player va prendre valeur de la clé(getPressedKeyCode(event)) et définir son mouvement
 				if (InputManager::getPressedKeyCode(event) == 36) //Si ESCAPE est appuyé, ferme le programme.
 					data->window.close();
+				else
+					addDeplacement(event);
 			}
 
 			if (event.type == Event::MouseButtonPressed)
 				std::cout << "Une touche a ete appuyee" << std::endl;
 		}
 	}
+
 
 	void Game::updateLogic()
 	{
@@ -70,7 +74,6 @@ namespace GameView
 		{
 			//boucle de jeu
 			timeManager.update();
-			myTest->update();
 		//	currentState->updateInput();
 		//	currentState->update();
 			render();
@@ -93,8 +96,16 @@ namespace GameView
 	{
 		data->window.clear(Color::Black);
 
-		myTest->render(data->window);
+		player->render(data->window);
 
 		data->window.display();
+
+	}
+
+	void  Game::addDeplacement(Event event)
+	{
+		Vector2f deplacement(0, 0);
+		if (InputManager::getPressedKeyCode(event) == 0)
+			deplacement.x = -1;
 	}
 }

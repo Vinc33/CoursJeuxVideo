@@ -5,6 +5,7 @@
 #include "./Manager/TimeManager.h"
 #include "GameState.h"
 #include "Entity/BaseEntity.h"
+#include "Entity/Player.h"
 
 using namespace sf;
 
@@ -33,12 +34,15 @@ namespace GameView
 		void updateLogic();
 		void updateEvent();
 		void render();
+		void addDeplacement(Event event);
+
 
 		//Variables
 		TimeManager timeManager;
 		const unsigned int FPS = 60;
 		GameDataRef data = std::make_shared<GameData>();
-		BaseEntity* myTest;
+		sf::Vector2f vecteurDeplacement;
+		Player* player;
 
 	protected:
 		//ViewManager* camera;

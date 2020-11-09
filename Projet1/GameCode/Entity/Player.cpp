@@ -1,7 +1,7 @@
 #include "Player.h"
 
 //Constructors
-Player::Player()
+Player::Player(std::string spriteName, int hauteur,int largeur):AnimateEntity(spriteName, hauteur, largeur)
 {
 	health = 100;
 	velocity = Vector2f(1.0, 1.0);
@@ -11,13 +11,7 @@ Player::Player()
 	invincibleTimer = 0;
 }
 
-Player::Player(std::string nom)
-{
-	this->nom = nom;
-	Player();
-}
-
-Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Direction direction, Weapon* weapon)
+Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Direction direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur) :AnimateEntity(spriteName, hauteur, largeur)
 {
 	this->nom = nom;
 	this->health = health;
@@ -97,9 +91,9 @@ void Player::setInvincibleTimer(int value)
 //Methods
 void Player::move(Vector2f movement)
 {
-	float x = velocity.x + acceleration.x + movement.x + getPosition().x;
-	float y = velocity.y + acceleration.y + movement.y + getPosition().y;
-	setPosition(x,y);
+	float x = velocity.x + acceleration.x + movement.x + sprite.getPosition().x;
+	float y = velocity.y + acceleration.y + movement.y + sprite.getPosition().y;
+	sprite.setPosition(x,y);
 }
 
 void Player::substractHealth(int substract)
