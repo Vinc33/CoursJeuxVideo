@@ -51,7 +51,7 @@ namespace GameView
 			//currentState->updateEvent(event); //Gamestate
 			if (event.type == Event::KeyPressed)
 			{
-				//cout << InputManager::getPressedKeyChar(event) << endl; //Player va prendre valeur de la clé(getPressedKeyCode(event)) et définir son mouvement
+				cout << InputManager::getPressedKeyChar(event) << endl; //Player va prendre valeur de la clé(getPressedKeyCode(event)) et définir son mouvement
 				if (InputManager::getPressedKeyCode(event) == 36) //Si ESCAPE est appuyé, ferme le programme.
 					data->window.close();
 				else
@@ -66,6 +66,11 @@ namespace GameView
 					std::cout << "Le bouton droit a ete appuyee" << std::endl;
 				if (InputManager::isMouseButtonPressed(event, sf::Mouse::Button::Middle))
 					std::cout << "Le bouton milieu a ete appuyee" << std::endl;
+			}
+
+			if (event.type == Event::MouseEntered)
+			{
+				std::cout << "a" << std::endl;
 			}
 			if (InputManager::isMouseWheelScrolled(event))
 				std::cout << "Le bouton milieu scroll a ete appuyee" << std::endl;
@@ -115,6 +120,16 @@ namespace GameView
 			//	currentState->updateInput();
 			//	currentState->update();
 			updateEvent();
+
+			//currentState->updateInput();
+			//currentState->update();
+			//render(); //Animations
+			//updateEvent();
+
+			//Widgets v
+			/*data->window.clear();
+			data->gui.draw(); // Draw all widgets
+			data->window.display();*/
 
 		}
 	}
