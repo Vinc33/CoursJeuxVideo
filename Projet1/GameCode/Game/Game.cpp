@@ -142,7 +142,15 @@ namespace GameView
 	void  Game::addDeplacement(Event event)
 	{
 		Vector2f deplacement(0, 0);
-		if (InputManager::getPressedKeyCode(event) == 0)
-			deplacement.x = -1;
+		switch (InputManager::getPressedKeyCode(event))
+		{
+		case 0: deplacement.x = -1; break;//gauche
+		case 22: deplacement.y = -1; break;//haut
+		case 18: deplacement.y = 1; break;//bas
+		case 3: deplacement.x = 1; break;//droite
+		default: break;
+		}
+		player->setVelocity(Vector2f(10,10));//exemple pour augmenter la vitesse
+		player->move(deplacement);
 	}
 }

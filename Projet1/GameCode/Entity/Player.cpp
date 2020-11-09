@@ -65,16 +65,16 @@ void Player::setHealth(int addition)
 	health < 0 ? health = 0 : health = health;
 }
 
-void Player::setAcceleration(float addition)
+void Player::setAcceleration(float value)
 {
-	acceleration.x += addition;
-	acceleration.y += addition;
+	acceleration.x = value;
+	acceleration.y = value;
 }
 
-void Player::setVelocity(Vector2f addition)
+void Player::setVelocity(Vector2f value)
 {
-	velocity.x += addition.x;
-	velocity.y += addition.y;
+	velocity.x = value.x;
+	velocity.y = value.y;
 }
 
 void Player::setDirection(Direction direction)
@@ -96,8 +96,8 @@ void Player::setPosition(float x, float y)
 //Methods
 void Player::move(Vector2f movement)
 {
-	float x = velocity.x + acceleration.x + movement.x + sprite.getPosition().x;
-	float y = velocity.y + acceleration.y + movement.y + sprite.getPosition().y;
+	float x = ((velocity.x + acceleration.x) * movement.x) + sprite.getPosition().x;
+	float y = ((velocity.y + acceleration.y) * movement.y) + sprite.getPosition().y;
 	sprite.setPosition(x,y);
 }
 
