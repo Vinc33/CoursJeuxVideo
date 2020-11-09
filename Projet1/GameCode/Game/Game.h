@@ -7,6 +7,7 @@
 #include "Entity/BaseEntity.h"
 #include "Entity/Player.h"
 #include <TGUI/TGUI.hpp>
+#include "Input/KeyboardMap.h"
 
 
 using namespace sf;
@@ -49,6 +50,8 @@ namespace GameView
 		GameDataRef data = std::make_shared<GameData>();
 		sf::Vector2f vecteurDeplacement;
 		Player* player;
+		KeyboardMap* keyboardMap;
+
 
 	protected:
 		//ViewManager* camera;
