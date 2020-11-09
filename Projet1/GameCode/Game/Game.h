@@ -38,7 +38,7 @@ namespace GameView
 		void updateLogic();
 		void updateEvent();
 		void render();
-		void addDeplacement(Event event);
+		void movePlayer(Event event);
 
 
 		//Fonction test, à enlever
