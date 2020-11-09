@@ -75,12 +75,14 @@ namespace GameView
 	void Game::updateLogic()
 	{
 		//mettre les collision ici 
-	}
 
+
+	}
 	//fonction test bouton
 	void Game::signalHandler()
 	{
 		std::cout << "Button pressed" << std::endl;
+
 	}
 
 	void Game::update()
@@ -110,6 +112,7 @@ namespace GameView
 			//render();
 			//	currentState->updateInput();
 			//	currentState->update();
+
 
 			updateEvent();
 

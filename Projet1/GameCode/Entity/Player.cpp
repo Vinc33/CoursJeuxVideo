@@ -33,6 +33,8 @@ Player::~Player()
 }
 
 //Gets
+#pragma region Gets
+
 Vector2f Player::getVelocity()
 {
 	return velocity;
@@ -61,6 +63,10 @@ int Player::getInvincibleTimer(int reelTime)
 }
 
 //Sets
+#pragma endregion Gets
+
+//Sets
+#pragma region Sets
 void Player::setHealth(int addition)
 {
 	health += addition;
@@ -89,6 +95,7 @@ void Player::setInvincibleTimer(int value)
 {
 	invincibleTimer = value;
 }
+#pragma endregion Sets
 
 //Methods
 void Player::move(Vector2f movement)
