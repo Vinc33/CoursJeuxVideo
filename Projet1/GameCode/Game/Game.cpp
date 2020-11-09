@@ -111,7 +111,6 @@ namespace GameView
 			//	currentState->updateInput();
 			//	currentState->update();
 			//render();
-
 			updateEvent();
 
 			data->window.clear();
