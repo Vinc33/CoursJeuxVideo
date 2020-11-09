@@ -25,7 +25,7 @@ void InputManager::update()
 	sf::Joystick::update();
 }
 
-bool InputManager::getKeyState(int playerID, INPUT key)
+bool InputManager::getKeyState(int playerID,INPUT key)
 {
 	switch (key)
 	{
