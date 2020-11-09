@@ -92,6 +92,7 @@
     <ClInclude Include="GameCode\Entity\AnimateEntity.h">
       <Filter>Engine\Entity</Filter>
     </ClInclude>
+    <ClInclude Include="GameCode\Config\Settings.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

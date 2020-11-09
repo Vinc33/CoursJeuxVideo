@@ -6,6 +6,8 @@
 #include "GameState.h"
 #include "Entity/BaseEntity.h"
 #include "Entity/Player.h"
+#include <TGUI/TGUI.hpp>
+
 
 using namespace sf;
 
@@ -14,6 +16,7 @@ namespace GameView
 	struct GameData
 	{
 		sf::RenderWindow window;
+		tgui::Gui gui{ window };
 	};
 
 	typedef std::shared_ptr<GameData> GameDataRef;
@@ -36,6 +39,9 @@ namespace GameView
 		void render();
 		void addDeplacement(Event event);
 
+
+		//Fonction test, à enlever
+		static void signalHandler();
 
 		//Variables
 		TimeManager timeManager;

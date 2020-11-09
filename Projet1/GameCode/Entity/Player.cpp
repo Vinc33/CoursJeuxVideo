@@ -54,6 +54,8 @@ int Player::getInvincibleTimer(int reelTime)
 	timer < 0 ? timer = 0 : timer = timer;
 	return timer;
 }
+
+//Sets
 #pragma endregion Gets
 
 //Sets
