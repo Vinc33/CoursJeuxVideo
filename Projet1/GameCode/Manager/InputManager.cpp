@@ -38,3 +38,17 @@ sf::Keyboard::Key InputManager::getPressedKeyCode(sf::Event event) //Retourner l
 {
 	return static_cast<sf::Keyboard::Key>(event.key.code);
 }
+
+bool InputManager::isMouseButtonPressed(sf::Event event, sf::Mouse::Button button)
+{
+	if (event.mouseButton.button == button)
+		return true;
+	return false;
+}
+
+bool InputManager::isMouseWheelScrolled(sf::Event event)
+{
+	if (event.type == sf::Event::MouseWheelScrolled)
+		return true;
+	return false;
+}

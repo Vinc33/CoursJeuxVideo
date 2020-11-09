@@ -14,7 +14,7 @@ AssetManager::~AssetManager(){}
 
 void AssetManager::init()
 {
-	//preLoadSprite("../MetroidVania/MetroidVaniaSprite.txt");
+	preLoadSprite("Scripts/playerSprite.txt");
 }
 void AssetManager::loadFromLevel(LevelInfo levelInfo)
 {
