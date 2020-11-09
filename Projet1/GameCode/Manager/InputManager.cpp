@@ -1,4 +1,4 @@
-#include "./Manager/InputManager.h"
+﻿#include "./Manager/InputManager.h"
 #include "./Input/KeyboardMap.h"
 #include <SFML/Window/Joystick.hpp>
 #include <iostream>
@@ -31,6 +31,20 @@ char InputManager::getPressedKeyChar(sf::Event event) //Retourner le char d'une 
 		return (char)(event.key.code + 22); // Chiffres de 0 - 9
 	else if (event.key.code == 57) // Barre espace
 		return ' ';
+	else if (event.key.code >= 71 && event.key.code <= 74)
+	{
+		switch (event.key.code)
+		{
+		case 71: return '<'; //Arrow left
+			break;
+		case 72: return '>'; //Arrow right
+			break;
+		case 73: return '^'; //Arrow up
+			break;
+		case 74: return '.'; //Arrow down
+			break;
+		}
+	}
 	else return '?';
 }
 

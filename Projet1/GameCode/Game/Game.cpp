@@ -63,6 +63,11 @@ namespace GameView
 				if (InputManager::isMouseButtonPressed(event, sf::Mouse::Button::Middle))
 					std::cout << "Le bouton milieu a ete appuyee" << std::endl;
 			}
+
+			if (event.type == Event::MouseEntered)
+			{
+				std::cout << "a" << std::endl;
+			}
 			if (InputManager::isMouseWheelScrolled(event))
 				std::cout << "Le bouton milieu scroll a ete appuyee" << std::endl;
 
@@ -105,14 +110,12 @@ namespace GameView
 			//boucle de jeu
 			timeManager.update();
 			myTest->update();
-		//	currentState->updateInput();
-		//	currentState->update();
-			//render();
-			//	currentState->updateInput();
-			//	currentState->update();
-			//render();
+			//currentState->updateInput();
+			//currentState->update();
+			//render(); //Animations
 			updateEvent();
 
+			//Widgets v
 			data->window.clear();
 			data->gui.draw(); // Draw all widgets
 			data->window.display();
