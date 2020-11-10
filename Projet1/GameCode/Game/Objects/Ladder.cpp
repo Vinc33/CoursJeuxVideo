@@ -18,7 +18,7 @@ int Ladder::verifyHp()
 
 void Ladder::checkCollision()
 {
-	sf::Event event;
+	/*sf::Event event;
 	if (ladder.getCollision(ladder)) // Call le getCollision de BaseEntity qui est un bool qui return une valeur
 	{
 		verifyHp(); // Pas utile, mais je le laisse, car tous les objets auront une vérification d'hp
@@ -27,7 +27,7 @@ void Ladder::checkCollision()
 			climb(); // Call climb
 		}
 
-	}
+	}*/
 }
 
 void Ladder::climb()

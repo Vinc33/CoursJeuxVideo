@@ -170,7 +170,7 @@ namespace GameView
 		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getRightKey())
 			deplacement.x = 1;
 		
-		player->setVelocity(Vector2f(10,10));//exemple pour augmenter la vitesse
+		player->setVelocity(Vector2f(20,20));//exemple pour augmenter la vitesse
 		while (keyPressed)
 		{
 			data->window.pollEvent(event);
