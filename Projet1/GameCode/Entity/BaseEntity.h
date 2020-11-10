@@ -2,7 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 
-
+using namespace std;
 class BaseEntity
 {
 public:
@@ -12,8 +12,10 @@ public:
 			
 	virtual void update() {}
 	virtual void render(sf::RenderTarget& target);
-
+	virtual void kill(BaseEntity entity);
+	virtual bool getCollision(BaseEntity entity);
 protected:
 	sf::Sprite sprite;
+	bool isCollided;
 };
 
