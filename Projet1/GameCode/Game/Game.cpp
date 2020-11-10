@@ -17,11 +17,12 @@ namespace GameView
 	{
 		data->window.setVerticalSyncEnabled(true);
 		data->window.create(VideoMode(width, height), titleScreen, Style::Close | Style::Titlebar);
+		Vector2f vecteurDeplacement (0.0, 0.0);
 	}
 
 	Game::~Game()
 	{
-		delete myTest;
+		delete player;
 	}
 
 	void Game::init()
@@ -29,7 +30,9 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
-		myTest = new BaseEntity("steamMan");
+		player = new Player("steamMan", 48, 48);
+		player->setPosition(400, 400);
+		keyboardMap = new KeyboardMap();
 	}
 
 	void Game::updateEvent()
@@ -49,9 +52,12 @@ namespace GameView
 			//currentState->updateEvent(event); //Gamestate
 			if (event.type == Event::KeyPressed)
 			{
-				cout << InputManager::getPressedKeyChar(event) << endl; //Player va prendre valeur de la clé(getPressedKeyCode(event)) et définir son mouvement
+				//cout << InputManager::getPressedKeyChar(event) << endl; //Player va prendre valeur de la clé(getPressedKeyCode(event)) et définir son mouvement
+				bool keyPressed = true;
 				if (InputManager::getPressedKeyCode(event) == 36) //Si ESCAPE est appuyé, ferme le programme.
 					data->window.close();
+				else
+					movePlayer(event);
 			}
 
 			if (event.type == Event::MouseButtonPressed)
@@ -63,6 +69,11 @@ namespace GameView
 				if (InputManager::isMouseButtonPressed(event, sf::Mouse::Button::Middle))
 					std::cout << "Le bouton milieu a ete appuyee" << std::endl;
 			}
+
+			if (event.type == Event::MouseEntered)
+			{
+				std::cout << "a" << std::endl;
+			}
 			if (InputManager::isMouseWheelScrolled(event))
 				std::cout << "Le bouton milieu scroll a ete appuyee" << std::endl;
 
@@ -71,6 +82,7 @@ namespace GameView
 
 		}
 	}
+
 
 	void Game::updateLogic()
 	{
@@ -104,18 +116,22 @@ namespace GameView
 		{
 			//boucle de jeu
 			timeManager.update();
-			myTest->update();
 		//	currentState->updateInput();
 		//	currentState->update();
-			//render();
+			render();
 			//	currentState->updateInput();
 			//	currentState->update();
-			//render();
 			updateEvent();
 
-			data->window.clear();
+			//currentState->updateInput();
+			//currentState->update();
+			//render(); //Animations
+			//updateEvent();
+
+			//Widgets v
+			/*data->window.clear();
 			data->gui.draw(); // Draw all widgets
-			data->window.display();
+			data->window.display();*/
 
 		}
 	}
@@ -134,8 +150,35 @@ namespace GameView
 	{
 		data->window.clear(Color::Black);
 
-		myTest->render(data->window);
+		player->render(data->window);
 
 		data->window.display();
+
+	}
+
+	void  Game::movePlayer(Event event)		//Deplace le joueur en fonction de la touche
+	{
+		Vector2f deplacement(0, 0);
+		bool keyPressed = true;
+
+		if (InputManager::getPressedKeyCode(event) == keyboardMap->getUpKey())
+			deplacement.y = -1;
+		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getLeftKey())
+			deplacement.x = -1;
+		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getDownKey())
+			deplacement.y = 1;
+		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getRightKey())
+			deplacement.x = 1;
+		
+		player->setVelocity(Vector2f(10,10));//exemple pour augmenter la vitesse
+		while (keyPressed)
+		{
+			data->window.pollEvent(event);
+			if (event.type == Event::KeyReleased)
+				keyPressed = false;
+			player->move(deplacement);
+			//player->render(data->window);
+			render();
+		}
 	}
 }

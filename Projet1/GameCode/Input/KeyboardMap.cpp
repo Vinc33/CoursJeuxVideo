@@ -3,10 +3,10 @@
 KeyboardMap::KeyboardMap()
 {
 
-	keyUp = sf::Keyboard::Up;
-	keyDown = sf::Keyboard::Down;
-	keyLeft = sf::Keyboard::Left;
-	keyRight = sf::Keyboard::Right;
+	keyUp = sf::Keyboard::W;
+	keyDown = sf::Keyboard::S;
+	keyLeft = sf::Keyboard::A;
+	keyRight = sf::Keyboard::D;
 
 	keyAttack = sf::Keyboard::X;
 	keyJump = sf::Keyboard::Space;

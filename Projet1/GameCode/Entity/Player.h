@@ -4,10 +4,12 @@
 #include <SFML\System\Vector2.hpp>
 #include "Utils/enums.h"
 #include "Weapon.h"
+#include "AnimateEntity.h"
+
 
 using sf::Vector2f;
 
-class Player : public sf::Sprite
+class Player : public AnimateEntity
 {
 	//attributs
 private:
@@ -24,9 +26,8 @@ private:
 
 public:
 	//Constructors/Desctructor
-	Player();
-	Player(std::string nom, int health,Vector2f velocity, Vector2f acceleration, Direction direction, Weapon* weapon);
-	Player(std::string nom);
+	Player(std::string nom, int health,Vector2f velocity, Vector2f acceleration, Direction direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur);
+	Player(std::string spriteName,int hauteur,int largeur);
 	~Player();
 	
 	//gets
@@ -42,6 +43,7 @@ public:
 	void setHealth(int addition);
 	void setDirection(Direction direction);
 	void setInvincibleTimer(int value);
+	void setPosition(float x, float y);
 	
 	//Methods
 	void move(Vector2f movement);

@@ -1,7 +1,7 @@
 #include "Player.h"
 
 //Constructors
-Player::Player()
+Player::Player(std::string spriteName, int hauteur,int largeur):AnimateEntity(spriteName, hauteur, largeur)
 {
 	health = 100;
 	velocity = Vector2f(1.0, 1.0);
@@ -11,13 +11,7 @@ Player::Player()
 	invincibleTimer = 0;
 }
 
-Player::Player(std::string nom)
-{
-	this->nom = nom;
-	Player();
-}
-
-Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Direction direction, Weapon* weapon)
+Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Direction direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur) :AnimateEntity(spriteName, hauteur, largeur)
 {
 	this->nom = nom;
 	this->health = health;
@@ -60,8 +54,6 @@ int Player::getInvincibleTimer(int reelTime)
 	timer < 0 ? timer = 0 : timer = timer;
 	return timer;
 }
-
-//Sets
 #pragma endregion Gets
 
 //Sets
@@ -73,16 +65,16 @@ void Player::setHealth(int addition)
 	health < 0 ? health = 0 : health = health;
 }
 
-void Player::setAcceleration(float addition)
+void Player::setAcceleration(float value)
 {
-	acceleration.x += addition;
-	acceleration.y += addition;
+	acceleration.x = value;
+	acceleration.y = value;
 }
 
-void Player::setVelocity(Vector2f addition)
+void Player::setVelocity(Vector2f value)
 {
-	velocity.x += addition.x;
-	velocity.y += addition.y;
+	velocity.x = value.x;
+	velocity.y = value.y;
 }
 
 void Player::setDirection(Direction direction)
@@ -94,14 +86,19 @@ void Player::setInvincibleTimer(int value)
 {
 	invincibleTimer = value;
 }
+
+void Player::setPosition(float x, float y)
+{
+	sprite.setPosition(x, y);
+}
 #pragma endregion Sets
 
 //Methods
 void Player::move(Vector2f movement)
 {
-	float x = velocity.x + acceleration.x + movement.x + getPosition().x;
-	float y = velocity.y + acceleration.y + movement.y + getPosition().y;
-	setPosition(x,y);
+	float x = ((velocity.x + acceleration.x) * movement.x) + sprite.getPosition().x;
+	float y = ((velocity.y + acceleration.y) * movement.y) + sprite.getPosition().y;
+	sprite.setPosition(x,y);
 }
 
 void Player::substractHealth(int substract)

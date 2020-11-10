@@ -5,7 +5,9 @@
 #include "./Manager/TimeManager.h"
 #include "GameState.h"
 #include "Entity/BaseEntity.h"
+#include "Entity/Player.h"
 #include <TGUI/TGUI.hpp>
+#include "Input/KeyboardMap.h"
 
 
 using namespace sf;
@@ -36,6 +38,8 @@ namespace GameView
 		void updateLogic();
 		void updateEvent();
 		void render();
+		void movePlayer(Event event);
+
 
 		//Fonction test, à enlever
 		static void signalHandler();
@@ -44,7 +48,10 @@ namespace GameView
 		TimeManager timeManager;
 		const unsigned int FPS = 60;
 		GameDataRef data = std::make_shared<GameData>();
-		BaseEntity* myTest;
+		sf::Vector2f vecteurDeplacement;
+		Player* player;
+		KeyboardMap* keyboardMap;
+
 
 	protected:
 		//ViewManager* camera;
