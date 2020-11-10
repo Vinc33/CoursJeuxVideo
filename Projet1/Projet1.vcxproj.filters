@@ -59,7 +59,7 @@
     <ClCompile Include="GameCode\Game\Objects\Container.cpp">
       <Filter>Engine\Game\Objects</Filter>
     </ClCompile>
-		<ClInclude Include="GameCode\Game\Objects\Fire.cpp">
+	<ClInclude Include="GameCode\Game\Objects\Fire.cpp">
       <Filter>Engine\Game\Objects</Filter>
     </ClInclude>
   </ItemGroup>

@@ -144,6 +144,7 @@
     <ClCompile Include="GameCode\Game\Objects\Barrel.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Container.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Crate.cpp" />
+	<ClCompile Include="GameCode\Game\Objects\Fire.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Ladder.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Platform.cpp" />
     <ClCompile Include="GameCode\Input\KeyboardMap.cpp" />
@@ -166,6 +167,7 @@
     <ClInclude Include="GameCode\Game\Objects\Barrel.h" />
     <ClInclude Include="GameCode\Game\Objects\Container.h" />
     <ClInclude Include="GameCode\Game\Objects\Crate.h" />
+	<ClCompile Include="GameCode\Game\Objects\Fire.h" />
     <ClInclude Include="GameCode\Game\Objects\Ladder.h" />
     <ClInclude Include="GameCode\Game\Objects\Platform.h" />
     <ClInclude Include="GameCode\Input\KeyboardMap.h" />
