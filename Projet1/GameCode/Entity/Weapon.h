@@ -1,4 +1,5 @@
 #pragma once
+#include "SFML/Graphics/Sprite.hpp"
 #include "AnimateEntity.h"
 #include <list>
 #include "Bullet.h"

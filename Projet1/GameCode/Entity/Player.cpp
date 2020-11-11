@@ -89,6 +89,7 @@ void Player::setInvincibleTimer(int value)
 void Player::setPosition(float x, float y)
 {
 	sprite.setPosition(x, y);
+	weapon->getSprite()->setPosition(Vector2f(sprite.getPosition().x + 12, sprite.getPosition().y));//Le weapon suit le joueur et est decallé de 12px vers la droite pour l'instant
 }
 
 void Player::setWeapon(Weapon* weapon)
@@ -102,7 +103,7 @@ void Player::move(Vector2f movement)
 {
 	float x = ((velocity.x + acceleration.x) * movement.x) + sprite.getPosition().x;
 	float y = ((velocity.y + acceleration.y) * movement.y) + sprite.getPosition().y;
-	sprite.setPosition(x,y);
+	setPosition(x,y);
 	setDirection(movement);
 }
 
@@ -123,13 +124,14 @@ bool Player::getIsInvincible()
 	return false;
 }
 
-void Player::shoot(Vector2f bulletVelocity)
+void Player::shoot(float bulletSpeed)
 {
+	Vector2f bulletVelocity = direction * bulletSpeed;
 	weapon->fire(bulletVelocity);
 }
 
 void Player::render(sf::RenderTarget& target)
 {
-	//weapon->render(target);
+	weapon->render(target);
 	target.draw(sprite);
 }

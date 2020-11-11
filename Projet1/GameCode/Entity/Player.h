@@ -51,7 +51,7 @@ public:
 	void substractHealth(int substract);
 	void addHealth(int addition);
 	bool getIsInvincible();
-	void shoot(Vector2f bulletVelocity);
+	void shoot(float bulletSpeed);
 	void render(sf::RenderTarget& target) override;
 };
 

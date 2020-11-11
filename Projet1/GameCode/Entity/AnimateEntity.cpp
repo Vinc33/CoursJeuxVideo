@@ -8,6 +8,13 @@ AnimateEntity::AnimateEntity(std::string spriteName, int largeur, int hauteur) :
 	currentAnim = 0;
 }
 
+#pragma region Gets
+Sprite* AnimateEntity::getSprite()
+{
+	return &sprite;
+}
+#pragma endregion Gets
+
 /*AnimateEntity::AnimateEntity()
 {
 
