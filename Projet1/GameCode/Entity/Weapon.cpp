@@ -17,16 +17,15 @@ Weapon::~Weapon()
 //Methods
 void Weapon::updateBullets()
 {
-	for (auto it = listBullets.begin(); it != listBullets.end(); ++it)
-	{
-		(*it)->move();
-		//supprime les balles qui sont hors map
-		/*if ((*it)->getSprite()->getPosition().x < 10 || (*it)->getSprite()->getPosition().x > 600 || (*it)->getSprite()->getPosition().y < 10 || (*it)->getSprite()->getPosition().y > 600)
+	auto it = listBullets.begin();
+	while (it != listBullets.end())
+		if ((*it)->getSprite()->getPosition().x < 0 || (*it)->getSprite()->getPosition().x > 1280 || (*it)->getSprite()->getPosition().y < 0 || (*it)->getSprite()->getPosition().y > 1024)
+			listBullets.erase(it++);
+		else
 		{
-			delete (*it);
-			listBullets.remove(*it);
-		}*/
-	}
+			(*it)->move();
+			++it;
+		}
 }
 
 void Weapon::fire(sf::Vector2f velocity) 
