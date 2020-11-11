@@ -21,7 +21,7 @@ void Weapon::updateBullets()
 		(*it)->move();
 }
 
-void Weapon::fire(float velocity) 
+void Weapon::fire(sf::Vector2f velocity) 
 {
 	listBullets.push_back(new Bullet(sprite.getPosition().x, sprite.getPosition().y, velocity,bulletSprite,bulletHauteur,bulletLargeur));
 }

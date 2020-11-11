@@ -19,7 +19,7 @@ private:
 public:
 	Weapon(string weaponSprite, int weaponHauteur, int weaponLargeur, string bulletSprite, int bulletHauteur, int bulletLargeur);
 	~Weapon();
-	void fire(float bulletVelocity);
+	void fire(sf::Vector2f bulletVelocity);
 	void render(sf::RenderTarget& target) override;
 private:
 	void updateBullets();

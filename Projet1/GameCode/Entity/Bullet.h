@@ -11,7 +11,7 @@ public:
 
 	//Methods
 public:
-	Bullet(float posX, float posY, float velocity,std::string spriteName,int hauteur, int largeur);
+	Bullet(float posX, float posY, sf::Vector2f velocity,std::string spriteName,int hauteur, int largeur);
 	~Bullet();
 	void move();
 private:

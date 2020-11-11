@@ -6,11 +6,11 @@ Player::Player(std::string spriteName, int hauteur,int largeur):AnimateEntity(sp
 	health = 100;
 	velocity = Vector2f(1.0, 1.0);
 	acceleration = Vector2f(0.0, 0.0);
-	direction = DROITE;
+	direction = Vector2f(1,0);
 	invincibleTimer = 0;
 }
 
-Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Direction direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur) :AnimateEntity(spriteName, hauteur, largeur)
+Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Vector2f direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur):AnimateEntity(spriteName, hauteur, largeur)
 {
 	this->nom = nom;
 	this->health = health;
@@ -42,7 +42,7 @@ int Player::getHealth()
 	return health;
 }
 
-Direction Player::getDirection()
+Vector2f Player::getDirection()
 {
 	return direction;
 }
@@ -76,7 +76,7 @@ void Player::setVelocity(Vector2f value)
 	velocity.y = value.y;
 }
 
-void Player::setDirection(Direction direction)
+void Player::setDirection(Vector2f direction)
 {
 	this->direction = direction;
 }
@@ -103,6 +103,7 @@ void Player::move(Vector2f movement)
 	float x = ((velocity.x + acceleration.x) * movement.x) + sprite.getPosition().x;
 	float y = ((velocity.y + acceleration.y) * movement.y) + sprite.getPosition().y;
 	sprite.setPosition(x,y);
+	setDirection(movement);
 }
 
 void Player::substractHealth(int substract)
@@ -122,7 +123,7 @@ bool Player::getIsInvincible()
 	return false;
 }
 
-void Player::shoot(float bulletVelocity)
+void Player::shoot(Vector2f bulletVelocity)
 {
 	weapon->fire(bulletVelocity);
 }

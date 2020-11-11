@@ -1,10 +1,10 @@
 #include "Bullet.h"
 
 //Constructeurs/Destructeur
-Bullet::Bullet(float posX, float posY, float velocity, std::string spriteName, int hauteur, int largeur) : AnimateEntity(spriteName, hauteur, largeur)
+Bullet::Bullet(float posX, float posY, sf::Vector2f velocity, std::string spriteName, int hauteur, int largeur) : AnimateEntity(spriteName, hauteur, largeur)
 {
-	this->velocity.x = velocity;
-	this->velocity.y = velocity;
+	this->velocity.x = velocity.x;
+	this->velocity.y = velocity.y;
 	sprite.setPosition(posX, posY);
 }
 

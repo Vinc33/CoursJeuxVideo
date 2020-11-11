@@ -17,7 +17,7 @@ private:
 	Vector2f velocity;
 	int health;
 	std::string nom;
-	Direction direction;
+	Vector2f direction;
 	Weapon* weapon;
 	int invincibleTimer;
 
@@ -26,14 +26,14 @@ private:
 
 public:
 	//Constructors/Desctructor
-	Player(std::string nom, int health,Vector2f velocity, Vector2f acceleration, Direction direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur);
+	Player(std::string nom, int health,Vector2f velocity, Vector2f acceleration, Vector2f direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur);
 	Player(std::string spriteName,int hauteur,int largeur);
 	~Player();
 	
 	//gets
 	inline Vector2f getAcceleration();
 	inline Vector2f getVelocity();
-	inline Direction getDirection();
+	inline Vector2f getDirection();
 	inline int getHealth();
 	int getInvincibleTimer(int reelTime);
 	
@@ -41,7 +41,7 @@ public:
 	void setAcceleration(float addition);
 	void setVelocity(Vector2f addition);
 	void setHealth(int addition);
-	void setDirection(Direction direction);
+	void setDirection(Vector2f direction);
 	void setInvincibleTimer(int value);
 	void setPosition(float x, float y);
 	void setWeapon(Weapon* weapon);
@@ -51,7 +51,7 @@ public:
 	void substractHealth(int substract);
 	void addHealth(int addition);
 	bool getIsInvincible();
-	void shoot(float bulletVelocity);
+	void shoot(Vector2f bulletVelocity);
 	void render(sf::RenderTarget& target) override;
 };
 
