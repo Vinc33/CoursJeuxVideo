@@ -7,7 +7,6 @@ Player::Player(std::string spriteName, int hauteur,int largeur):AnimateEntity(sp
 	velocity = Vector2f(1.0, 1.0);
 	acceleration = Vector2f(0.0, 0.0);
 	direction = DROITE;
-	weapon = new Weapon();
 	invincibleTimer = 0;
 }
 
@@ -91,6 +90,11 @@ void Player::setPosition(float x, float y)
 {
 	sprite.setPosition(x, y);
 }
+
+void Player::setWeapon(Weapon* weapon)
+{
+	this->weapon = weapon;
+}
 #pragma endregion Sets
 
 //Methods
@@ -116,4 +120,15 @@ bool Player::getIsInvincible()
 	if (invincibleTimer > 0)		//deviendra : si le temps est plus grand que le timer 
 		return true;
 	return false;
+}
+
+void Player::shoot(float bulletVelocity)
+{
+	weapon->fire(bulletVelocity);
+}
+
+void Player::render(sf::RenderTarget& target)
+{
+	//weapon->render(target);
+	target.draw(sprite);
 }

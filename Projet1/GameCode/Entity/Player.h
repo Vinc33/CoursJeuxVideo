@@ -44,11 +44,14 @@ public:
 	void setDirection(Direction direction);
 	void setInvincibleTimer(int value);
 	void setPosition(float x, float y);
+	void setWeapon(Weapon* weapon);
 	
 	//Methods
 	void move(Vector2f movement);
 	void substractHealth(int substract);
 	void addHealth(int addition);
 	bool getIsInvincible();
+	void shoot(float bulletVelocity);
+	void render(sf::RenderTarget& target) override;
 };
 
