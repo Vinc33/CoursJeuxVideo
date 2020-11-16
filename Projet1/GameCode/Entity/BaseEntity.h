@@ -7,8 +7,7 @@ using namespace std;
 class BaseEntity : public Collidable
 {
 public:
-	BaseEntity();
-	BaseEntity(std::string spriteName);
+	BaseEntity(std::string spriteName, float boxWidth = 0, float boxHeight = 0);
 	virtual ~BaseEntity() {}
 			
 	virtual void update() {}

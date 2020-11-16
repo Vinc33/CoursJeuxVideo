@@ -5,6 +5,7 @@ Platform::Platform(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.p
 	this->hp = hp;
 	this->isDestroyable = destroyable;
 	objectName = "Platform";
+	//ne pas oublier de setter le box du collision
 }
 
 int Platform::verifyHp()

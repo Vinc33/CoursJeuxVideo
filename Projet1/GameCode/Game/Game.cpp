@@ -30,7 +30,7 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
-		player = new Player("steamMan", 48, 48);
+		player = new Player("steamMan", 48, 48,24,40);
 		player->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
 		player->setPosition(400, 400);
 		player->setVelocity(Vector2f(20, 20));//exemple pour augmenter la vitesse

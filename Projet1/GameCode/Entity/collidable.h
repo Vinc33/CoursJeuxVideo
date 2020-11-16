@@ -5,7 +5,6 @@
     class Collidable {
       public:
         Collidable(float width, float height);
-        Collidable();
 
         bool tryCollideWith(Collidable& other);
         sf::FloatRect getBox();
@@ -15,4 +14,5 @@
 
       private:
         sf::Vector2f m_size;
+
     };

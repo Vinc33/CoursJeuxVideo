@@ -5,8 +5,6 @@
     {
     }
 
-    Collidable::Collidable() {}
-
     bool Collidable::tryCollideWith(Collidable& other)
     {
         if (getBox().intersects(other.getBox())) {

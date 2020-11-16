@@ -1,15 +1,11 @@
 #include "BaseEntity.h"
 #include "Manager/AssetManager.h"
 
-BaseEntity::BaseEntity(string spriteName)
+BaseEntity::BaseEntity(string spriteName, float boxWidth, float boxHeight) : Collidable(boxWidth, boxHeight)
 {
 	sprite.setTexture(AssetManager::getTexture(spriteName) );
-}
-
-BaseEntity::BaseEntity():Collidable()
-{
-	isDestroyable = false;
 	hp = 0;
+	isDestroyable = false;
 }
 
 void BaseEntity::render(sf::RenderTarget& target)

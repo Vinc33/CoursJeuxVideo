@@ -5,6 +5,7 @@ Container::Container(int hp, bool destroyable) : BaseEntity("Asset/Sprite/contai
 	this->hp = hp;
 	this->isDestroyable = destroyable;
 	objectName = "Container";
+	//ne pas oublier de setter le box du collision
 }
 
 int Container::verifyHp()
