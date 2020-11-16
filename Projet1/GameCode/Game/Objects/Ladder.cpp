@@ -1,37 +1,30 @@
 #include "Ladder.h"
 
-Ladder::Ladder(int hp, bool destroyable)
+Ladder::Ladder(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "ladder", 100, false)
 {
-	this->sprite = "Assets/Objects/barrel.png";
-	this->hp = hp;
-	this->destroyable = destroyable;
+
 }
 
 int Ladder::verifyHp()
 {
-	if (hp <= 0 && destroyable) // Si l'hp de l'objet est inférieure à 0 et que l'objet peut être détruit
+	if (this->hp <= 0 && this->isDestroyable)
 	{
-		ladder.kill(ladder); // Call de la fonction kill dans BaseEntity qui supprime l'objet du jeu
+		ladder.kill(ladder);
 	}
 	return hp;
 }
 
 void Ladder::checkCollision()
 {
-	sf::Event event;
-	if (ladder.getCollision(ladder)) // Call le getCollision de BaseEntity qui est un bool qui return une valeur
+	if (ladder.getCollision(ladder))
 	{
-		verifyHp(); // Pas utile, mais je le laisse, car tous les objets auront une vérification d'hp
-		if (InputManager::getPressedKeyCode(event) == keyboardMap->getUpKey()) // Si la KeyUp est appuyer (KeyUp, et non W, car le joueur à la possibilité de changer la touche
-		{
-			climb(); // Call climb
-		}
-
+		verifyHp();
 	}
 }
 
-void Ladder::climb()
+string Ladder::iAm()
 {
-
+	return this->objectName;
 }
+
 

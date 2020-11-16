@@ -13,9 +13,10 @@ private:
 	BaseEntity platform;
 
 public:
-	Platform::Platform(int hp, bool destroyable);
-	int Platform::verifyHp();
-	void Platform::checkCollision();
+	Platform(int hp, bool destroyable);
+	int verifyHp();
+	void checkCollision();
+	string iAm();
 
 };
 

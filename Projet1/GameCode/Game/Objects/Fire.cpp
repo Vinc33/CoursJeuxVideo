@@ -1,15 +1,13 @@
 #include "Fire.h"
 
-Fire::Fire(int hp, bool destroyable)
+Fire::Fire(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "fire", 100, false)
 {
-	this->sprite = "Assets/Objects/barrel.png";
-	this->hp = hp;
-	this->destroyable = destroyable;
+
 }
 
 int Fire::verifyHp()
 {
-	if (hp <= 0 && destroyable)
+	if (this->hp <= 0 && this->isDestroyable)
 	{
 		fire.kill(fire);
 	}
@@ -23,4 +21,10 @@ void Fire::checkCollision()
 		verifyHp();
 	}
 }
+
+string Fire::iAm()
+{
+	return this->objectName;
+}
+
 
