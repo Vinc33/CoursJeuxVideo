@@ -9,8 +9,6 @@ class Fire : BaseEntity
 private:
 	int hp;
 	bool destroyable;
-	string sprite;
-	BaseEntity fire;
 
 public:
 	Fire::Fire(int hp, bool destroyable);

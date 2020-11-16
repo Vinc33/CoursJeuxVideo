@@ -59,9 +59,11 @@
     <ClCompile Include="GameCode\Game\Objects\Container.cpp">
       <Filter>Engine\Game\Objects</Filter>
     </ClCompile>
-	<ClInclude Include="GameCode\Game\Objects\Fire.cpp">
-      <Filter>Engine\Game\Objects</Filter>
-    </ClInclude>
+    <ClCompile Include="GameCode\Game\Objects\Fire.cpp" />
+    <ClCompile Include="GameCode\Game\Objects\Fire.h" />
+    <ClCompile Include="GameCode\Entity\collidable.cpp">
+      <Filter>Engine\Entity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCode\Game\GameState.h">
@@ -126,8 +128,8 @@
     <ClInclude Include="GameCode\Game\Objects\Barrel.h">
       <Filter>Engine\Game\Objects</Filter>
     </ClInclude>
-	<ClInclude Include="GameCode\Game\Objects\Fire.h">
-      <Filter>Engine\Game\Objects</Filter>
+    <ClInclude Include="GameCode\Entity\collidable.h">
+      <Filter>Engine\Entity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -9,8 +9,6 @@ class Platform : BaseEntity
 private:
 	int hp;
 	bool destroyable;
-	string sprite;
-	BaseEntity platform;
 
 public:
 	Platform::Platform(int hp, bool destroyable);

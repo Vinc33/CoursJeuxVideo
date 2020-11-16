@@ -2,17 +2,13 @@
 
 Ladder::Ladder(int hp, bool destroyable)
 {
-	this->sprite = "Assets/Objects/barrel.png";
+	//this->sprite = "Assets/Objects/barrel.png";
 	this->hp = hp;
 	this->destroyable = destroyable;
 }
 
 int Ladder::verifyHp()
 {
-	if (hp <= 0 && destroyable) // Si l'hp de l'objet est inférieure à 0 et que l'objet peut être détruit
-	{
-		ladder.kill(ladder); // Call de la fonction kill dans BaseEntity qui supprime l'objet du jeu
-	}
 	return hp;
 }
 

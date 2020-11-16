@@ -174,18 +174,20 @@ namespace GameView
 			deplacement.x = 1;
 		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getAttackKey()) 
 		{
-			player->shoot(5);
-			moved = false;		//evite d'entrer dans la boucle suivante fait pour les déplacement
-		}						//si on enleve ca, les balles ne marcheront pas lorsque l'on shoot sans se déplacer
+			player->shoot(5);	//evite d'entrer dans la boucle suivante fait pour les déplacement sans s'être déplacé
+			moved = false;		//si on enleve ca, les balles ne marcheront pas lorsque l'on shoot sans se déplacer
+		}						
+		if(moved)
+			player->move(deplacement);
 		
-		while (keyPressed && moved)
+		/*while (keyPressed && moved)
 		{
-			data->window.pollEvent(event);
+			data->window.pollEvent(event);				//À ne jamais remettre!!!  Ordre de Vincent.
 			if (event.type == Event::KeyReleased)
 				keyPressed = false;
 			player->move(deplacement);
 			//player->render(data->window);
 			render();
-		}
+		}*/
 	}
 }

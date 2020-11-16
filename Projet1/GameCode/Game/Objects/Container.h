@@ -9,8 +9,6 @@ class Container : BaseEntity
 private:
 	int hp;
 	bool destroyable;
-	string sprite;
-	BaseEntity container;
 
 public:
 	Container::Container(int hp, bool destroyable);

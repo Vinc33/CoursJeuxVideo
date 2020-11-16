@@ -12,8 +12,6 @@ class Ladder : BaseEntity
 private:
 	int hp;
 	bool destroyable;
-	string sprite;
-	BaseEntity ladder;
 
 public:
 	Ladder::Ladder(int hp, bool destroyable);
