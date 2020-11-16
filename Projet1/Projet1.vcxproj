@@ -169,7 +169,7 @@
     <ClInclude Include="GameCode\Game\Objects\Barrel.h" />
     <ClInclude Include="GameCode\Game\Objects\Container.h" />
     <ClInclude Include="GameCode\Game\Objects\Crate.h" />
-    <ClCompile Include="GameCode\Game\Objects\Fire.h" />
+    <ClInclude Include="GameCode\Game\Objects\Fire.h" />
     <ClInclude Include="GameCode\Game\Objects\Ladder.h" />
     <ClInclude Include="GameCode\Game\Objects\Platform.h" />
     <ClInclude Include="GameCode\Input\KeyboardMap.h" />

@@ -8,7 +8,8 @@ BaseEntity::BaseEntity(string spriteName)
 
 BaseEntity::BaseEntity():Collidable()
 {
-
+	isDestroyable = false;
+	hp = 0;
 }
 
 void BaseEntity::render(sf::RenderTarget& target)
@@ -24,12 +25,6 @@ sf::Vector2f BaseEntity::getPosition()
 void BaseEntity::onCollide(Collidable& other)
 {
 
-}
-
-void BaseEntity::kill(BaseEntity* entity)
-{
-	// listEntityOnMap[entity] = null;
-	//cout << entity << "Has been destroyed";
 }
 
 bool BaseEntity::getCollision(BaseEntity* entity)

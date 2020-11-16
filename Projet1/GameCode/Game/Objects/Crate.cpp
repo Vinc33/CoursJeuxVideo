@@ -1,20 +1,20 @@
 #include "Crate.h"
 
-Crate::Crate(int hp, bool destroyable)
+Crate::Crate(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png")
 {
-	//this->sprite = "Assets/Objects/barrel.png";
 	this->hp = hp;
-	this->destroyable = destroyable;
+	this->isDestroyable = destroyable;
+	objectName = "Crate";
 }
 
 int Crate::verifyHp()
 {
-
 	return hp;
 }
 
-void Crate::checkCollision()
+string Crate::iAm()
 {
-
+	return this->objectName;
 }
+
 

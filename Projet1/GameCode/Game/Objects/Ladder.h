@@ -10,14 +10,11 @@ using namespace std;
 class Ladder : BaseEntity
 {
 private:
-	int hp;
-	bool destroyable;
 
 public:
-	Ladder::Ladder(int hp, bool destroyable);
-	int Ladder::verifyHp();
-	void Ladder::checkCollision();
-	void Ladder::climb();
+	Ladder(int hp, bool destroyable);
+	int verifyHp();
+	string iAm();
 
 };
 

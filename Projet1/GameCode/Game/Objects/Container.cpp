@@ -1,10 +1,10 @@
 #include "Container.h"
 
-Container::Container(int hp, bool destroyable)
+Container::Container(int hp, bool destroyable) : BaseEntity("Asset/Sprite/container.png")
 {
-	//this->sprite = "Assets/Objects/barrel.png";
 	this->hp = hp;
-	this->destroyable = destroyable;
+	this->isDestroyable = destroyable;
+	objectName = "Container";
 }
 
 int Container::verifyHp()
@@ -16,4 +16,10 @@ void Container::checkCollision()
 {
 
 }
+
+string Container::iAm()
+{
+	return this->objectName;
+}
+
 

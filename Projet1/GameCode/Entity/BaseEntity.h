@@ -13,12 +13,16 @@ public:
 			
 	virtual void update() {}
 	virtual void render(sf::RenderTarget& target);
-	virtual void kill(BaseEntity* entity);
 	virtual bool getCollision(BaseEntity* entity);
 protected:
 	sf::Sprite sprite;
+	string objectName;
 	bool isCollided;
+
 	virtual sf::Vector2f getPosition();
 	virtual void onCollide(Collidable& other);
+
+	int hp;
+	bool isDestroyable;
 };
 

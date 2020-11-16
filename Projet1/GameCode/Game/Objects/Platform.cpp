@@ -1,10 +1,10 @@
 #include "Platform.h"
 
-Platform::Platform(int hp, bool destroyable)
+Platform::Platform(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png")
 {
-	//this->sprite = "Assets/Objects/barrel.png";
 	this->hp = hp;
-	this->destroyable = destroyable;
+	this->isDestroyable = destroyable;
+	objectName = "Platform";
 }
 
 int Platform::verifyHp()
@@ -12,8 +12,9 @@ int Platform::verifyHp()
 	return hp;
 }
 
-void Platform::checkCollision()
+string Platform::iAm()
 {
-
+	return this->objectName;
 }
+
 
