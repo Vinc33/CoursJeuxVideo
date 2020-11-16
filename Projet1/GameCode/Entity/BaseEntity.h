@@ -7,7 +7,7 @@ class BaseEntity
 {
 public:
 	BaseEntity() {}
-	BaseEntity(std::string spriteName);
+	BaseEntity(string spriteName, string objectName, int hp, bool isDestroyable);
 	virtual ~BaseEntity() {}
 			
 	virtual void update() {}
@@ -16,6 +16,9 @@ public:
 	virtual bool getCollision(BaseEntity entity);
 protected:
 	sf::Sprite sprite;
+	string objectName;
 	bool isCollided;
+	int hp;
+	bool isDestroyable;
 };
 
