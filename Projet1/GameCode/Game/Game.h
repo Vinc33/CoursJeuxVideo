@@ -50,6 +50,8 @@ namespace GameView
 		GameDataRef data = std::make_shared<GameData>();
 		sf::Vector2f vecteurDeplacement;
 		Player* player;
+		//test
+		Player* playerTest;
 		KeyboardMap* keyboardMap;
 
 

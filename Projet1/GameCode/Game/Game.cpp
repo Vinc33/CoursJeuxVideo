@@ -23,6 +23,7 @@ namespace GameView
 	Game::~Game()
 	{
 		delete player;
+		delete playerTest;
 	}
 
 	void Game::init()
@@ -34,6 +35,12 @@ namespace GameView
 		player->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
 		player->setPosition(400, 400);
 		player->setVelocity(Vector2f(20, 20));//exemple pour augmenter la vitesse
+
+		//testing
+		playerTest = new Player("steamMan", 48, 48, 24, 40);
+		playerTest->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
+		playerTest->setPosition(200, 400);
+		
 		keyboardMap = new KeyboardMap();
 	}
 
@@ -154,6 +161,9 @@ namespace GameView
 
 		player->render(data->window);
 
+		//testing
+		playerTest->render(data->window);
+
 		data->window.display();
 
 	}
@@ -179,6 +189,9 @@ namespace GameView
 		}						
 		if(moved)
 			player->move(deplacement);
+
+		if (player->tryCollideWith((*playerTest)))
+			cout << "Colision" << endl;
 		
 		/*while (keyPressed && moved)
 		{
