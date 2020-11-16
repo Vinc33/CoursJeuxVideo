@@ -17,6 +17,9 @@ public:
 	void addAnim(Animation* anim, std::string animName) { animMap[animName] = anim; }
 	void setAnim(std::string animToPlay) { currentAnim = animMap[animToPlay]; }
 
+	//Gets
+	sf::Sprite* getSprite();
+
 	//virtual void render(sf::RenderTarget& target);
 
 private:

@@ -8,7 +8,7 @@ KeyboardMap::KeyboardMap()
 	keyLeft = sf::Keyboard::A;
 	keyRight = sf::Keyboard::D;
 
-	keyAttack = sf::Keyboard::X;
+	keyAttack = sf::Keyboard::J;
 	keyJump = sf::Keyboard::Space;
 	keySkill1 = sf::Keyboard::C;
 	keySkill2 = sf::Keyboard::F;

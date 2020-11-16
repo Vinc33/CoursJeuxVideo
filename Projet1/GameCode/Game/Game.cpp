@@ -31,7 +31,9 @@ namespace GameView
 		AssetManager::init();
 		InputManager::init();
 		player = new Player("steamMan", 48, 48);
+		player->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
 		player->setPosition(400, 400);
+		player->setVelocity(Vector2f(20, 20));//exemple pour augmenter la vitesse
 		keyboardMap = new KeyboardMap();
 	}
 
@@ -160,6 +162,7 @@ namespace GameView
 	{
 		Vector2f deplacement(0, 0);
 		bool keyPressed = true;
+		bool moved = true;
 
 		if (InputManager::getPressedKeyCode(event) == keyboardMap->getUpKey())
 			deplacement.y = -1;
@@ -169,9 +172,13 @@ namespace GameView
 			deplacement.y = 1;
 		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getRightKey())
 			deplacement.x = 1;
+		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getAttackKey()) 
+		{
+			player->shoot(5);
+			moved = false;		//evite d'entrer dans la boucle suivante fait pour les déplacement
+		}						//si on enleve ca, les balles ne marcheront pas lorsque l'on shoot sans se déplacer
 		
-		player->setVelocity(Vector2f(10,10));//exemple pour augmenter la vitesse
-		while (keyPressed)
+		while (keyPressed && moved)
 		{
 			data->window.pollEvent(event);
 			if (event.type == Event::KeyReleased)

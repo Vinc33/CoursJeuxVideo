@@ -1,8 +1,8 @@
 #pragma once
-#include <SFML\Graphics\Sprite.hpp>
+#include "AnimateEntity.h"
 #include <SFML/System/Vector2.hpp>
 
-class Bullet : public sf::Sprite
+class Bullet : public AnimateEntity
 {
 	//Attributs
 private:
@@ -11,7 +11,7 @@ public:
 
 	//Methods
 public:
-	Bullet(float posX, float posY, float velocity);
+	Bullet(float posX, float posY, sf::Vector2f velocity,std::string spriteName,int hauteur, int largeur);
 	~Bullet();
 	void move();
 private:
