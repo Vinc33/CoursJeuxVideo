@@ -6,6 +6,7 @@ BaseEntity::BaseEntity(string spriteName, float boxWidth, float boxHeight) : Col
 	sprite.setTexture(AssetManager::getTexture(spriteName) );
 	hp = 0;
 	isDestroyable = false;
+	setPalier(sprite.getPosition().y / Consts::PALIERHEIGHT);
 }
 
 void BaseEntity::render(sf::RenderTarget& target)
@@ -13,10 +14,12 @@ void BaseEntity::render(sf::RenderTarget& target)
 	target.draw(sprite);
 }
 
-void BaseEntity::update()
+int BaseEntity::update()
 {
-	checkPalier();
-	std::cout << palier << endl;
+	if (checkPalier() == 1)
+		return 1;//has to change lists
+	return 0;
+	//std::cout << palier << endl;
 }
 
 sf::Vector2f BaseEntity::getPosition()
@@ -40,9 +43,15 @@ bool BaseEntity::getCollision(BaseEntity* entity)
 	return isCollided;
 }
 
-void BaseEntity::checkPalier()
+int BaseEntity::checkPalier()
 {
-	setPalier(sprite.getPosition().y / Consts::PALIERHEIGHT);
+	int palier = sprite.getPosition().y / Consts::PALIERHEIGHT;
+	if(palier != this->palier)
+	{
+		setPalier(sprite.getPosition().y / Consts::PALIERHEIGHT);
+		return 1;	//has to change lists
+	}
+	return 0;
 }
 
 #pragma region Gets/Sets

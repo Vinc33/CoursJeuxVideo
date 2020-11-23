@@ -24,7 +24,7 @@
 
     }
 
-    void Collidable::update()
+    int Collidable::update()
     {
-
+        return 0;
     }

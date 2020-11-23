@@ -3,10 +3,22 @@
 
 Map::Map()
 {
+	list<BaseEntity*> emptyList;
 	for (int rows = 0; rows < sizeof(tiles)/sizeof(tiles[0]); rows++)
 		for (int cols = 0; cols < sizeof(tiles[0])/sizeof(tiles[0][0]); cols++)
 			tiles[rows][cols] = 0;
+	for (int i = 0; i < Consts::NBPALIERSMAX; i++)
+		mapEntities.push_back(emptyList);
 	playerStart = sf::Vector2f(0, 0);
+}
+
+Map::~Map()
+{
+	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
+		delete *it;
+	for (auto it = mapEntities.begin(); it != mapEntities.end(); it++)
+		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
+			delete *it2;
 }
 
 void Map::loadMap(std::string filename)
@@ -19,7 +31,8 @@ void Map::render(sf::RenderWindow& window)
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
 		(*it)->render(window);
 	for (auto it = mapEntities.begin(); it != mapEntities.end(); it++)
-		(*it)->render(window);
+		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
+			(*it2)->render(window);
 	window.draw(background);
 }
 
@@ -28,7 +41,25 @@ void Map::update()
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
 		(*it)->update();
 	for (auto it = mapEntities.begin(); it != mapEntities.end(); it++)
-		(*it)->update();
+		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
+		{
+			int oldPalier = (*it2)->getPalier();
+			if ((*it2)->update() == 1)
+			{
+				mapEntities[(*it2)->getPalier()].push_back(*it2);
+				mapEntities[oldPalier].remove(*it2);
+			}
+		}
+}
+
+void Map::addMapEntity(BaseEntity* entity)
+{ 
+	mapEntities[entity->getPalier()].push_back(entity);
+}
+
+void Map::addMapObject(BaseEntity* object)
+{
+	mapObjects.push_back(object);
 }
 
 #pragma region Gets/sets

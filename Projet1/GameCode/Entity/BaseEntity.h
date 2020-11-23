@@ -15,11 +15,11 @@ public:
 	BaseEntity(std::string spriteName, float boxWidth = 0, float boxHeight = 0);
 	virtual ~BaseEntity() {}
 			
-	virtual void update();
+	virtual int update();
 	virtual void render(sf::RenderTarget& target);
 	virtual bool getCollision(BaseEntity* entity);
 
-	void checkPalier();
+	int checkPalier();
 
 	//Gets
 	int getPalier();

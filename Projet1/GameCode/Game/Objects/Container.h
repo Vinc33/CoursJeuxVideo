@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Container : BaseEntity
+class Container : public BaseEntity
 {
 private:
 

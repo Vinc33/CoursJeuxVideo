@@ -7,7 +7,7 @@
 
 using namespace std;
 
-class Ladder : BaseEntity
+class Ladder : public BaseEntity
 {
 private:
 

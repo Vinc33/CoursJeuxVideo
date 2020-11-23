@@ -4,7 +4,7 @@
 
 using namespace std;
 
-class Fire : BaseEntity
+class Fire : public BaseEntity
 {
 private:
 

@@ -1,6 +1,6 @@
 #include "Ladder.h"
 
-Ladder::Ladder(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png")
+Ladder::Ladder(int hp, bool destroyable) : BaseEntity("steamMan")
 {
 	this->hp = hp;
 	this->isDestroyable = destroyable;

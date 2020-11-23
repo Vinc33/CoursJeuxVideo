@@ -3,14 +3,16 @@
 #include "Entity/collidable.h"
 #include <list>
 #include <SFML/Graphics.hpp>
+#include <vector>
+#include "Entity/BaseEntity.h"
 
 class Map
 {
 	//Attributs
 private :
 	sf::Vector2f playerStart;
-	std::list<Collidable*> mapObjects;
-	std::list<Collidable*> mapEntities;
+	std::list<BaseEntity*> mapObjects;
+	std::vector<std::list<BaseEntity*>> mapEntities;
 	int tiles[32][40];//has to be changed
 	sf::Texture backgroundTexture;
 	sf::Sprite background;
@@ -26,8 +28,11 @@ public:
 	//Methode
 public:
 	Map();
+	~Map();
 	void loadMap(std::string filename);
 	void render(sf::RenderWindow& window);
 	void update();
+	void addMapObject(BaseEntity* object);
+	void addMapEntity(BaseEntity* entity);  
 };
 

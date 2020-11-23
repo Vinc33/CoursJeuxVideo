@@ -2,6 +2,7 @@
 #include <cstdlib>
 #include <vector>
 #include <iostream>
+#include "Game/Objects/Ladder.h"
 #ifdef NDEBUG
 static bool debug = true;
 #else
@@ -24,6 +25,7 @@ namespace GameView
 	{
 		delete player;
 		delete playerTest;
+		delete map;
 	}
 
 	void Game::init()
@@ -36,14 +38,17 @@ namespace GameView
 		player->setPosition(400, 400);
 		player->setVelocity(Vector2f(20, 20));//exemple pour augmenter la vitesse
 
-		//testing
+		//testing player test
 		playerTest = new Player("steamMan", 24, 40);
 		playerTest->setWeapon(new Weapon("steamMan","steamMan"));
 		playerTest->setPosition(200, 400);
 		cout << player->getSprite()->getTextureRect().width;
 		cout << player->getSprite()->getTextureRect().height;
+
 		map = new Map();
 		map->setBackground("Assets/Background/placeholder.jpg");
+		//testing map
+		map->addMapEntity(new Ladder(100, false));
 		
 		keyboardMap = new KeyboardMap();
 	}
