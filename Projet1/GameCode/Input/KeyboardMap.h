@@ -1,23 +1,26 @@
 #pragma once
 #include <iostream>
-#include "InputMap.h"
 #include <SFML/Window/Keyboard.hpp>
+#define myKey sf::Keyboard::Key
 
-class KeyboardMap :
-	public InputMap
+
+class KeyboardMap
 {
 public:
+
 	KeyboardMap();
+	KeyboardMap(myKey keyUp, myKey keyDown, myKey keyLeft, myKey keyRight, myKey keyAttack, myKey keyJump, myKey keySkill1, myKey keySkill2);
 	~KeyboardMap();
 
-	bool getUp();
-	bool getDown();
-	bool getLeft();
-	bool getRight();
-	bool getAttack();
-	bool getJump();
-	bool getSkill1();
-	bool getSkill2();
+	sf::Keyboard::Key getUpKey();
+	sf::Keyboard::Key getDownKey();
+	sf::Keyboard::Key getLeftKey();
+	sf::Keyboard::Key getRightKey();
+
+	sf::Keyboard::Key getAttackKey();
+	sf::Keyboard::Key getJumpKey();
+	sf::Keyboard::Key getSkill1Key();
+	sf::Keyboard::Key getSkill2Key();
 
 private:
 
@@ -30,5 +33,6 @@ private:
 	sf::Keyboard::Key keyJump;
 	sf::Keyboard::Key keySkill1;
 	sf::Keyboard::Key keySkill2;
+
 };
 

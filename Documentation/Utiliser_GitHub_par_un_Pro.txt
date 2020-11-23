@@ -1,0 +1,20 @@
+#1 (Même avant de jouer dans le projet) Ouvrir cmder
+#2 Se rendre sur le repositorie: cd C:/Users/Maxime/CoursJeuxVideo
+#3 Vous assurer que vous êtes sur votre Branche, si non git checkout Le_Nom_De_Votre_Branche
+#4 git pull
+#5 Aller modifier le projet, ajouter des classes, assurez vous qu'elles soit au bonne endroit et amusez vous comme des fous
+#6 (Assurez-vous que vous avez sauvegarder et fermé le projet avant les prochaines étapes)
+#7 git add Le_Nom_Du_Fichier_Modifié et vous faite cela pour tout les fichiers ayant été modifié
+#8 git status (Voir si ils ont été ajouté)
+#9 git commit -m "Un beau message d'amour"
+#10 git push
+#11 git checkout master
+#12 git pull
+#13 git log-p (S'il y a un problème aller le règler dans votre code puis recommencer à partir de l'étape 6)
+#14 Si vous êtes rendu ici, c'est qu'il n'y a pas de problème avec le code, alors appuyez sur q
+#15 git merge Le_Nom_De_Votre_Branche
+#16 git push
+
+
+
+Voilà, maintenant tout le monde peut accédé à vos modifications

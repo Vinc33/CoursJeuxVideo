@@ -3,57 +3,74 @@
 KeyboardMap::KeyboardMap()
 {
 
-	keyUp = sf::Keyboard::Up;
-	keyDown = sf::Keyboard::Down;
-	keyLeft = sf::Keyboard::Left;
-	keyRight = sf::Keyboard::Right;
+	keyUp = sf::Keyboard::W;
+	keyDown = sf::Keyboard::S;
+	keyLeft = sf::Keyboard::A;
+	keyRight = sf::Keyboard::D;
 
-	keyAttack = sf::Keyboard::X;
+	keyAttack = sf::Keyboard::J;
 	keyJump = sf::Keyboard::Space;
 	keySkill1 = sf::Keyboard::C;
-	keySkill2 = sf::Keyboard::D;
+	keySkill2 = sf::Keyboard::F;
+
 }
 
-KeyboardMap::~KeyboardMap()
+// Constructeur utilisé pour changer les contrôles dans un menu de paramètres
+KeyboardMap::KeyboardMap(myKey keyUp = myKey::W, myKey keyDown = myKey::S, myKey keyLeft = myKey::A, myKey keyRight = myKey::D, myKey keyAttack = myKey::X, myKey keyJump = myKey::Space, myKey keySkill1 = myKey::C, myKey keySkill2 = myKey::F)
 {
+
+	this->keyUp = keyUp;
+	this->keyDown = keyDown;
+	this->keyLeft = keyLeft;
+	this->keyRight = keyRight;
+
+	this->keyAttack = keyAttack;
+	this->keyJump = keyJump;
+	this->keySkill1 = keySkill1;
+	this->keySkill2 = keySkill2;
+
 }
 
-bool KeyboardMap::getUp()
+#pragma region Getters
+
+sf::Keyboard::Key KeyboardMap::getUpKey()
 {
-	return sf::Keyboard::isKeyPressed(keyUp);
+	return keyUp;
 }
 
-bool KeyboardMap::getDown()
+sf::Keyboard::Key KeyboardMap::getDownKey()
 {
-	return sf::Keyboard::isKeyPressed(keyDown);
+	return keyDown;
 }
 
-bool KeyboardMap::getLeft()
+sf::Keyboard::Key KeyboardMap::getLeftKey()
 {
-	return sf::Keyboard::isKeyPressed(keyLeft);
+	return keyLeft;
 }
 
-bool KeyboardMap::getRight()
+sf::Keyboard::Key KeyboardMap::getRightKey()
 {
-	return sf::Keyboard::isKeyPressed(keyRight);
+	return keyRight;
 }
 
-bool KeyboardMap::getAttack()
+sf::Keyboard::Key KeyboardMap::getAttackKey()
 {
-	return sf::Keyboard::isKeyPressed(keyAttack);
+	return keyAttack;
 }
 
-bool KeyboardMap::getJump()
+sf::Keyboard::Key KeyboardMap::getJumpKey()
 {
-	return sf::Keyboard::isKeyPressed(keyJump);
+	return keyJump;
 }
 
-bool KeyboardMap::getSkill1()
+sf::Keyboard::Key KeyboardMap::getSkill1Key()
 {
-	return sf::Keyboard::isKeyPressed(keySkill1);
+	return keySkill1;
 }
 
-bool KeyboardMap::getSkill2()
+sf::Keyboard::Key KeyboardMap::getSkill2Key()
 {
-	return sf::Keyboard::isKeyPressed(keySkill2);
+	return keySkill2;
 }
+
+#pragma endregion Getters

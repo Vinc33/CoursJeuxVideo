@@ -21,10 +21,10 @@ void Animation::addFrame(unsigned index, float delay)
 const sf::IntRect& Animation::getFrame()
 {
     currentTime += TimeManager::DeltaTime;
-    if (TimeManager::DeltaTime >= tabFrames[frameIndex].delay) {
+    if(currentTime >= tabFrames[frameIndex].delay) {
         currentTime = 0;
         frameIndex++;
-        if (frameIndex == tabFrames.size())
+        if (frameIndex >= tabFrames.size())
             frameIndex = 0;
     }
     return tabFrames[frameIndex].bounds;
