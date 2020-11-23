@@ -8,6 +8,7 @@
 #include "Entity/Player.h"
 #include <TGUI/TGUI.hpp>
 #include "Input/KeyboardMap.h"
+#include "Map.h"
 
 
 using namespace sf;
@@ -53,6 +54,7 @@ namespace GameView
 		//test
 		Player* playerTest;
 		KeyboardMap* keyboardMap;
+		Map* map;
 
 
 	protected:

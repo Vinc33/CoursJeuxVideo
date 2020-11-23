@@ -9,7 +9,7 @@ class Map
 private :
 	sf::Vector2f playerStart;
 	std::list<Collidable*> mapObjects;
-	int tiles[30][30];
+	int tiles[30][30];//has to be changed
 
 	//Gets
 	sf::Vector2f getPlayerStart();

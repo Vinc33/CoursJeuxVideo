@@ -40,6 +40,7 @@ namespace GameView
 		playerTest = new Player("steamMan", 48, 48, 24, 40);
 		playerTest->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
 		playerTest->setPosition(200, 400);
+		map = new Map();
 		
 		keyboardMap = new KeyboardMap();
 	}
@@ -121,6 +122,8 @@ namespace GameView
 		button->connect("Pressed", [&]() { std::cout << "input2" << endl; }); //Exemple en lambda, notez que le bouton peut prendre deux fonctions
 
 		//End of testing GUI
+
+		map->updateObjects();
 		while (data->window.isOpen())
 		{
 			//boucle de jeu
@@ -160,6 +163,7 @@ namespace GameView
 		data->window.clear(Color::Black);
 
 		player->render(data->window);
+		map->render(data->window);
 
 		//testing
 		playerTest->render(data->window);

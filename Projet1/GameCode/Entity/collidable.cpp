@@ -19,3 +19,13 @@
     {
         return {getPosition().x, getPosition().y, m_size.x, m_size.y};
     }
+
+    void Collidable::render(sf::RenderWindow &window)
+    {
+
+    }
+
+    void Collidable::update()
+    {
+
+    }

@@ -2,8 +2,8 @@
 
 Map::Map()
 {
-	for (int rows = 0; rows < sizeof(tiles); rows++)
-		for (int cols = 0; cols < sizeof(tiles[0]); cols++)
+	for (int rows = 0; rows < sizeof(tiles)/sizeof(tiles[0]); rows++)
+		for (int cols = 0; cols < sizeof(tiles[0])/sizeof(tiles[0][0]); cols++)
 			tiles[rows][cols] = 0;
 	playerStart = sf::Vector2f(0, 0);
 }
@@ -16,15 +16,13 @@ void Map::loadMap(std::string filename)
 void Map::render(sf::RenderWindow &window)
 {
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
-		//(*it)->render();
-		;
+		(*it)->render(window);
 }
 
 void Map::updateObjects()
 {
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
-		//(*it)->update();
-		;
+		(*it)->update();
 }
 
 #pragma region Gets/sets
