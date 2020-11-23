@@ -1,4 +1,5 @@
 #include "Game.h"
+
 #include <cstdlib>
 #include <vector>
 #include <iostream>
@@ -24,6 +25,7 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
+		AnimFactory::initFactory();
 		myTest = new BaseEntity("steamMan");
 	}
 
