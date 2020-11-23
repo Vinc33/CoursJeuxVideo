@@ -131,13 +131,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="AspirateurQuantique.cpp" />
-    <ClCompile Include="BalaiVibranium.cpp" />
-    <ClCompile Include="Balayagerapide.cpp" />
-    <ClCompile Include="Banque.cpp" />
-    <ClCompile Include="CPUAmeliorer.cpp" />
-    <ClCompile Include="Detecteurdepoussiere.cpp" />
-    <ClCompile Include="FactoryUsine.cpp" />
     <ClCompile Include="GameCode\Config\Settings.cpp" />
     <ClCompile Include="GameCode\Config\Utils.cpp" />
     <ClCompile Include="GameCode\Entity\AnimateEntity.cpp" />
@@ -160,19 +153,9 @@
     <ClCompile Include="GameCode\Manager\AssetManager.cpp" />
     <ClCompile Include="GameCode\Manager\InputManager.cpp" />
     <ClCompile Include="GameCode\Manager\TimeManager.cpp" />
-    <ClCompile Include="GameStateTycoon.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MainTycoon.cpp" />
-    <ClCompile Include="Usine.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AspirateurQuantique.h" />
-    <ClInclude Include="BalaiVibranium.h" />
-    <ClInclude Include="Balayagerapide.h" />
-    <ClInclude Include="Banque.h" />
-    <ClInclude Include="CPUAmeliorer.h" />
-    <ClInclude Include="Detecteurdepoussiere.h" />
-    <ClInclude Include="FactoryUsine.h" />
     <ClInclude Include="GameCode\Config\Settings.h" />
     <ClInclude Include="GameCode\Config\Utils.h" />
     <ClInclude Include="GameCode\Entity\AnimateEntity.h" />
@@ -188,11 +171,7 @@
     <ClInclude Include="GameCode\Game\Objects\Barrel.h" />
     <ClInclude Include="GameCode\Game\Objects\Container.h" />
     <ClInclude Include="GameCode\Game\Objects\Crate.h" />
-
-    <ClCompile Include="GameCode\Game\Objects\Fire.h" />
-
     <ClInclude Include="GameCode\Game\Objects\Fire.h" />
-
     <ClInclude Include="GameCode\Game\Objects\Ladder.h" />
     <ClInclude Include="GameCode\Game\Objects\Platform.h" />
     <ClInclude Include="GameCode\Input\KeyboardMap.h" />
@@ -200,9 +179,6 @@
     <ClInclude Include="GameCode\Manager\InputManager.h" />
     <ClInclude Include="GameCode\Manager\TimeManager.h" />
     <ClInclude Include="GameCode\Utils\enums.h" />
-    <ClInclude Include="GameStateTycoon.h" />
-    <ClInclude Include="MainTycoon.h" />
-    <ClInclude Include="Usine.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Sons\001-System01.ogg" />
