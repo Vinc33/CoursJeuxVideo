@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="Main.cpp" />
     <ClCompile Include="GameCode\Game\Game.cpp">
       <Filter>Engine\Game</Filter>
     </ClCompile>
@@ -59,6 +58,7 @@
     <ClCompile Include="GameCode\Game\Objects\Container.cpp">
       <Filter>Engine\Game\Objects</Filter>
     </ClCompile>
+
     <ClCompile Include="GameCode\Game\Objects\Fire.h">
       <Filter>Engine\Game\Objects</Filter>
     </ClCompile>
@@ -92,8 +92,22 @@
     <ClCompile Include="MainTycoon.cpp">
       <Filter>Engine\Game\Tycoon</Filter>
     </ClCompile>
-    <ClCompile Include="FactoryUsine.cpp">
-      <Filter>Engine\Game\Tycoon</Filter>
+	<ClCompile Include="FactoryUsine.cpp">
+		<Filter>Engine\Game\Tycoon</Filter>
+	</ClCompile>
+
+    <ClCompile Include="GameCode\Entity\collidable.cpp">
+      <Filter>Engine\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCode\Game\Objects\Fire.cpp">
+      <Filter>Engine\Game\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCode\Game\Map.cpp">
+      <Filter>Engine\Game</Filter>
+
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -159,6 +173,7 @@
     <ClInclude Include="GameCode\Game\Objects\Barrel.h">
       <Filter>Engine\Game\Objects</Filter>
     </ClInclude>
+
     <ClInclude Include="GameStateTycoon.h">
       <Filter>Engine\Game</Filter>
     </ClInclude>
@@ -186,8 +201,19 @@
     <ClInclude Include="MainTycoon.h">
       <Filter>Engine\Game\Tycoon</Filter>
     </ClInclude>
-    <ClInclude Include="FactoryUsine.h">
-      <Filter>Engine\Game\Tycoon</Filter>
+	  <ClInclude Include="FactoryUsine.h">
+		  <Filter>Engine\Game\Tycoon</Filter>
+	  </ClInclude>
+
+    <ClInclude Include="GameCode\Entity\collidable.h">
+      <Filter>Engine\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCode\Game\Objects\Fire.h">
+      <Filter>Engine\Game\Objects</Filter>
+
+    </ClInclude>
+    <ClInclude Include="GameCode\Game\Map.h">
+      <Filter>Engine\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

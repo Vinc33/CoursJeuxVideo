@@ -1,26 +1,26 @@
 #include "Container.h"
 
-Container::Container(int hp, bool destroyable)
+Container::Container(int hp, bool destroyable) : BaseEntity("Asset/Sprite/container.png")
 {
-	this->sprite = "Assets/Objects/barrel.png";
 	this->hp = hp;
-	this->destroyable = destroyable;
+	this->isDestroyable = destroyable;
+	objectName = "Container";
+	//ne pas oublier de setter le box du collision
 }
 
 int Container::verifyHp()
 {
-	if (hp <= 0 && destroyable)
-	{
-		container.kill(container);
-	}
 	return hp;
 }
 
 void Container::checkCollision()
 {
-	if (container.getCollision(container))
-	{
-		verifyHp();
-	}
+
 }
+
+string Container::iAm()
+{
+	return this->objectName;
+}
+
 

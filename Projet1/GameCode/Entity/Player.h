@@ -26,8 +26,8 @@ private:
 
 public:
 	//Constructors/Desctructor
-	Player(std::string nom, int health,Vector2f velocity, Vector2f acceleration, Vector2f direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur);
-	Player(std::string spriteName,int hauteur,int largeur);
+	Player(std::string nom, int health,Vector2f velocity, Vector2f acceleration, Vector2f direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur, float boxWidth, float boxHeight);
+	Player(std::string spriteName,int hauteur,int largeur, float boxWidth, float boxHeight);
 	~Player();
 	
 	//gets

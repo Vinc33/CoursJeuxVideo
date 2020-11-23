@@ -7,15 +7,12 @@ using namespace std;
 class Container : BaseEntity
 {
 private:
-	int hp;
-	bool destroyable;
-	string sprite;
-	BaseEntity container;
 
 public:
-	Container::Container(int hp, bool destroyable);
-	int Container::verifyHp();
-	void Container::checkCollision();
+	Container(int hp, bool destroyable);
+	int verifyHp();
+	void checkCollision();
+	string iAm();
 
 };
 

@@ -1,26 +1,21 @@
 #include "Platform.h"
 
-Platform::Platform(int hp, bool destroyable)
+Platform::Platform(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png")
 {
-	this->sprite = "Assets/Objects/barrel.png";
 	this->hp = hp;
-	this->destroyable = destroyable;
+	this->isDestroyable = destroyable;
+	objectName = "Platform";
+	//ne pas oublier de setter le box du collision
 }
 
 int Platform::verifyHp()
 {
-	if (hp <= 0 && destroyable)
-	{
-		platform.kill(platform);
-	}
 	return hp;
 }
 
-void Platform::checkCollision()
+string Platform::iAm()
 {
-	if (platform.getCollision(platform))
-	{
-		verifyHp();
-	}
+	return this->objectName;
 }
+
 

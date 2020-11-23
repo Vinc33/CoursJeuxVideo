@@ -1,9 +1,11 @@
 #include "BaseEntity.h"
 #include "Manager/AssetManager.h"
 
-BaseEntity::BaseEntity(string spriteName)
+BaseEntity::BaseEntity(string spriteName, float boxWidth, float boxHeight) : Collidable(boxWidth, boxHeight)
 {
 	sprite.setTexture(AssetManager::getTexture(spriteName) );
+	hp = 0;
+	isDestroyable = false;
 }
 
 void BaseEntity::render(sf::RenderTarget& target)
@@ -11,13 +13,17 @@ void BaseEntity::render(sf::RenderTarget& target)
 	target.draw(sprite);
 }
 
-void BaseEntity::kill(BaseEntity entity)
+sf::Vector2f BaseEntity::getPosition()
 {
-	// listEntityOnMap[entity] = null;
-	//cout << entity << "Has been destroyed";
+	return sprite.getPosition();
 }
 
-bool BaseEntity::getCollision(BaseEntity entity)
+void BaseEntity::onCollide(Collidable& other)
+{
+
+}
+
+bool BaseEntity::getCollision(BaseEntity* entity)
 {
 	isCollided = false;
 	/* if (entity est en collision)

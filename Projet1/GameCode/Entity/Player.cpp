@@ -1,16 +1,17 @@
 #include "Player.h"
 
 //Constructors
-Player::Player(std::string spriteName, int hauteur,int largeur):AnimateEntity(spriteName, hauteur, largeur)
+Player::Player(std::string spriteName, int hauteur,int largeur, float boxWidth, float boxHeight) : AnimateEntity(spriteName, hauteur, largeur,boxWidth,boxHeight)
 {
 	health = 100;
 	velocity = Vector2f(1.0, 1.0);
 	acceleration = Vector2f(0.0, 0.0);
 	direction = Vector2f(1,0);
 	invincibleTimer = 0;
+
 }
 
-Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Vector2f direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur):AnimateEntity(spriteName, hauteur, largeur)
+Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Vector2f direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur,float boxWidth,float boxHeight ) : AnimateEntity(spriteName, hauteur, largeur,boxWidth, boxHeight)
 {
 	this->nom = nom;
 	this->health = health;
