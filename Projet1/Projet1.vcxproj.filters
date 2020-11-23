@@ -59,9 +59,42 @@
     <ClCompile Include="GameCode\Game\Objects\Container.cpp">
       <Filter>Engine\Game\Objects</Filter>
     </ClCompile>
-	<ClInclude Include="GameCode\Game\Objects\Fire.cpp">
+    <ClCompile Include="GameCode\Game\Objects\Fire.h">
       <Filter>Engine\Game\Objects</Filter>
-    </ClInclude>
+    </ClCompile>
+    <ClCompile Include="GameCode\Game\Objects\Fire.cpp">
+      <Filter>Engine\Game\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="GameStateTycoon.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="Banque.cpp">
+      <Filter>Engine\Game\Tycoon</Filter>
+    </ClCompile>
+    <ClCompile Include="Usine.cpp">
+      <Filter>Engine\Game\Tycoon</Filter>
+    </ClCompile>
+    <ClCompile Include="Detecteurdepoussiere.cpp">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClCompile>
+    <ClCompile Include="Balayagerapide.cpp">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClCompile>
+    <ClCompile Include="AspirateurQuantique.cpp">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClCompile>
+    <ClCompile Include="BalaiVibranium.cpp">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClCompile>
+    <ClCompile Include="CPUAmeliorer.cpp">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClCompile>
+    <ClCompile Include="MainTycoon.cpp">
+      <Filter>Engine\Game\Tycoon</Filter>
+    </ClCompile>
+    <ClCompile Include="FactoryUsine.cpp">
+      <Filter>Engine\Game\Tycoon</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCode\Game\GameState.h">
@@ -126,8 +159,35 @@
     <ClInclude Include="GameCode\Game\Objects\Barrel.h">
       <Filter>Engine\Game\Objects</Filter>
     </ClInclude>
-	<ClInclude Include="GameCode\Game\Objects\Fire.h">
-      <Filter>Engine\Game\Objects</Filter>
+    <ClInclude Include="GameStateTycoon.h">
+      <Filter>Engine\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="Banque.h">
+      <Filter>Engine\Game\Tycoon</Filter>
+    </ClInclude>
+    <ClInclude Include="Usine.h">
+      <Filter>Engine\Game\Tycoon</Filter>
+    </ClInclude>
+    <ClInclude Include="Detecteurdepoussiere.h">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClInclude>
+    <ClInclude Include="Balayagerapide.h">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClInclude>
+    <ClInclude Include="AspirateurQuantique.h">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClInclude>
+    <ClInclude Include="BalaiVibranium.h">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClInclude>
+    <ClInclude Include="CPUAmeliorer.h">
+      <Filter>Engine\Game\Tycoon\StandMenager</Filter>
+    </ClInclude>
+    <ClInclude Include="MainTycoon.h">
+      <Filter>Engine\Game\Tycoon</Filter>
+    </ClInclude>
+    <ClInclude Include="FactoryUsine.h">
+      <Filter>Engine\Game\Tycoon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +223,12 @@
     </Filter>
     <Filter Include="Sons\ES">
       <UniqueIdentifier>{b54d8879-9b67-426a-847e-5e865e3dd092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Game\Tycoon">
+      <UniqueIdentifier>{4c5e5d11-17c3-4d6a-9e05-395bdc18dc69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Game\Tycoon\StandMenager">
+      <UniqueIdentifier>{84f431d7-f50f-43d9-ad1e-9cef7b741932}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
