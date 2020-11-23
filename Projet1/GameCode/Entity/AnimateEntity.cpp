@@ -3,7 +3,7 @@
 #include "Entity/Animation.h"
 
 
-AnimateEntity::AnimateEntity(std::string spriteName, int largeur, int hauteur,float boxWidth, float boxHeight) : BaseEntity(spriteName,boxWidth,boxHeight)
+AnimateEntity::AnimateEntity(std::string spriteName,float boxWidth, float boxHeight) : BaseEntity(spriteName,boxWidth,boxHeight)
 {
 	currentAnim = 0;
 }

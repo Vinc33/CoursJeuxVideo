@@ -1,7 +1,7 @@
 #include "Player.h"
 
 //Constructors
-Player::Player(std::string spriteName, int hauteur,int largeur, float boxWidth, float boxHeight) : AnimateEntity(spriteName, hauteur, largeur,boxWidth,boxHeight)
+Player::Player(std::string spriteName, float boxWidth, float boxHeight) : AnimateEntity(spriteName,boxWidth,boxHeight)
 {
 	health = 100;
 	velocity = Vector2f(1.0, 1.0);
@@ -11,7 +11,7 @@ Player::Player(std::string spriteName, int hauteur,int largeur, float boxWidth, 
 
 }
 
-Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Vector2f direction, Weapon* weapon,std::string spriteName, int hauteur, int largeur,float boxWidth,float boxHeight ) : AnimateEntity(spriteName, hauteur, largeur,boxWidth, boxHeight)
+Player::Player(std::string nom, int health,Vector2f velocity,Vector2f acceleration, Vector2f direction, Weapon* weapon,std::string spriteName,float boxWidth,float boxHeight ) : AnimateEntity(spriteName,boxWidth, boxHeight)
 {
 	this->nom = nom;
 	this->health = health;
@@ -89,6 +89,12 @@ void Player::setInvincibleTimer(int value)
 
 void Player::setPosition(float x, float y)
 {
+	//Validation
+	x > 1280 - sprite.getTextureRect().width ? x = 1280 - sprite.getTextureRect().width : x = x;
+	x <    0 ? x =    0 : x = x;
+	y > 1024 ? y = 1024 : y = y;
+	y <    0 ? y =    0 : y = y;
+	
 	sprite.setPosition(x, y);
 	weapon->getSprite()->setPosition(Vector2f(sprite.getPosition().x + 12, sprite.getPosition().y));//Le weapon suit le joueur et est decallé de 12px vers la droite pour l'instant
 }

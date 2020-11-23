@@ -2,7 +2,7 @@
 #include <string>
 
 //Constructors/Destructor
-Weapon::Weapon(string weaponSprite, int weaponHauteur, int weaponLargeur, string bulletSprite, int bulletHauteur, int bulletLargeur) : AnimateEntity(weaponSprite,weaponHauteur, weaponLargeur)
+Weapon::Weapon(string weaponSprite, string bulletSprite) : AnimateEntity(weaponSprite)
 {
 	this->bulletHauteur = bulletHauteur;
 	this->bulletLargeur = bulletHauteur;

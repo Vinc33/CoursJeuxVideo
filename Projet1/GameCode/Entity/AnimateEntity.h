@@ -8,7 +8,7 @@
 class AnimateEntity :public BaseEntity
 {
 public:
-	AnimateEntity(std::string spriteName, int largeur, int hauteur, float boxWidth = 0, float boxHeight = 0);
+	AnimateEntity(std::string spriteName, float boxWidth = 0, float boxHeight = 0);
 	//AnimateEntity();
 	~AnimateEntity(){}//destructeur
 	

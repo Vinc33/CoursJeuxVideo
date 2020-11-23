@@ -31,16 +31,19 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
-		player = new Player("steamMan", 48, 48,24,40);
-		player->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
+		player = new Player("steamMan",24,40);
+		player->setWeapon(new Weapon("steamMan", "steamMan"));
 		player->setPosition(400, 400);
 		player->setVelocity(Vector2f(20, 20));//exemple pour augmenter la vitesse
 
 		//testing
-		playerTest = new Player("steamMan", 48, 48, 24, 40);
-		playerTest->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
+		playerTest = new Player("steamMan", 24, 40);
+		playerTest->setWeapon(new Weapon("steamMan","steamMan"));
 		playerTest->setPosition(200, 400);
+		cout << player->getSprite()->getTextureRect().width;
+		cout << player->getSprite()->getTextureRect().height;
 		map = new Map();
+		map->setBackground("Assets/Background/placeholder.jpg");
 		
 		keyboardMap = new KeyboardMap();
 	}
@@ -123,7 +126,7 @@ namespace GameView
 
 		//End of testing GUI
 
-		map->updateObjects();
+		map->update();
 		while (data->window.isOpen())
 		{
 			//boucle de jeu
@@ -162,8 +165,8 @@ namespace GameView
 	{
 		data->window.clear(Color::Black);
 
-		player->render(data->window);
 		map->render(data->window);
+		player->render(data->window);
 
 		//testing
 		playerTest->render(data->window);

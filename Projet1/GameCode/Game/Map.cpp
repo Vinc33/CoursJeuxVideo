@@ -1,4 +1,5 @@
 #include "Map.h"
+#include <iostream>
 
 Map::Map()
 {
@@ -13,15 +14,20 @@ void Map::loadMap(std::string filename)
 	//code here;
 }
 
-void Map::render(sf::RenderWindow &window)
+void Map::render(sf::RenderWindow& window)
 {
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
 		(*it)->render(window);
+	for (auto it = mapEntities.begin(); it != mapEntities.end(); it++)
+		(*it)->render(window);
+	window.draw(background);
 }
 
-void Map::updateObjects()
+void Map::update()
 {
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
+		(*it)->update();
+	for (auto it = mapEntities.begin(); it != mapEntities.end(); it++)
 		(*it)->update();
 }
 
@@ -37,5 +43,13 @@ void Map::setPlayerStart(float x, float y)
 {
 	playerStart.x = x;
 	playerStart.y = y;
+}
+
+void Map::setBackground(std::string background)
+{
+	if (!backgroundTexture.loadFromFile(background))
+		;
+	else
+		this->background.setTexture(backgroundTexture);
 }
 #pragma endregion
