@@ -9,7 +9,6 @@ class AnimateEntity :public BaseEntity
 {
 public:
 	AnimateEntity(std::string spriteName, int largeur, int hauteur, float boxWidth = 0, float boxHeight = 0);
-	//AnimateEntity();
 	~AnimateEntity(){}//destructeur
 	
 	void updateAnimateEntity() {}
@@ -20,7 +19,7 @@ public:
 	//Gets
 	sf::Sprite* getSprite();
 
-	//virtual void render(sf::RenderTarget& target);
+	virtual void render(sf::RenderTarget& target);
 
 private:
 	Animation* currentAnim;

@@ -32,7 +32,6 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
-
 		AnimFactory::initFactory();
 
 
@@ -40,13 +39,17 @@ namespace GameView
 		playerTest = new Player("steamMan", 48, 48, 24, 40);
 		playerTest->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
 		playerTest->setPosition(200, 400);
-		map = new Map();
+
+		playerTest->addAnim(AnimFactory::getAnim("anim_steamman_idle"), "idle");
+		playerTest->setAnim("idle");
+
+	//	map = new Map();
 		
 		keyboardMap = new KeyboardMap();
 		
 
 		//Test Sulli
-		tgui::ChildWindow::Ptr window = tgui::ChildWindow::create();
+	/*	tgui::ChildWindow::Ptr window = tgui::ChildWindow::create();
 		data->gui.add(window, "window");
 		window = data->gui.get<tgui::ChildWindow>("window");
 		window->setKeepInParent(true);
@@ -121,7 +124,7 @@ namespace GameView
 		button7->setPosition(100,550);
 		button7->setText("Quittez");
 		button7->setTextSize(15);
-		
+		*/
 		//crée une classe MenuManager
 
 	}
@@ -214,14 +217,14 @@ namespace GameView
 
 		//End of testing GUI
 
-		map->updateObjects();
+		//map->updateObjects();
 		while (data->window.isOpen())
 		{
 			//boucle de jeu
 			timeManager.update();
 		//	currentState->updateInput();
 		//	currentState->update();
-			//render();
+			render();
 			//	currentState->updateInput();
 			//	currentState->update();
 			updateEvent();
@@ -232,9 +235,9 @@ namespace GameView
 			//updateEvent();
 
 			//Widgets v
-			data->window.clear();
-			data->gui.draw(); // Draw all widgets
-			data->window.display();
+//			data->window.clear();
+//			data->gui.draw(); // Draw all widgets
+			//data->window.display();
 
 		}
 	}
@@ -252,9 +255,6 @@ namespace GameView
 	void Game::render()
 	{
 		data->window.clear(Color::Black);
-
-		player->render(data->window);
-		map->render(data->window);
 
 		//testing
 		playerTest->render(data->window);

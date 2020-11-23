@@ -15,12 +15,8 @@ Sprite* AnimateEntity::getSprite()
 }
 #pragma endregion Gets
 
-/*AnimateEntity::AnimateEntity()
-{
 
-}*/
-
-/*void AnimateEntity::render(sf::RenderTarget& target)
+void AnimateEntity::render(sf::RenderTarget& target)
 {
 	//sprite.setTextureRect(currentAnim->getFrame());
-}*/
+}
