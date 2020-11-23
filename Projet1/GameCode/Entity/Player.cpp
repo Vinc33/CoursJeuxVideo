@@ -112,6 +112,7 @@ void Player::move(Vector2f movement)
 	float y = ((velocity.y + acceleration.y) * movement.y) + sprite.getPosition().y;
 	setPosition(x,y);
 	setDirection(movement);
+	update();//to update palier
 }
 
 void Player::substractHealth(int substract)

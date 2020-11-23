@@ -143,6 +143,9 @@
     <ClInclude Include="GameCode\Game\Map.h">
       <Filter>Engine\Game</Filter>
     </ClInclude>
+    <ClInclude Include="GameCode\Utils\Consts.h">
+      <Filter>Engine\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

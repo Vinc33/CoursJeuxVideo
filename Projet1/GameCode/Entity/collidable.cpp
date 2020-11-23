@@ -2,8 +2,7 @@
 
     Collidable::Collidable(float width, float height)
         : m_size(width, height)
-    {
-    }
+    { }
 
     bool Collidable::tryCollideWith(Collidable& other)
     {

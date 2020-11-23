@@ -13,6 +13,12 @@ void BaseEntity::render(sf::RenderTarget& target)
 	target.draw(sprite);
 }
 
+void BaseEntity::update()
+{
+	checkPalier();
+	std::cout << palier << endl;
+}
+
 sf::Vector2f BaseEntity::getPosition()
 {
 	return sprite.getPosition();
@@ -33,3 +39,21 @@ bool BaseEntity::getCollision(BaseEntity* entity)
 
 	return isCollided;
 }
+
+void BaseEntity::checkPalier()
+{
+	setPalier(sprite.getPosition().y / Consts::PALIERHEIGHT);
+}
+
+#pragma region Gets/Sets
+//Gets
+int BaseEntity::getPalier()
+{
+	return palier;
+}
+//Sets
+void BaseEntity::setPalier(int palier)
+{
+	this->palier = palier;
+}
+#pragma endregion

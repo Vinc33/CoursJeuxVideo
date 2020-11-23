@@ -2,17 +2,30 @@
 #include <SFML/Graphics.hpp>
 #include <string>
 #include "collidable.h"
+#include "Utils/Consts.h"
+#include <iostream>
 
 using namespace std;
 class BaseEntity : public Collidable
 {
+private:
+	int palier;
+
 public:
 	BaseEntity(std::string spriteName, float boxWidth = 0, float boxHeight = 0);
 	virtual ~BaseEntity() {}
 			
-	virtual void update() {}
+	virtual void update();
 	virtual void render(sf::RenderTarget& target);
 	virtual bool getCollision(BaseEntity* entity);
+
+	void checkPalier();
+
+	//Gets
+	int getPalier();
+
+	//Sets
+	void setPalier(int palier);
 protected:
 	sf::Sprite sprite;
 	string objectName;
