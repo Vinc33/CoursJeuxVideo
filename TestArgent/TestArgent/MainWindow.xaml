@@ -1,0 +1,32 @@
+﻿<Window x:Class="TestArgent.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestArgent"
+        
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <StackPanel>
+            <WrapPanel>
+                <TextBlock FontSize="45" Name="portefeuilles" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            </WrapPanel>
+            <Expander Header="Stand Menager" HorizontalAlignment="Right" Width="792">
+                <StackPanel>
+                <WrapPanel>
+                    <Button Click="Usine1Click" Width="100" Height="50" >Améliorier Usine 1</Button>
+                    <TextBlock x:Name="Usine1"></TextBlock>
+                    <Label Name="lblTime" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </WrapPanel>
+                <WrapPanel>
+                    <Button Click="Usine2CLick" Width="100" Height="50">Améliorier Usine 2</Button>
+                    <TextBlock x:Name="Usine2"></TextBlock>
+                    <Label Name="lblTime2" FontSize="48" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                </WrapPanel>
+                </StackPanel>
+            </Expander>
+   
+        </StackPanel>
+    </Grid>
+</Window>

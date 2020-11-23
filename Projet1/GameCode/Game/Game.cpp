@@ -23,6 +23,7 @@ namespace GameView
 	Game::~Game()
 	{
 		delete player;
+		delete playerTest;
 	}
 
 	void Game::init()
@@ -30,10 +31,17 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
-		player = new Player("steamMan", 48, 48);
+		player = new Player("steamMan", 48, 48,24,40);
 		player->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
 		player->setPosition(400, 400);
 		player->setVelocity(Vector2f(20, 20));//exemple pour augmenter la vitesse
+
+		//testing
+		playerTest = new Player("steamMan", 48, 48, 24, 40);
+		playerTest->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
+		playerTest->setPosition(200, 400);
+		map = new Map();
+		
 		keyboardMap = new KeyboardMap();
 		
 
@@ -204,6 +212,8 @@ namespace GameView
 
 
 		//End of testing GUI
+
+		map->updateObjects();
 		while (data->window.isOpen())
 		{
 			//boucle de jeu
@@ -243,6 +253,10 @@ namespace GameView
 		data->window.clear(Color::Black);
 
 		player->render(data->window);
+		map->render(data->window);
+
+		//testing
+		playerTest->render(data->window);
 
 		data->window.display();
 
@@ -264,18 +278,23 @@ namespace GameView
 			deplacement.x = 1;
 		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getAttackKey()) 
 		{
-			player->shoot(5);
-			moved = false;		//evite d'entrer dans la boucle suivante fait pour les déplacement
-		}						//si on enleve ca, les balles ne marcheront pas lorsque l'on shoot sans se déplacer
+			player->shoot(5);	//evite d'entrer dans la boucle suivante fait pour les déplacement sans s'être déplacé
+			moved = false;		//si on enleve ca, les balles ne marcheront pas lorsque l'on shoot sans se déplacer
+		}						
+		if(moved)
+			player->move(deplacement);
+
+		if (player->tryCollideWith((*playerTest)))
+			cout << "Colision" << endl;
 		
-		while (keyPressed && moved)
+		/*while (keyPressed && moved)
 		{
-			data->window.pollEvent(event);
+			data->window.pollEvent(event);				//À ne jamais remettre!!!  Ordre de Vincent.
 			if (event.type == Event::KeyReleased)
 				keyPressed = false;
 			player->move(deplacement);
 			//player->render(data->window);
 			render();
-		}
+		}*/
 	}
 }

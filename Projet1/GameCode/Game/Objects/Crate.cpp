@@ -1,26 +1,21 @@
 #include "Crate.h"
 
-Crate::Crate(int hp, bool destroyable)
+Crate::Crate(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png")
 {
-	this->sprite = "Assets/Objects/barrel.png";
 	this->hp = hp;
-	this->destroyable = destroyable;
+	this->isDestroyable = destroyable;
+	objectName = "Crate";
+	//ne pas oublier de setter le box du collision
 }
 
 int Crate::verifyHp()
 {
-	if (hp <= 0 && destroyable)
-	{
-		crate.kill(crate);
-	}
 	return hp;
 }
 
-void Crate::checkCollision()
+string Crate::iAm()
 {
-	if (crate.getCollision(crate))
-	{
-		verifyHp();
-	}
+	return this->objectName;
 }
+
 

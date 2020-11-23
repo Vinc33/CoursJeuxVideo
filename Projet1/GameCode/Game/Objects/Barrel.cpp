@@ -1,26 +1,22 @@
 #include "Barrel.h"
 
-Barrel::Barrel(int hp, bool destroyable)
+Barrel::Barrel(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png")
 {
-	this->sprite = "Assets/Objects/barrel.png";
 	this->hp = hp;
-	this->destroyable = destroyable;
+	this->isDestroyable = destroyable;
+	objectName = "Barrel";
+	//ne pas oublier de setter le box du collision
 }
 
 int Barrel::verifyHp()
 {
-	if (hp <= 0 && destroyable)
-	{
-		barrel.kill(barrel);
-	}
 	return hp;
 }
 
-void Barrel::checkCollision()
+
+string Barrel::iAm()
 {
-	if (barrel.getCollision(barrel))
-	{
-		verifyHp();
-	}
+	return this->objectName;
 }
+
 
