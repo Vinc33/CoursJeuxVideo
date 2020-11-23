@@ -3,9 +3,9 @@
 #include <vector>
 #include <iostream>
 #ifdef NDEBUG
-static bool debug = true;
+bool debug = true;
 #else
-static bool debug = false;
+bool debug = false;
 #endif
 
 
@@ -97,6 +97,14 @@ namespace GameView
 		std::cout << "Button pressed" << std::endl;
 	}
 
+	void makeWindow(tgui::ChildWindow::Ptr parent)
+	{
+		tgui::ChildWindow::Ptr newWindow = tgui::ChildWindow::create();
+		parent->add(newWindow, "window");
+		newWindow = parent->get<tgui::ChildWindow>("window");
+		newWindow->setResizable(true);
+	}
+
 	void Game::update()
 	{
 		//Testing GUI below - NOD, à effacer au futur
@@ -112,7 +120,14 @@ namespace GameView
 		button->setTextSize(28);
 		button->connect("Pressed", Game::signalHandler); //Relier le bouton à une fonction(doit être statique si on utilise la classe et non une instance), le premier paramètre est prédéfinis
 		button->connect("Pressed", [&]() { std::cout << "input2" << endl; }); //Exemple en lambda, notez que le bouton peut prendre deux fonctions
-
+		tgui::ChildWindow::Ptr window = tgui::ChildWindow::create();
+		data->gui.add(window, "window");
+		window = data->gui.get<tgui::ChildWindow>("window");
+		window->setResizable(true);
+		tgui::ChildWindow::Ptr window2 = tgui::ChildWindow::create();
+		window->add(window2, "window2");
+		window = window2->get<tgui::ChildWindow>("window2");
+		window2->setResizable(true);
 		//End of testing GUI
 		while (data->window.isOpen())
 		{
@@ -120,7 +135,7 @@ namespace GameView
 			timeManager.update();
 		//	currentState->updateInput();
 		//	currentState->update();
-			render();
+			//render();
 			//	currentState->updateInput();
 			//	currentState->update();
 			updateEvent();
@@ -131,9 +146,9 @@ namespace GameView
 			//updateEvent();
 
 			//Widgets v
-			/*data->window.clear();
+			data->window.clear();
 			data->gui.draw(); // Draw all widgets
-			data->window.display();*/
+			data->window.display();
 
 		}
 	}
