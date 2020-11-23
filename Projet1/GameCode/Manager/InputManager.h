@@ -24,5 +24,9 @@ public:
 
 	static bool isMouseWheelScrolled(sf::Event event); //Retourne true ou false si la roue de la souris a été scrolled
 
+	static bool isMouseHover(sf::Event event); //Retrourne true ou false si la souris passe sur l'objet
+
+	static bool isMouseNotHover(sf::Event event); //Retrourne true ou false si la souris quitte l'objet
+
 };
 
