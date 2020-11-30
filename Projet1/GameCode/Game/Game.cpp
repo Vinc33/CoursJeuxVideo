@@ -3,7 +3,7 @@
 #include <cstdlib>
 #include <vector>
 #include <iostream>
-#include "Game/Objects/Ladder.h"
+#include "Utils/Objects.h" // Include des objets/entités
 #ifdef NDEBUG
 static bool debug = true;
 #else
@@ -224,6 +224,7 @@ namespace GameView
 		{
 			//boucle de jeu
 			timeManager.update();
+			
 		//	currentState->updateInput();
 		//	currentState->update();
 			render();
@@ -297,5 +298,21 @@ namespace GameView
 			//player->render(data->window);
 			render();
 		}*/
+	}
+
+	void Game::playerCheckCollision(BaseEntity* unBaseEntity)
+	{
+		//testing
+		Barrel* barrel = new Barrel(100, 0, false);
+		barrel->getSprite()->setPosition(1, 2);
+		map->addMapObject(barrel);
+
+		if (player->getPalier() == unBaseEntity->getPalier())
+		{
+			if (player->getCollision(unBaseEntity))
+			{
+				player->substractHealth(unBaseEntity->getDamage());
+			}
+		}
 	}
 }

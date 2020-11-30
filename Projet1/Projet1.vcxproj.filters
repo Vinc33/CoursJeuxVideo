@@ -148,6 +148,9 @@
       <Filter>Engine\Utils</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\AnimFactory.h" />
+    <ClInclude Include="Objects.h">
+      <Filter>Engine\Utils</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">

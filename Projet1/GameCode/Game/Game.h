@@ -10,6 +10,7 @@
 #include <TGUI/TGUI.hpp>
 #include "Input/KeyboardMap.h"
 #include "Map.h"
+#include "Utils/Objects.h"
 
 
 using namespace sf;
@@ -41,6 +42,7 @@ namespace GameView
 		void updateEvent();
 		void render();
 		void movePlayer(Event event);
+		void playerCheckCollision(BaseEntity* unBaseEntity);
 
 
 		//Fonction test, à enlever

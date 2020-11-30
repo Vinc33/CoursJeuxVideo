@@ -56,6 +56,22 @@ int BaseEntity::checkPalier()
 
 #pragma region Gets/Sets
 //Gets
+
+int BaseEntity::getDamage()
+{
+	return damage;
+}
+
+int BaseEntity::getHealth()
+{
+	return hp;
+}
+
+Sprite* BaseEntity::getSprite()
+{
+	return &sprite;
+}
+
 int BaseEntity::getPalier()
 {
 	return palier;

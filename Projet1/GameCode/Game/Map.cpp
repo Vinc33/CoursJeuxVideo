@@ -59,7 +59,7 @@ void Map::addMapEntity(BaseEntity* entity)
 
 void Map::addMapObject(BaseEntity* object)
 {
-	mapObjects.push_back(object);
+	mapObjects[object->getPalier()].push_back(object);
 }
 
 #pragma region Gets/sets
@@ -67,6 +67,16 @@ void Map::addMapObject(BaseEntity* object)
 sf::Vector2f Map::getPlayerStart()
 {
 	return playerStart;
+}
+
+std::vector<std::list<BaseEntity*>> Map::getMapEntities()
+{
+	return mapEntities;
+}
+
+std::vector<std::list<BaseEntity*>> Map::getMapObjects()
+{
+	return mapObjects;
 }
 
 //Sets
