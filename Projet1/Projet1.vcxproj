@@ -182,6 +182,7 @@
     <ClInclude Include="GameCode\Manager\TimeManager.h" />
     <ClInclude Include="GameCode\Utils\Consts.h" />
     <ClInclude Include="GameCode\Utils\enums.h" />
+    <ClInclude Include="Objects.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\Sons\001-System01.ogg" />
