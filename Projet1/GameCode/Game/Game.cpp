@@ -253,6 +253,28 @@ namespace GameView
 
 	void Game::startGame()
 	{
+		// TESTING
+		Barrel* barrel = new Barrel(100, 0, false);
+		barrel->setPosition(1, 2);
+		map->addMapObject(barrel);
+
+		Barrel* barrel4 = new Barrel(100, 0, false);
+		barrel4->setPosition(100, 2);
+		map->addMapObject(barrel4);
+
+		Barrel* barrel1 = new Barrel(100, 0, false);
+		barrel1->setPosition(1, 201);
+		map->addMapObject(barrel1);
+
+		Barrel* barrel2 = new Barrel(100, 0, false);
+		barrel2->setPosition(1, 401);
+		map->addMapObject(barrel2);
+
+		Barrel* barrel3 = new Barrel(100, 0, false);
+		barrel3->setPosition(1, 601);
+		map->addMapObject(barrel3);
+		// FIN TESTING
+
 		update();
 	}
 
@@ -299,21 +321,27 @@ namespace GameView
 			//player->render(data->window);
 			render();
 		}*/
+
+		playerCheckCollision();
 	}
 
-	void Game::playerCheckCollision(BaseEntity* unBaseEntity)
+	void Game::playerCheckCollision()
 	{
-		//testing
-		Barrel* barrel = new Barrel(100, 0, false);
-		barrel->getSprite()->setPosition(1, 2);
-		map->addMapObject(barrel);
+		// Pour tester, les objets ont été créés dans startGame
+		std::vector<std::list<BaseEntity*>> mapObjects = map -> getMapObjects();
+		int i = 0;
+		for (auto it = mapObjects[player->getPalier()].begin(); it != mapObjects[player->getPalier()].end(); it++)
+		{
+			i++;
+		}
+		cout << "\nVous êtes sur le palier #" << player->getPalier() << " et il y a " << i << " objets\n" ;
 
-		if (player->getPalier() == unBaseEntity->getPalier())
+		/*if (player->getPalier() == unBaseEntity->getPalier())
 		{
 			if (player->getCollision(unBaseEntity))
 			{
 				player->substractHealth(unBaseEntity->getDamage());
 			}
-		}
+		}*/
 	}
 }

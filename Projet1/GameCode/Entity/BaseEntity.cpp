@@ -81,4 +81,10 @@ void BaseEntity::setPalier(int palier)
 {
 	this->palier = palier;
 }
+
+void BaseEntity::setPosition(float x , float y)
+{
+	sprite.setPosition(x, y);
+	checkPalier();
+}
 #pragma endregion

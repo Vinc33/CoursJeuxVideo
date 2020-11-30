@@ -9,6 +9,8 @@ Map::Map()
 			tiles[rows][cols] = 0;
 	for (int i = 0; i < Consts::NBPALIERSMAX; i++)
 		mapEntities.push_back(emptyList);
+	for (int i = 0; i < Consts::NBPALIERSMAX; i++)
+		mapObjects.push_back(emptyList);
 	playerStart = sf::Vector2f(0, 0);
 }
 

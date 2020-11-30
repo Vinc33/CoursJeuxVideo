@@ -29,6 +29,7 @@ public:
 
 	//Sets
 	void setPalier(int palier);
+	void setPosition(float x, float y);
 protected:
 	sf::Sprite sprite;
 	string objectName;

@@ -1,3 +1,4 @@
 Assets/Sprite/SteamMan/SteamMan.png steamMan|
 Assets/Sprite/SteamMan/SteamMan_idle.png steamManIdle|
-Assets/Sprite/SteamMan/SteamMan_walk.png steamManWalk
+Assets/Sprite/SteamMan/SteamMan_walk.png steamManWalk|
+Assets/Sprite/SteamMan/SteamMan.png barrel

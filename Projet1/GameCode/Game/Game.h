@@ -42,7 +42,7 @@ namespace GameView
 		void updateEvent();
 		void render();
 		void movePlayer(Event event);
-		void playerCheckCollision(BaseEntity* unBaseEntity);
+		void playerCheckCollision();
 
 
 		//Fonction test, à enlever
