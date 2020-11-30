@@ -66,3 +66,13 @@ bool InputManager::isMouseWheelScrolled(sf::Event event)
 		return true;
 	return false;
 }
+bool InputManager::isMouseHover(sf::Event event) {
+	if (event.type == sf::Event::MouseEntered)
+		return true;
+	return false;
+}
+bool InputManager::isMouseNotHover(sf::Event event) {
+	if (event.type == sf::Event::MouseLeft)
+		return true;
+	return false;
+}

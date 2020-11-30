@@ -1,25 +1,17 @@
 #include "Ladder.h"
 
-Ladder::Ladder(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "ladder", 100, 0, false)
+Ladder::Ladder(int hp, int damage, bool destroyable) : BaseEntity("steamMan")
 {
-
+	this->hp = hp;
+	this->damage = damage;
+	this->isDestroyable = destroyable;
+	objectName = "Ladder";
+	//ne pas oublier de setter le box du collision
 }
 
 int Ladder::verifyHp()
 {
-	if (this->hp <= 0 && this->isDestroyable)
-	{
-		ladder.kill(ladder);
-	}
 	return hp;
-}
-
-void Ladder::checkCollision()
-{
-	if (ladder.getCollision(ladder))
-	{
-		verifyHp();
-	}
 }
 
 string Ladder::iAm()

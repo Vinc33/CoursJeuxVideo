@@ -4,8 +4,6 @@
 #include "./Config/Utils.h"
 #include "./Manager/AssetManager.h"
 
-
-
 map<string, Texture> AssetManager::textureInfo = map<string, Texture>();
 map<string, Font> AssetManager::fontInfo = map<string, Font>();
 
@@ -68,7 +66,7 @@ void AssetManager::preLoadSprite(const string& fileName)
 	vector<string> info = Utils::split(fileInfo, '|');
 	for each (string infoMap in info)
 	{
-		int spaceNo = infoMap.find(' ');
+		size_t spaceNo = infoMap.find(' ');
 		string fileName = infoMap.substr(0, spaceNo);
 		string mapName = infoMap.substr(spaceNo+1, infoMap.size());
 

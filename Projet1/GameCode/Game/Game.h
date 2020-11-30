@@ -3,11 +3,13 @@
 #include "./Manager/AssetManager.h";
 #include "./Manager/InputManager.h"
 #include "./Manager/TimeManager.h"
+#include "AnimFactory.h"
 #include "GameState.h"
 #include "Entity/BaseEntity.h"
 #include "Entity/Player.h"
 #include <TGUI/TGUI.hpp>
 #include "Input/KeyboardMap.h"
+#include "Map.h"
 
 
 using namespace sf;
@@ -50,7 +52,10 @@ namespace GameView
 		GameDataRef data = std::make_shared<GameData>();
 		sf::Vector2f vecteurDeplacement;
 		Player* player;
+		//test
+		Player* playerTest;
 		KeyboardMap* keyboardMap;
+		Map* map;
 
 
 	protected:

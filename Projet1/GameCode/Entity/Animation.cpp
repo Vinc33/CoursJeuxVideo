@@ -1,10 +1,11 @@
 #include "Animation.h"
 #include "Manager/TimeManager.h"
 
-Animation::Animation(unsigned frameWidth, unsigned frameHeight)
+Animation::Animation(std::string spriteName, unsigned frameWidth, unsigned frameHeight)
     : FRAME_WIDTH(frameWidth)
     , FRAME_HEIGHT(frameHeight)
     , currentTime(0)
+    , spriteAssetName(spriteName)
 {}
 
 void Animation::addFrame(unsigned index, float delay)

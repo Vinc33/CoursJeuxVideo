@@ -4,15 +4,13 @@
 
 using namespace std;
 
-class Barrel : BaseEntity
+class Barrel : public BaseEntity
 {
 	private:
-		BaseEntity barrel;
 
 	public:
-		Barrel(int hp, bool destroyable);
-		int verifyHp();
-		void checkCollision();
+		Barrel(int hp, int damage, bool destroyable);
+		int Barrel::verifyHp();
 		string iAm();
 
 };

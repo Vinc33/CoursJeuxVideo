@@ -1,23 +1,39 @@
 #pragma once
 #include <SFML/Graphics.hpp>
 #include <string>
+#include "collidable.h"
+#include "Utils/Consts.h"
+#include <iostream>
 
 using namespace std;
-class BaseEntity
+class BaseEntity : public Collidable
 {
+private:
+	int palier;
+
 public:
-	BaseEntity() {}
-	BaseEntity(string spriteName, string objectName, int hp, int damage, bool isDestroyable);
+	BaseEntity(std::string spriteName, float boxWidth = 0, float boxHeight = 0);
 	virtual ~BaseEntity() {}
 			
-	virtual void update() {}
+	virtual int update();
 	virtual void render(sf::RenderTarget& target);
-	virtual void kill(BaseEntity entity);
-	virtual bool getCollision(BaseEntity entity);
+	virtual bool getCollision(BaseEntity* entity);
+
+	int checkPalier();
+
+	//Gets
+	int getPalier();
+
+	//Sets
+	void setPalier(int palier);
 protected:
 	sf::Sprite sprite;
 	string objectName;
 	bool isCollided;
+
+	virtual sf::Vector2f getPosition();
+	virtual void onCollide(Collidable& other);
+
 	int hp;
 	int damage;
 	bool isDestroyable;

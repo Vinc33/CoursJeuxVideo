@@ -7,18 +7,13 @@
 
 using namespace std;
 
-class Ladder : BaseEntity
+class Ladder : public BaseEntity
 {
 private:
-	int hp;
-	bool destroyable;
-	string sprite;
-	BaseEntity ladder;
 
 public:
-	Ladder(int hp, bool destroyable);
+	Ladder(int hp, int damage, bool destroyable);
 	int verifyHp();
-	void checkCollision();
 	string iAm();
 
 };

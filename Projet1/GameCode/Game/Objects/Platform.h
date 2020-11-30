@@ -4,18 +4,13 @@
 
 using namespace std;
 
-class Platform : BaseEntity
+class Platform : public BaseEntity
 {
 private:
-	int hp;
-	bool destroyable;
-	string sprite;
-	BaseEntity platform;
 
 public:
-	Platform(int hp, bool destroyable);
+	Platform(int hp, int damage, bool destroyable);
 	int verifyHp();
-	void checkCollision();
 	string iAm();
 
 };

@@ -1,15 +1,12 @@
 #include "BaseEntity.h"
 #include "Manager/AssetManager.h"
 
-BaseEntity::BaseEntity(string spriteName, string objectName, int hp, int damage, bool isDestroyable)
+BaseEntity::BaseEntity(string spriteName, float boxWidth, float boxHeight) : Collidable(boxWidth, boxHeight)
 {
 	sprite.setTexture(AssetManager::getTexture(spriteName) );
-	this->damage = damage;
-	this->isDestroyable = isDestroyable;
-	if (isDestroyable)
-	{
-		this->hp = hp;
-	}
+	hp = 0;
+	isDestroyable = false;
+	setPalier(sprite.getPosition().y / Consts::PALIERHEIGHT);
 }
 
 void BaseEntity::render(sf::RenderTarget& target)
@@ -17,13 +14,25 @@ void BaseEntity::render(sf::RenderTarget& target)
 	target.draw(sprite);
 }
 
-void BaseEntity::kill(BaseEntity entity)
+int BaseEntity::update()
 {
-	// listEntityOnMap[entity] = null;
-	//cout << entity << "Has been destroyed";
+	if (checkPalier() == 1)
+		return 1;//has to change lists
+	return 0;
+	//std::cout << palier << endl;
 }
 
-bool BaseEntity::getCollision(BaseEntity entity)
+sf::Vector2f BaseEntity::getPosition()
+{
+	return sprite.getPosition();
+}
+
+void BaseEntity::onCollide(Collidable& other)
+{
+
+}
+
+bool BaseEntity::getCollision(BaseEntity* entity)
 {
 	isCollided = false;
 	/* if (entity est en collision)
@@ -33,3 +42,27 @@ bool BaseEntity::getCollision(BaseEntity entity)
 
 	return isCollided;
 }
+
+int BaseEntity::checkPalier()
+{
+	int palier = sprite.getPosition().y / Consts::PALIERHEIGHT;
+	if(palier != this->palier)
+	{
+		setPalier(sprite.getPosition().y / Consts::PALIERHEIGHT);
+		return 1;	//has to change lists
+	}
+	return 0;
+}
+
+#pragma region Gets/Sets
+//Gets
+int BaseEntity::getPalier()
+{
+	return palier;
+}
+//Sets
+void BaseEntity::setPalier(int palier)
+{
+	this->palier = palier;
+}
+#pragma endregion

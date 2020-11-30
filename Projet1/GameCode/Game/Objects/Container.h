@@ -4,13 +4,12 @@
 
 using namespace std;
 
-class Container : BaseEntity
+class Container : public BaseEntity
 {
 private:
-	BaseEntity container;
 
 public:
-	Container(int hp, bool destroyable);
+	Container(int hp, int damage, bool destroyable);
 	int verifyHp();
 	void checkCollision();
 	string iAm();
