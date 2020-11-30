@@ -9,7 +9,7 @@ class Crate : public BaseEntity
 private:
 
 public:
-	Crate(int hp, bool destroyable);
+	Crate(int hp, int damage, bool destroyable);
 	int verifyHp();
 	string iAm();
 

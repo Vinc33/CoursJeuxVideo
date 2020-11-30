@@ -9,7 +9,7 @@ class Fire : public BaseEntity
 private:
 
 public:
-	Fire(int hp, bool destroyable);
+	Fire(int hp, int damage, bool destroyable);
 	int verifyHp();
 	string iAm();
 

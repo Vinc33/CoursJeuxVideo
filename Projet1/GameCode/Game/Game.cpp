@@ -48,7 +48,7 @@ namespace GameView
 		map = new Map();
 		map->setBackground("Assets/Background/placeholder.jpg");
 		//testing map
-		map->addMapEntity(new Ladder(100, false));
+		map->addMapEntity(new Ladder(100, 0, false));
 
 		
 		keyboardMap = new KeyboardMap();

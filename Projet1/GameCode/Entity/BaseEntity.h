@@ -35,6 +35,7 @@ protected:
 	virtual void onCollide(Collidable& other);
 
 	int hp;
+	int damage;
 	bool isDestroyable;
 };
 

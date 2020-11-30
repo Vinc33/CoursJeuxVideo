@@ -12,7 +12,7 @@ class Ladder : public BaseEntity
 private:
 
 public:
-	Ladder(int hp, bool destroyable);
+	Ladder(int hp, int damage, bool destroyable);
 	int verifyHp();
 	string iAm();
 

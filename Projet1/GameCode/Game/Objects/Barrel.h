@@ -9,7 +9,7 @@ class Barrel : public BaseEntity
 	private:
 
 	public:
-		Barrel(int hp, bool destroyable);
+		Barrel(int hp, int damage, bool destroyable);
 		int Barrel::verifyHp();
 		string iAm();
 

@@ -1,8 +1,9 @@
 #include "Crate.h"
 
-Crate::Crate(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png")
+Crate::Crate(int hp, int damage, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png")
 {
 	this->hp = hp;
+	this->damage = damage;
 	this->isDestroyable = destroyable;
 	objectName = "Crate";
 	//ne pas oublier de setter le box du collision

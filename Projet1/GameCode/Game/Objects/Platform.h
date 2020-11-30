@@ -9,7 +9,7 @@ class Platform : public BaseEntity
 private:
 
 public:
-	Platform(int hp, bool destroyable);
+	Platform(int hp, int damage, bool destroyable);
 	int verifyHp();
 	string iAm();
 
