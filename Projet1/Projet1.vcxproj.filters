@@ -70,6 +70,7 @@
     <ClCompile Include="GameCode\Game\Map.cpp">
       <Filter>Engine\Game</Filter>
     </ClCompile>
+    <ClCompile Include="GameCode\AnimFactory.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCode\Game\GameState.h">
@@ -146,6 +147,7 @@
     <ClInclude Include="GameCode\Utils\Consts.h">
       <Filter>Engine\Utils</Filter>
     </ClInclude>
+    <ClInclude Include="GameCode\AnimFactory.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Engine">
