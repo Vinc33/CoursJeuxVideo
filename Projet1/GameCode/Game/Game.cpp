@@ -40,8 +40,7 @@ namespace GameView
 		playerTest->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
 		playerTest->setPosition(200, 400);
 
-		playerTest->addAnim(AnimFactory::getAnim("anim_steamman_idle"), "idle");
-		playerTest->setAnim("idle");
+		playerTest->setAnim("anim_steamman_idle");
 
 	//	map = new Map();
 		
