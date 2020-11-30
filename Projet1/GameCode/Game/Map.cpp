@@ -15,7 +15,8 @@ Map::Map()
 Map::~Map()
 {
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
-		delete *it;
+		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
+			delete *it2;
 	for (auto it = mapEntities.begin(); it != mapEntities.end(); it++)
 		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
 			delete *it2;
@@ -29,7 +30,8 @@ void Map::loadMap(std::string filename)
 void Map::render(sf::RenderWindow& window)
 {
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
-		(*it)->render(window);
+		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
+			(*it2)->render(window);
 	for (auto it = mapEntities.begin(); it != mapEntities.end(); it++)
 		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
 			(*it2)->render(window);
@@ -39,7 +41,15 @@ void Map::render(sf::RenderWindow& window)
 void Map::update()
 {
 	for (auto it = mapObjects.begin(); it != mapObjects.end(); it++)
-		(*it)->update();
+		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
+		{
+			int oldPalier = (*it2)->getPalier();
+			if ((*it2)->update() == 1)
+			{
+				mapObjects[(*it2)->getPalier()].push_back(*it2);
+				mapObjects[oldPalier].remove(*it2);
+			}
+		}
 	for (auto it = mapEntities.begin(); it != mapEntities.end(); it++)
 		for (auto it2 = it->begin(); it2 != it->end(); ++it2)
 		{
