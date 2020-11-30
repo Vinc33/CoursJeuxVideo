@@ -15,12 +15,18 @@ Sprite* AnimateEntity::getSprite()
 }
 #pragma endregion Gets
 
-/*AnimateEntity::AnimateEntity()
-{
 
-}*/
-
-/*void AnimateEntity::render(sf::RenderTarget& target)
+void AnimateEntity::render(sf::RenderTarget& target)
 {
-	//sprite.setTextureRect(currentAnim->getFrame());
-}*/
+	if (currentAnim != nullptr)
+	{
+		sprite.setTextureRect(currentAnim->getFrame());
+	}
+	target.draw(sprite);
+}
+
+void AnimateEntity::setAnim(std::string animToPlay)
+{ 
+	currentAnim = AnimFactory::getAnim(animToPlay);
+	sprite.setTexture( AssetManager::getTexture(currentAnim->getSpriteName()) );
+}

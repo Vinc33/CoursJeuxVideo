@@ -140,6 +140,6 @@ void Player::shoot(float bulletSpeed)
 
 void Player::render(sf::RenderTarget& target)
 {
+	AnimateEntity::render(target);
 	weapon->render(target);
-	target.draw(sprite);
 }
