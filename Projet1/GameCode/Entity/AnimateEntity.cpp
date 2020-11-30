@@ -3,17 +3,30 @@
 #include "Entity/Animation.h"
 
 
-AnimateEntity::AnimateEntity(std::string spriteName, int largeur, int hauteur) : BaseEntity(spriteName)
+AnimateEntity::AnimateEntity(std::string spriteName,float boxWidth, float boxHeight) : BaseEntity(spriteName,boxWidth,boxHeight)
 {
 	currentAnim = 0;
 }
 
-/*AnimateEntity::AnimateEntity()
+#pragma region Gets
+Sprite* AnimateEntity::getSprite()
 {
+	return &sprite;
+}
+#pragma endregion Gets
 
-}*/
 
-/*void AnimateEntity::render(sf::RenderTarget& target)
+void AnimateEntity::render(sf::RenderTarget& target)
 {
-	//sprite.setTextureRect(currentAnim->getFrame());
-}*/
+	if (currentAnim != nullptr)
+	{
+		sprite.setTextureRect(currentAnim->getFrame());
+	}
+	target.draw(sprite);
+}
+
+void AnimateEntity::setAnim(std::string animToPlay)
+{ 
+	currentAnim = AnimFactory::getAnim(animToPlay);
+	sprite.setTexture( AssetManager::getTexture(currentAnim->getSpriteName()) );
+}
