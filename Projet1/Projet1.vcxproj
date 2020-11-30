@@ -140,11 +140,12 @@
     <ClCompile Include="GameCode\Entity\Player.cpp" />
     <ClCompile Include="GameCode\Entity\Weapon.cpp" />
     <ClCompile Include="GameCode\Game\Game.cpp" />
+    <ClCompile Include="GameCode\Game\GameDef.cpp" />
     <ClCompile Include="GameCode\Game\GameState.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Barrel.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Container.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Crate.cpp" />
-	<ClCompile Include="GameCode\Game\Objects\Fire.cpp" />
+    <ClCompile Include="GameCode\Game\Objects\Fire.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Ladder.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Platform.cpp" />
     <ClCompile Include="GameCode\Input\KeyboardMap.cpp" />
@@ -163,11 +164,12 @@
     <ClInclude Include="GameCode\Entity\Player.h" />
     <ClInclude Include="GameCode\Entity\Weapon.h" />
     <ClInclude Include="GameCode\Game\Game.h" />
+    <ClInclude Include="GameCode\Game\GameDef.h" />
     <ClInclude Include="GameCode\Game\GameState.h" />
     <ClInclude Include="GameCode\Game\Objects\Barrel.h" />
     <ClInclude Include="GameCode\Game\Objects\Container.h" />
     <ClInclude Include="GameCode\Game\Objects\Crate.h" />
-	<ClCompile Include="GameCode\Game\Objects\Fire.h" />
+    <ClCompile Include="GameCode\Game\Objects\Fire.h" />
     <ClInclude Include="GameCode\Game\Objects\Ladder.h" />
     <ClInclude Include="GameCode\Game\Objects\Platform.h" />
     <ClInclude Include="GameCode\Input\KeyboardMap.h" />
@@ -282,6 +284,12 @@
     <None Include="..\Sons\161-Skill05.ogg" />
     <None Include="..\Sons\169-Skill13.ogg" />
     <None Include="..\Sons\179-Skill23.ogg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="GameCode\Images\CyberRun.png" />
+    <Image Include="GameCode\Images\engrenages.png" />
+    <Image Include="GameCode\Images\Jouer.png" />
+    <Image Include="GameCode\Images\Quitter.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

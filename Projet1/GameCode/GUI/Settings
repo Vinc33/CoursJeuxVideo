@@ -1,0 +1,50 @@
+Panel.PanelAtk {
+    Size = (200, 100);
+
+    Renderer {
+        backgroundcolor = white;
+        bordercolor = black;
+    }
+
+    Label.LabelEditBoxAtk {
+        ScrollbarPolicy = Never;
+        Size = (132, 100);
+        Text = "Attaque:";
+        TextSize = 20;
+        VerticalAlignment = Center;
+
+        Renderer {
+            backgroundcolor = transparent;
+            bordercolor = #3C3C3C;
+            borders = (0, 0, 0, 0);
+            textcolor = #3C3C3C;
+        }
+    }
+
+    EditBox.EditBoxAttaque {
+        Alignment = Center;
+        DefaultText = J;
+        MaximumCharacters = 1;
+        Position = (100, 0);
+        Size = (68, 86);
+        TextSize = 68;
+
+        Renderer {
+            backgroundcolor = #F5F5F5;
+            backgroundcolordisabled = #E6E6E6;
+            backgroundcolorhover = white;
+            bordercolor = #3C3C3C;
+            bordercolordisabled = #7D7D7D;
+            bordercolorhover = black;
+            borders = (1, 1, 1, 1);
+            caretcolor = black;
+            caretwidth = 1;
+            defaulttextcolor = #A0A0A0;
+            padding = (0, 0, 0, 0);
+            selectedtextbackgroundcolor = #006EFF;
+            selectedtextcolor = white;
+            textcolor = #3C3C3C;
+            textcolordisabled = #7D7D7D;
+        }
+    }
+}

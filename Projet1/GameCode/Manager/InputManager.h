@@ -20,9 +20,13 @@ public:
 
 	static sf::Keyboard::Key getPressedKeyCode(sf::Event event); //Retourne la clé des lettres A-Z et numéros 0-9(pas numpad)[Logique]
 
+	static sf::Keyboard::Key getPressedKeyCodeInInput(sf::Event event); //Retourne la clé des lettres A-Z et numéros 0-9(pas numpad)[Logique]
+
 	static bool isMouseButtonPressed(sf::Event event, sf::Mouse::Button button); //Retourne true ou false si le bouton demandé est appuyé
 
 	static bool isMouseWheelScrolled(sf::Event event); //Retourne true ou false si la roue de la souris a été scrolled
+
+	static bool validateInput(sf::Event event);
 
 };
 

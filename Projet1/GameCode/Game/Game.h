@@ -9,53 +9,40 @@
 #include <TGUI/TGUI.hpp>
 #include "Input/KeyboardMap.h"
 
-
 using namespace sf;
 
-namespace GameView
+class Game
 {
-	struct GameData
-	{
-		sf::RenderWindow window;
-		tgui::Gui gui{ window };
-	};
+public:
+	Game(int width, int height, string titleScreen);
+	~Game();
 
-	typedef std::shared_ptr<GameData> GameDataRef;
+	virtual void init();
+	void startGame();
 
-	class Game
-	{
-	public:
-		Game(int width, int height, string titleScreen);
-		~Game();
+private://Fonctions
+	void update();
+	void updateInput();
+	void updateLogic();
+	void updateEvent();
+	void render();
+	void movePlayer(Event event);
 
-		virtual void init();
-		void startGame();
+	//Fonction test, à enlever
+	static void signalHandler();
 
-
-	private://Fonctions
-		void update();
-		void updateInput();
-		void updateLogic();
-		void updateEvent();
-		void render();
-		void movePlayer(Event event);
-
-
-		//Fonction test, à enlever
-		static void signalHandler();
-
-		//Variables
-		TimeManager timeManager;
-		const unsigned int FPS = 60;
-		GameDataRef data = std::make_shared<GameData>();
-		sf::Vector2f vecteurDeplacement;
-		Player* player;
-		KeyboardMap* keyboardMap;
+	//Variables
+	Event event;
+	TimeManager timeManager;
+	const unsigned int FPS = 60;
+	GameDef::GameDataRef data = std::make_shared<GameDef::GameData>();
+	sf::Vector2f vecteurDeplacement;
+	Player* player;
+	KeyboardMap* keyboardMap = new KeyboardMap();
 
 
-	protected:
-		//ViewManager* camera;
-		//GameState* currentState;
+protected:
+	//ViewManager* camera;
+	GameState* currentGameState = new GameState("MainMenu", data, event, keyboardMap);
 
-	};
-}
+};

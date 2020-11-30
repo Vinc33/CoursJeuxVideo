@@ -74,3 +74,47 @@ sf::Keyboard::Key KeyboardMap::getSkill2Key()
 }
 
 #pragma endregion Getters
+
+#pragma region Setters
+
+void KeyboardMap::setUpKey(sf::Keyboard::Key key)
+{
+	keyUp = key;
+}
+
+void KeyboardMap::setDownKey(sf::Keyboard::Key key)
+{
+	keyDown = key;
+}
+
+void KeyboardMap::setLeftKey(sf::Keyboard::Key key)
+{
+	keyLeft = key;
+}
+
+void KeyboardMap::setRightKey(sf::Keyboard::Key key)
+{
+	keyRight = key;
+}
+
+void KeyboardMap::setAttackKey(sf::Keyboard::Key key)
+{
+	keyAttack = key;
+}
+
+void KeyboardMap::setJumpKey(sf::Keyboard::Key key)
+{
+	keyJump = key;
+}
+
+void KeyboardMap::setSkill1Key(sf::Keyboard::Key key)
+{
+	keySkill1 = key;
+}
+
+void KeyboardMap::setSkill2Key(sf::Keyboard::Key key)
+{
+	keySkill2 = key;
+}
+
+#pragma endregion Setters

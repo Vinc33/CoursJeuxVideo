@@ -5,9 +5,6 @@
     <ClCompile Include="GameCode\Game\Game.cpp">
       <Filter>Engine\Game</Filter>
     </ClCompile>
-    <ClCompile Include="GameCode\Game\GameState.cpp">
-      <Filter>Engine\Game</Filter>
-    </ClCompile>
     <ClCompile Include="GameCode\Manager\InputManager.cpp">
       <Filter>Engine\Manager</Filter>
     </ClCompile>
@@ -59,9 +56,14 @@
     <ClCompile Include="GameCode\Game\Objects\Container.cpp">
       <Filter>Engine\Game\Objects</Filter>
     </ClCompile>
-	<ClInclude Include="GameCode\Game\Objects\Fire.cpp">
-      <Filter>Engine\Game\Objects</Filter>
-    </ClInclude>
+    <ClCompile Include="GameCode\Game\Objects\Fire.cpp" />
+    <ClCompile Include="GameCode\Game\Objects\Fire.h" />
+    <ClCompile Include="GameCode\Game\GameDef.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="GameCode\Game\GameState.cpp">
+      <Filter>Engine\Game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCode\Game\GameState.h">
@@ -126,8 +128,8 @@
     <ClInclude Include="GameCode\Game\Objects\Barrel.h">
       <Filter>Engine\Game\Objects</Filter>
     </ClInclude>
-	<ClInclude Include="GameCode\Game\Objects\Fire.h">
-      <Filter>Engine\Game\Objects</Filter>
+    <ClInclude Include="GameCode\Game\GameDef.h">
+      <Filter>Engine\Game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +165,9 @@
     </Filter>
     <Filter Include="Sons\ES">
       <UniqueIdentifier>{b54d8879-9b67-426a-847e-5e865e3dd092}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Images">
+      <UniqueIdentifier>{05ac9305-858a-4411-9b65-df10ecfe0feb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -481,5 +486,19 @@
     <None Include="..\Sons\004-System04.ogg">
       <Filter>Sons</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="GameCode\Images\Jouer.png">
+      <Filter>Engine\Images</Filter>
+    </Image>
+    <Image Include="GameCode\Images\Quitter.png">
+      <Filter>Engine\Images</Filter>
+    </Image>
+    <Image Include="GameCode\Images\CyberRun.png">
+      <Filter>Engine\Images</Filter>
+    </Image>
+    <Image Include="GameCode\Images\engrenages.png">
+      <Filter>Engine\Images</Filter>
+    </Image>
   </ItemGroup>
 </Project>
