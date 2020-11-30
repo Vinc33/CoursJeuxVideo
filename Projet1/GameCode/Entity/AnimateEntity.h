@@ -4,6 +4,7 @@
 #include <Entity/BaseEntity.h>
 #include <SFML/Graphics.hpp>
 #include "Entity/Animation.h"
+#include "AnimFactory.h"
 
 class AnimateEntity :public BaseEntity
 {
@@ -12,9 +13,7 @@ public:
 	~AnimateEntity(){}//destructeur
 	
 	void updateAnimateEntity() {}
-
-	void addAnim(Animation* anim, std::string animName) { animMap[animName] = anim; }
-	void setAnim(std::string animToPlay) { currentAnim = animMap[animToPlay]; }
+	void setAnim(std::string animToPlay);
 
 	//Gets
 	sf::Sprite* getSprite();

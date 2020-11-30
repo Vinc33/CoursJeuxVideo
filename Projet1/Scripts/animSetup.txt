@@ -1,1 +1,3 @@
-anim_steamman_walk Assets/Sprite/SteamMan/SteamMan_walk.png 48 48 6 100
+anim_steamman_walk steamManWalk 48 48 6 100|
+anim_steamman_idle steamManIdle 48 48 4 100
+

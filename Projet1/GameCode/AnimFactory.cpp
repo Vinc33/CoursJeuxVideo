@@ -19,9 +19,8 @@ void AnimFactory::initFactory()
 
 Animation* AnimFactory::getAnim(string animName)
 {
-	return 0;
+	return animationInfo[animName];
 }
-
 
 void AnimFactory::loadAnim(const string& fileName)
 {
@@ -41,7 +40,7 @@ void AnimFactory::loadAnim(const string& fileName)
 			anim.height = std::stoi(animInfo[3]);
 			anim.nbFrame = std::stoi(animInfo[4]);
 			anim.delay = std::stoi(animInfo[5]);
-			Animation* animation = new Animation(anim.width, anim.height);
+			Animation* animation = new Animation(anim.path,anim.width, anim.height);
 			
 			for (int i = 0; i < anim.nbFrame; i++)
 			{
