@@ -23,6 +23,9 @@ public:
 
 	//Gets
 	int getPalier();
+	int getDamage();
+	int getHealth();
+	sf::Sprite* getSprite();
 
 	//Sets
 	void setPalier(int palier);

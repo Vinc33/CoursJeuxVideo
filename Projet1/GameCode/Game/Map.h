@@ -11,8 +11,8 @@ class Map
 	//Attributs
 private :
 	sf::Vector2f playerStart;
-	std::list<BaseEntity*> mapObjects;
-	std::vector<std::list<BaseEntity*>> mapEntities;
+	std::vector<std::list<BaseEntity*>> mapObjects;//mur,ladder,etc
+	std::vector<std::list<BaseEntity*>> mapEntities;//enemies
 	int tiles[32][40];//has to be changed
 	sf::Texture backgroundTexture;
 	sf::Sprite background;
@@ -20,6 +20,8 @@ private :
 public:
 	//Gets
 	sf::Vector2f getPlayerStart();
+	std::vector<std::list<BaseEntity*>> getMapEntities();
+	std::vector<std::list<BaseEntity*>> getMapObjects();
 	
 	//Sets
 	void setPlayerStart(float x, float y);
