@@ -54,7 +54,7 @@
  #define LEVEL_MAX   20
 
  //Nombre max de tilesets
- #define MAX_TILESETS   1
+ #define MAX_TILESETS   3
 
  //Durée des messages
  #define DUREE_MESSAGE   60
