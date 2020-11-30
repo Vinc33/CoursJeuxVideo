@@ -3,6 +3,7 @@
 #include "./Manager/AssetManager.h";
 #include "./Manager/InputManager.h"
 #include "./Manager/TimeManager.h"
+#include "AnimFactory.h"
 #include "GameState.h"
 #include "Entity/BaseEntity.h"
 #include "Entity/Player.h"

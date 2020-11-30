@@ -1,4 +1,5 @@
 #include "Game.h"
+
 #include <cstdlib>
 #include <vector>
 #include <iostream>
@@ -33,15 +34,14 @@ namespace GameView
 		data->window.setFramerateLimit(FPS);
 		AssetManager::init();
 		InputManager::init();
+		AnimFactory::initFactory();
+
 		player = new Player("steamMan",24,40);
 		player->setWeapon(new Weapon("steamMan", "steamMan"));
 		player->setPosition(400, 400);
 		player->setVelocity(Vector2f(20, 20));//exemple pour augmenter la vitesse
-
-		//testing player test
-		playerTest = new Player("steamMan", 24, 40);
-		playerTest->setWeapon(new Weapon("steamMan","steamMan"));
-		playerTest->setPosition(200, 400);
+		player->setAnim("anim_steamman_idle");
+		
 		cout << player->getSprite()->getTextureRect().width;
 		cout << player->getSprite()->getTextureRect().height;
 
@@ -49,12 +49,13 @@ namespace GameView
 		map->setBackground("Assets/Background/placeholder.jpg");
 		//testing map
 		map->addMapEntity(new Ladder(100, false));
+
 		
 		keyboardMap = new KeyboardMap();
 		
 
 		//Test Sulli
-		tgui::ChildWindow::Ptr window = tgui::ChildWindow::create();
+	/*	tgui::ChildWindow::Ptr window = tgui::ChildWindow::create();
 		data->gui.add(window, "window");
 		window = data->gui.get<tgui::ChildWindow>("window");
 		window->setKeepInParent(true);
@@ -129,8 +130,9 @@ namespace GameView
 		button7->setPosition(100,550);
 		button7->setText("Quittez");
 		button7->setTextSize(15);
-		
+		*/
 		//crée une classe MenuManager
+
 	}
 
 	void Game::updateEvent()
@@ -213,22 +215,18 @@ namespace GameView
 		//button->setTextSize(28);
 		//button->connect("Pressed", Game::signalHandler); //Relier le bouton à une fonction(doit être statique si on utilise la classe et non une instance), le premier paramètre est prédéfinis
 		//button->connect("Pressed", [&]() { std::cout << "input2" << endl; }); //Exemple en lambda, notez que le bouton peut prendre deux fonctions
-		
-
-		
-
 
 
 		//End of testing GUI
-
 		map->update();
+
 		while (data->window.isOpen())
 		{
 			//boucle de jeu
 			timeManager.update();
 		//	currentState->updateInput();
 		//	currentState->update();
-			//render();
+			render();
 			//	currentState->updateInput();
 			//	currentState->update();
 			updateEvent();
@@ -239,9 +237,9 @@ namespace GameView
 			//updateEvent();
 
 			//Widgets v
-			data->window.clear();
-			data->gui.draw(); // Draw all widgets
-			data->window.display();
+//			data->window.clear();
+//			data->gui.draw(); // Draw all widgets
+			//data->window.display();
 
 		}
 	}
@@ -262,9 +260,6 @@ namespace GameView
 
 		map->render(data->window);
 		player->render(data->window);
-
-		//testing
-		playerTest->render(data->window);
 
 		data->window.display();
 
@@ -292,8 +287,6 @@ namespace GameView
 		if(moved)
 			player->move(deplacement);
 
-		if (player->tryCollideWith((*playerTest)))
-			cout << "Colision" << endl;
 		
 		/*while (keyPressed && moved)
 		{

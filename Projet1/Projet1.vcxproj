@@ -131,6 +131,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="GameCode\AnimFactory.cpp" />
     <ClCompile Include="GameCode\Config\Settings.cpp" />
     <ClCompile Include="GameCode\Config\Utils.cpp" />
     <ClCompile Include="GameCode\Entity\AnimateEntity.cpp" />
@@ -156,6 +157,7 @@
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameCode\AnimFactory.h" />
     <ClInclude Include="GameCode\Config\Settings.h" />
     <ClInclude Include="GameCode\Config\Utils.h" />
     <ClInclude Include="GameCode\Entity\AnimateEntity.h" />
