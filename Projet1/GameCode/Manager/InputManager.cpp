@@ -53,6 +53,32 @@ sf::Keyboard::Key InputManager::getPressedKeyCode(sf::Event event) //Retourner l
 	return static_cast<sf::Keyboard::Key>(event.key.code);
 }
 
+sf::Keyboard::Key InputManager::getPressedKeyCodeInInput(sf::Event event) //Retourner la touche dans un champ
+{
+	if (event.key.code >= 97 && event.key.code <= 122)
+		return static_cast<sf::Keyboard::Key>(event.key.code - 97); // Lettres de a - z
+	if (event.key.code >= 65 && event.key.code <= 90)
+		return static_cast<sf::Keyboard::Key>(event.key.code - 65); // Lettres de A - Z
+	else if (event.key.code >= 48 && event.key.code <= 57)
+		return static_cast<sf::Keyboard::Key>(event.key.code - 22); // Chiffres de 0 - 9
+	else if (event.key.code == 32)
+		return static_cast<sf::Keyboard::Key>(event.key.code + 15); // Barre Espace
+	return static_cast<sf::Keyboard::Key>(event.key.code);
+}
+
+bool InputManager::validateInput(sf::Event event) //Valide si la key appuyée est valide ou non
+{
+	if (event.key.code >= 97 && event.key.code <= 122)
+		return true; // Lettres de a - z
+	if (event.key.code >= 65 && event.key.code <= 90)
+		return true; // Lettres de A - Z
+	else if (event.key.code >= 48 && event.key.code <= 57)
+		return true; // Chiffres de 0 - 9
+	else if (event.key.code == 32)
+		return true; // Barre Espace
+	return false;
+}
+
 bool InputManager::isMouseButtonPressed(sf::Event event, sf::Mouse::Button button)
 {
 	if (event.mouseButton.button == button)

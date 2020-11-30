@@ -22,6 +22,17 @@ public:
 	sf::Keyboard::Key getSkill1Key();
 	sf::Keyboard::Key getSkill2Key();
 
+	void setUpKey(sf::Keyboard::Key key);
+	void setDownKey(sf::Keyboard::Key key);
+	void setLeftKey(sf::Keyboard::Key key);
+	void setRightKey(sf::Keyboard::Key key);
+
+	void setAttackKey(sf::Keyboard::Key key);
+	void setJumpKey(sf::Keyboard::Key key);
+	void setSkill1Key(sf::Keyboard::Key key);
+	void setSkill2Key(sf::Keyboard::Key key);
+
+
 private:
 
 	sf::Keyboard::Key keyUp;

@@ -12,57 +12,44 @@
 #include "Map.h"
 #include "Utils/Objects.h"
 
-
 using namespace sf;
 
-namespace GameView
+class Game
 {
-	struct GameData
-	{
-		sf::RenderWindow window;
-		tgui::Gui gui{ window };
-	};
 
-	typedef std::shared_ptr<GameData> GameDataRef;
+public:
+	Game(int width, int height, string titleScreen);
+	~Game();
 
-	class Game
-	{
-	public:
-		Game(int width, int height, string titleScreen);
-		~Game();
+	virtual void init();
+	void startGame();
 
-		virtual void init();
-		void startGame();
+private://Fonctions
+	void update();
+	void updateInput();
+	void updateLogic();
+	void updateEvent();
+	void render();
+	void movePlayer(Event event);
+	void playerCheckCollision();
 
+	//Fonction test, à enlever
+	static void signalHandler();
 
-	private://Fonctions
-		void update();
-		void updateInput();
-		void updateLogic();
-		void updateEvent();
-		void render();
-		void movePlayer(Event event);
-		void playerCheckCollision();
-
-
-		//Fonction test, à enlever
-		static void signalHandler();
-
-		//Variables
-		TimeManager timeManager;
-		const unsigned int FPS = 60;
-		GameDataRef data = std::make_shared<GameData>();
-		sf::Vector2f vecteurDeplacement;
-		Player* player;
-		//test
-		Player* playerTest;
-		KeyboardMap* keyboardMap;
-		Map* map;
+	//Variables
+	Event event;
+	TimeManager timeManager;
+	const unsigned int FPS = 60;
+	GameDef::GameDataRef data = std::make_shared<GameDef::GameData>();
+	sf::Vector2f vecteurDeplacement;
+	Player* player;
+	Player* playerTest;
+	KeyboardMap* keyboardMap = new KeyboardMap();
+	Map* map;
 
 
-	protected:
-		//ViewManager* camera;
-		//GameState* currentState;
+protected:
+	//ViewManager* camera;
+	GameState* currentGameState = new GameState("MainMenu", data, event, keyboardMap);
 
-	};
-}
+};
