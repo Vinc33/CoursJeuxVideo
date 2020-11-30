@@ -12,6 +12,7 @@ static bool debug = false;
 
 
 //initialize static variables
+//je veux update
 
 namespace GameView
 {
