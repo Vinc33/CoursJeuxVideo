@@ -1,9 +1,10 @@
 #include "BaseEntity.h"
 #include "Manager/AssetManager.h"
 
-BaseEntity::BaseEntity(string spriteName, string objectName, int hp, bool isDestroyable)
+BaseEntity::BaseEntity(string spriteName, string objectName, int hp, int damage, bool isDestroyable)
 {
 	sprite.setTexture(AssetManager::getTexture(spriteName) );
+	this->damage = damage;
 	this->isDestroyable = isDestroyable;
 	if (isDestroyable)
 	{

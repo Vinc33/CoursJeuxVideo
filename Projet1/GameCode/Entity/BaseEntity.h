@@ -7,7 +7,7 @@ class BaseEntity
 {
 public:
 	BaseEntity() {}
-	BaseEntity(string spriteName, string objectName, int hp, bool isDestroyable);
+	BaseEntity(string spriteName, string objectName, int hp, int damage, bool isDestroyable);
 	virtual ~BaseEntity() {}
 			
 	virtual void update() {}
@@ -19,6 +19,7 @@ protected:
 	string objectName;
 	bool isCollided;
 	int hp;
+	int damage;
 	bool isDestroyable;
 };
 

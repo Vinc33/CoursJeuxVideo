@@ -1,6 +1,6 @@
 #include "Platform.h"
 
-Platform::Platform(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "platform", 100, false)
+Platform::Platform(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "platform", 100, 0, false)
 {
 
 }

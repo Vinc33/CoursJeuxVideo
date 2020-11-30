@@ -1,6 +1,6 @@
 #include "Barrel.h"
 
-Barrel::Barrel(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "barrel", 100, false)
+Barrel::Barrel(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "barrel", 100, 0, false)
 {
 
 }

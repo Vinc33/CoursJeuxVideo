@@ -1,6 +1,6 @@
 #include "Container.h"
 
-Container::Container(int hp, bool destroyable) : BaseEntity("Asset/Sprite/container.png", "container", 100, false)
+Container::Container(int hp, bool destroyable) : BaseEntity("Asset/Sprite/container.png", "container", 100, 0, false)
 {
 
 }

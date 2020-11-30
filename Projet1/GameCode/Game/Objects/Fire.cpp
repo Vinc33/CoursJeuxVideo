@@ -1,6 +1,6 @@
 #include "Fire.h"
 
-Fire::Fire(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "fire", 100, false)
+Fire::Fire(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "fire", 100, 10, false)
 {
 
 }

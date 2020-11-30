@@ -1,6 +1,6 @@
 #include "Crate.h"
 
-Crate::Crate(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "crate", 100, false)
+Crate::Crate(int hp, bool destroyable) : BaseEntity("Asset/Sprite/barrel.png", "crate", 100, 0, false)
 {
 
 }
