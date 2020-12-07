@@ -275,3 +275,4 @@ void GameState::changeGameState(std::string state)
 #pragma endregion Settings
 	}
 }
+

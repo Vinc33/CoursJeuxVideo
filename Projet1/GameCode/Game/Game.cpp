@@ -8,6 +8,7 @@ bool debug = true;
 #else
 bool debug = false;
 #endif
+#include <Game\Tycoon\MainTycoon.h>
 
 
 //initialize static variables
@@ -20,12 +21,40 @@ Game::Game(int width, int height, string titleScreen)
 	Vector2f vecteurDeplacement(0.0, 0.0);
 }
 
+
 Game::~Game()
 {
 	delete player;
 	delete playerTest;
 	delete map;
 }
+
+	void Game::init()
+	{
+		data->window.setFramerateLimit(FPS);
+		AssetManager::init();
+		InputManager::init();
+		player = new Player("steamMan", 48, 48,24,40);
+		player->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
+		player->setPosition(400, 400);
+		player->setVelocity(Vector2f(20, 20));//exemple pour augmenter la vitesse
+
+		//testing
+		playerTest = new Player("steamMan", 48, 48, 24, 40);
+		playerTest->setWeapon(new Weapon("steamMan", 48, 48, "steamMan", 48, 48));
+		playerTest->setPosition(200, 400);
+		map = new Map();
+		
+		keyboardMap = new KeyboardMap();
+		//tgui::Text text1;
+		//window->add(text1, "monText");
+		//text1 = window->get<tgui::Text>("monText");
+		//text1.setString("Requis : ");
+		//text1.setPosition(75, 475);
+		//text1.setCharacterSize(15);
+	
+	}
+
 
 void Game::init()
 {
@@ -255,6 +284,11 @@ void Game::update()
 		//button->setTextSize(28);
 		//button->connect("Pressed", Game::signalHandler); //Relier le bouton à une fonction(doit être statique si on utilise la classe et non une instance), le premier paramètre est prédéfinis
 		//button->connect("Pressed", [&]() { std::cout << "input2" << endl; }); //Exemple en lambda, notez que le bouton peut prendre deux fonctions
+<<<<<<< HEAD
+=======
+		
+
+>>>>>>> MathieuBienvenu
 
 
 		//End of testing GUI
