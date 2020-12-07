@@ -6,10 +6,9 @@
 #ifdef NDEBUG
 bool debug = true;
 #else
-bool debug = true;
+bool debug = false;
 #endif
 #include <Game\Tycoon\MainTycoon.h>
-
 
 //initialize static variables
 //je veux update
@@ -49,7 +48,6 @@ void Game::init()
 	map->setBackground("Assets/Background/placeholder.jpg");
 	//testing map
 	map->addMapEntity(new Ladder(100, 0, false));
-
 }
 
 void Game::updateEvent()
@@ -102,10 +100,8 @@ void Game::updateEvent()
 			std::cout << "Le bouton milieu scroll a ete appuyee" << std::endl;
 
 		data->gui.handleEvent(event); // Pass the event to the widgets
-
 	}
 }
-
 
 void Game::updateLogic()
 {
@@ -136,7 +132,6 @@ void Game::update()
 			updateEvent();
 
 			render(); //Animations
-
 		}
 	}
 }
@@ -202,39 +197,25 @@ void Game::movePlayer(Event event)		//Deplace le joueur en fonction de la touche
 		deplacement.x = 1;
 	else if (InputManager::getPressedKeyCode(event) == keyboardMap->getAttackKey())
 	{
-		Vector2f deplacement(0, 0);
-		bool keyPressed = true;
-		bool moved = true;
-
-		if (InputManager::getPressedKeyCode(event) == keyboardMap->getUpKey())
-			deplacement.y = -1;
-		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getLeftKey())
-			deplacement.x = -1;
-		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getDownKey())
-			deplacement.y = 1;
-		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getRightKey())
-			deplacement.x = 1;
-		else if (InputManager::getPressedKeyCode(event) == keyboardMap->getAttackKey())
-		{
-			player->shoot(5);	//evite d'entrer dans la boucle suivante fait pour les déplacement sans s'être déplacé
-			moved = false;		//si on enleve ca, les balles ne marcheront pas lorsque l'on shoot sans se déplacer
-		}
-		if (moved)
-			player->move(deplacement);
-
-
-		/*while (keyPressed && moved)
-		{
-			data->window.pollEvent(event);				//À ne jamais remettre!!!  Ordre de Vincent.
-			if (event.type == Event::KeyReleased)
-				keyPressed = false;
-			player->move(deplacement);
-			//player->render(data->window);
-			render();
-		}*/
-
-		playerCheckCollision();
+		player->shoot(5);	//evite d'entrer dans la boucle suivante fait pour les déplacement sans s'être déplacé
+		moved = false;		//si on enleve ca, les balles ne marcheront pas lorsque l'on shoot sans se déplacer
 	}
+
+
+	/*while (keyPressed && moved)
+	{
+		data->window.pollEvent(event);				//À ne jamais remettre!!!  Ordre de Vincent.
+		if (event.type == Event::KeyReleased)
+			keyPressed = false;
+		player->move(deplacement);
+		//player->render(data->window);
+		render();
+	}*/
+
+	if (moved)
+		player->move(deplacement);
+	playerCheckCollision();
+
 }
 
 void Game::playerCheckCollision()

@@ -30,7 +30,7 @@ public:
 
 	static bool isMouseNotHover(sf::Event event); //Retrourne true ou false si la souris quitte l'objet
 
-	static bool validateInput(sf::Event event);
+	static bool validateInput(sf::Event event); //Valide qu'une input soit: A-Z, a-z, 0-9, ^/</>/., ' '
 
 };
 

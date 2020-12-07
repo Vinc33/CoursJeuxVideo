@@ -25,9 +25,9 @@ void GameState::changeGameState(std::string state)
 		tgui::BitmapButton::Ptr buttonSettings = tgui::BitmapButton::create();
 		data->gui.add(buttonSettings, "SettingsButton");
 		buttonSettings = data->gui.get<tgui::BitmapButton>("SettingsButton");
-		buttonSettings->setSize(250, 100);
+		buttonSettings->setSize(200, 114);
 		buttonSettings->setPosition(390, 250);
-		buttonSettings->setText("Paramètres");
+		buttonSettings->setImage("GameCode/Images/engrenages.png");
 		buttonSettings->connect("Pressed", [&]() { GameState::changeGameState("Settings"); });
 		tgui::BitmapButton::Ptr buttonQuit = tgui::BitmapButton::create();
 		data->gui.add(buttonQuit, "QuitterButton");
