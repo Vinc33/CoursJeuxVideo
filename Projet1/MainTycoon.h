@@ -1,14 +1,20 @@
 #pragma once
 #include "Banque.h"
 #include "Usine.h"
+#include <SFML\System\Time.hpp>
+
+
+
 class MainTycoon
 {
 private:
-    Banque* portefeuille;
-    Usine* StandMenager[];
-
+    Banque* porteFeuille;
+    Usine* standMenager[];
+    sf::Time increment;
 public:
-    MainTycoon();
-    void ameliorer();
+    void init();
+    static void ameliorer(int valeur);
+    void ajouter();
 };
+
 
