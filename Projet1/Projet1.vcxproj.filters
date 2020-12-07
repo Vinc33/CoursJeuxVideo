@@ -76,34 +76,34 @@
       <Filter>Engine\Game</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\BalaiVibranium.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\Balayagerapide.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\Banque.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\AspirateurQuantique.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\CPUAmeliorer.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\Detecteurdepoussiere.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\FactoryUsine.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\GameStateTycoon.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\MainTycoon.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\Usine.cpp">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -189,34 +189,34 @@
       <Filter>Engine\Utils</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\Banque.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\AspirateurQuantique.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\BalaiVibranium.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\Balayagerapide.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\CPUAmeliorer.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\Detecteurdepoussiere.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\Usine.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\FactoryUsine.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\GameStateTycoon.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\MainTycoon.h">
-      <Filter>Tycoon</Filter>
+      <Filter>Engine\Tycoon</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -256,7 +256,7 @@
     <Filter Include="Engine\Images">
       <UniqueIdentifier>{05ac9305-858a-4411-9b65-df10ecfe0feb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tycoon">
+    <Filter Include="Engine\Tycoon">
       <UniqueIdentifier>{bb1ba376-a628-47df-b1c6-95cf6d8f8801}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
