@@ -50,6 +50,6 @@ private://Fonctions
 
 protected:
 	//ViewManager* camera;
-	GameState* currentGameState = new GameState("MainMenu", data, event, keyboardMap);
+	GameState* currentGameState = new GameState("MainMenu", data, &event, keyboardMap);
 
 };

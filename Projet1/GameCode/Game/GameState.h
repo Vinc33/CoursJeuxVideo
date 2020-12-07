@@ -10,7 +10,7 @@ class GameState
 {
 public:
 
-	GameState(std::string state, std::shared_ptr<GameDef::GameData> data, Event event, KeyboardMap* keyboardMap);
+	GameState(std::string state, std::shared_ptr<GameDef::GameData> data, Event* event, KeyboardMap* keyboardMap);
 
 	enum State { Pause, Platformer, Tycoon, MainMenu, Settings };
 
@@ -25,7 +25,7 @@ private:
 
 	std::string state;
 	std::shared_ptr<GameDef::GameData> data;
-	Event event;
+	Event* event;
 	KeyboardMap* keyboardMap;
 
 };

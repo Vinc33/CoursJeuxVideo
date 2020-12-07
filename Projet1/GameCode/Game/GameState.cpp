@@ -1,6 +1,6 @@
 #include "GameState.h"
 
-GameState::GameState(std::string state, std::shared_ptr<GameDef::GameData> data, Event event, KeyboardMap* keyboardMap)
+GameState::GameState(std::string state, std::shared_ptr<GameDef::GameData> data, Event* event, KeyboardMap* keyboardMap)
 {
 	this->state = state;
 	this->data = data;
@@ -21,7 +21,7 @@ void GameState::changeGameState(std::string state)
 		buttonStart->setSize(400, 100);
 		buttonStart->setPosition(390, 50);
 		buttonStart->setImage("GameCode/Images/Jouer.png");
-		buttonStart->connect("Pressed", [&]() { GameState::changeGameState("Settings"); });
+		buttonStart->connect("Pressed", [&]() { GameState::changeGameState("Tycoon"); });
 		tgui::BitmapButton::Ptr buttonSettings = tgui::BitmapButton::create();
 		data->gui.add(buttonSettings, "SettingsButton");
 		buttonSettings = data->gui.get<tgui::BitmapButton>("SettingsButton");
@@ -79,8 +79,8 @@ void GameState::changeGameState(std::string state)
 		editBoxAtk->setAlignment(tgui::EditBox::Alignment::Center);
 		editBoxAtk->setMaximumCharacters(1);
 		editBoxAtk->connect("TextChanged", [&]() {
-			if (InputManager::validateInput(event))
-				keyboardMap->setAttackKey(InputManager::getPressedKeyCodeInInput(event)); });
+			if (InputManager::validateInput(*event))
+				keyboardMap->setAttackKey(InputManager::getPressedKeyCodeInInput(*event)); });
 
 		tgui::Panel::Ptr panelJump = tgui::Panel::create();
 		data->gui.add(panelJump, "PanelJump");
@@ -105,8 +105,8 @@ void GameState::changeGameState(std::string state)
 		editBoxJump->setAlignment(tgui::EditBox::Alignment::Center);
 		editBoxJump->setMaximumCharacters(1);
 		editBoxJump->connect("TextChanged", [&]() {
-			if (InputManager::validateInput(event))
-				keyboardMap->setJumpKey(InputManager::getPressedKeyCodeInInput(event)); });
+			if (InputManager::validateInput(*event))
+				keyboardMap->setJumpKey(InputManager::getPressedKeyCodeInInput(*event)); });
 
 		tgui::Panel::Ptr panelSkill1 = tgui::Panel::create();
 		data->gui.add(panelSkill1, "PanelSkill1");
@@ -131,8 +131,8 @@ void GameState::changeGameState(std::string state)
 		editBoxSkill1->setAlignment(tgui::EditBox::Alignment::Center);
 		editBoxSkill1->setMaximumCharacters(1);
 		editBoxSkill1->connect("TextChanged", [&]() {
-			if (InputManager::validateInput(event))
-				keyboardMap->setSkill1Key(InputManager::getPressedKeyCodeInInput(event)); });
+			if (InputManager::validateInput(*event))
+				keyboardMap->setSkill1Key(InputManager::getPressedKeyCodeInInput(*event)); });
 
 		tgui::Panel::Ptr panelSkill2 = tgui::Panel::create();
 		data->gui.add(panelSkill2, "PanelSkill2");
@@ -157,8 +157,8 @@ void GameState::changeGameState(std::string state)
 		editBoxSkill2->setAlignment(tgui::EditBox::Alignment::Center);
 		editBoxSkill2->setMaximumCharacters(1);
 		editBoxSkill2->connect("TextChanged", [&]() {
-			if (InputManager::validateInput(event))
-				keyboardMap->setSkill2Key(InputManager::getPressedKeyCodeInInput(event)); });
+			if (InputManager::validateInput(*event))
+				keyboardMap->setSkill2Key(InputManager::getPressedKeyCodeInInput(*event)); });
 
 		tgui::Panel::Ptr panelUp = tgui::Panel::create();
 		data->gui.add(panelUp, "PanelUp");
@@ -183,8 +183,8 @@ void GameState::changeGameState(std::string state)
 		editBoxUp->setAlignment(tgui::EditBox::Alignment::Center);
 		editBoxUp->setMaximumCharacters(1);
 		editBoxUp->connect("TextChanged", [&]() {
-			if (InputManager::validateInput(event))
-				keyboardMap->setUpKey(InputManager::getPressedKeyCodeInInput(event)); });
+			if (InputManager::validateInput(*event))
+				keyboardMap->setUpKey(InputManager::getPressedKeyCodeInInput(*event)); });
 
 		tgui::Panel::Ptr panelDown = tgui::Panel::create();
 		data->gui.add(panelDown, "PanelDown");
@@ -209,8 +209,8 @@ void GameState::changeGameState(std::string state)
 		editBoxDown->setAlignment(tgui::EditBox::Alignment::Center);
 		editBoxDown->setMaximumCharacters(1);
 		editBoxDown->connect("TextChanged", [&]() {
-			if (InputManager::validateInput(event))
-				keyboardMap->setDownKey(InputManager::getPressedKeyCodeInInput(event)); });
+			if (InputManager::validateInput(*event))
+				keyboardMap->setDownKey(InputManager::getPressedKeyCodeInInput(*event)); });
 
 		tgui::Panel::Ptr panelLeft = tgui::Panel::create();
 		data->gui.add(panelLeft, "PanelLeft");
@@ -235,8 +235,8 @@ void GameState::changeGameState(std::string state)
 		editBoxLeft->setAlignment(tgui::EditBox::Alignment::Center);
 		editBoxLeft->setMaximumCharacters(1);
 		editBoxLeft->connect("TextChanged", [&]() {
-			if (InputManager::validateInput(event))
-				keyboardMap->setLeftKey(InputManager::getPressedKeyCodeInInput(event)); });
+			if (InputManager::validateInput(*event))
+				keyboardMap->setLeftKey(InputManager::getPressedKeyCodeInInput(*event)); });
 
 		tgui::Panel::Ptr panelRight = tgui::Panel::create();
 		data->gui.add(panelRight, "PanelRight");
@@ -261,8 +261,8 @@ void GameState::changeGameState(std::string state)
 		editBoxRight->setAlignment(tgui::EditBox::Alignment::Center);
 		editBoxRight->setMaximumCharacters(1);
 		editBoxRight->connect("TextChanged", [&]() {
-			if (InputManager::validateInput(event))
-				keyboardMap->setRightKey(InputManager::getPressedKeyCodeInInput(event)); });
+			if (InputManager::validateInput(*event))
+				keyboardMap->setRightKey(InputManager::getPressedKeyCodeInInput(*event)); });
 
 		tgui::Button::Ptr buttonBack = tgui::Button::create();
 		data->gui.add(buttonBack, "ButtonBack");
