@@ -10,7 +10,6 @@ void GameStateTycoon::init() // Initialiser tous l'interface du tycoon
 	//MainTycoon* main = new MainTycoon();
 	//main->init();
 	//int value = 0;
-	////Test Sulli
 	//tgui::ChildWindow::Ptr window = tgui::ChildWindow::create();
 	//data->gui.add(window, "window");
 	//window = data->gui.get<tgui::ChildWindow>("window");
