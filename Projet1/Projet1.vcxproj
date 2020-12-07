@@ -142,6 +142,7 @@
     <ClCompile Include="GameCode\Entity\Weapon.cpp" />
     <ClCompile Include="GameCode\Game\Game.cpp" />
     <ClCompile Include="GameCode\Game\GameState.cpp" />
+    <ClCompile Include="GameCode\Game\GameStateTycoon.cpp" />
     <ClCompile Include="GameCode\Game\Map.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Barrel.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Container.cpp" />
@@ -149,6 +150,15 @@
     <ClCompile Include="GameCode\Game\Objects\Fire.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Ladder.cpp" />
     <ClCompile Include="GameCode\Game\Objects\Platform.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\AspirateurQuantique.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\BalaiVibranium.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\Balayagerapide.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\Banque.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\CPUAmeliorer.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\Detecteurdepoussiere.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\FactoryUsine.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\MainTycoon.cpp" />
+    <ClCompile Include="GameCode\Game\Tycoon\Usine.cpp" />
     <ClCompile Include="GameCode\Input\KeyboardMap.cpp" />
     <ClCompile Include="GameCode\Manager\AssetManager.cpp" />
     <ClCompile Include="GameCode\Manager\InputManager.cpp" />
@@ -167,6 +177,7 @@
     <ClInclude Include="GameCode\Entity\Weapon.h" />
     <ClInclude Include="GameCode\Game\Game.h" />
     <ClInclude Include="GameCode\Game\GameState.h" />
+    <ClInclude Include="GameCode\Game\GameStateTycoon.h" />
     <ClInclude Include="GameCode\Game\Map.h" />
     <ClInclude Include="GameCode\Game\Objects\Barrel.h" />
     <ClInclude Include="GameCode\Game\Objects\Container.h" />
@@ -174,6 +185,15 @@
     <ClInclude Include="GameCode\Game\Objects\Fire.h" />
     <ClInclude Include="GameCode\Game\Objects\Ladder.h" />
     <ClInclude Include="GameCode\Game\Objects\Platform.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\AspirateurQuantique.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\BalaiVibranium.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\Balayagerapide.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\Banque.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\CPUAmeliorer.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\Detecteurdepoussiere.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\FactoryUsine.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\MainTycoon.h" />
+    <ClInclude Include="GameCode\Game\Tycoon\Usine.h" />
     <ClInclude Include="GameCode\Input\KeyboardMap.h" />
     <ClInclude Include="GameCode\Manager\AssetManager.h" />
     <ClInclude Include="GameCode\Manager\InputManager.h" />
