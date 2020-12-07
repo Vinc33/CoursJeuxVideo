@@ -15,25 +15,32 @@ void GameState::changeGameState(std::string state)
 	if (this->state == "MainMenu")
 	{
 #pragma region MainMenu
+		tgui::BitmapButton::Ptr mainTitle = tgui::BitmapButton::create();
+		data->gui.add(mainTitle, "MainTitle");
+		mainTitle = data->gui.get<tgui::BitmapButton>("MainTitle");
+		mainTitle->setEnabled(false);
+		mainTitle->setSize(800, 102);
+		mainTitle->setPosition(100, 100);
+		mainTitle->setImage("GameCode/Images/CyberRun.png");
 		tgui::BitmapButton::Ptr buttonStart = tgui::BitmapButton::create();
 		data->gui.add(buttonStart, "StartButton");
 		buttonStart = data->gui.get<tgui::BitmapButton>("StartButton");
-		buttonStart->setSize(400, 100);
-		buttonStart->setPosition(390, 50);
+		buttonStart->setSize(345, 100);
+		buttonStart->setPosition(350, 300);
 		buttonStart->setImage("GameCode/Images/Jouer.png");
 		buttonStart->connect("Pressed", [&]() { GameState::changeGameState("Tycoon"); });
 		tgui::BitmapButton::Ptr buttonSettings = tgui::BitmapButton::create();
 		data->gui.add(buttonSettings, "SettingsButton");
 		buttonSettings = data->gui.get<tgui::BitmapButton>("SettingsButton");
 		buttonSettings->setSize(200, 114);
-		buttonSettings->setPosition(390, 250);
+		buttonSettings->setPosition(800, 886);
 		buttonSettings->setImage("GameCode/Images/engrenages.png");
 		buttonSettings->connect("Pressed", [&]() { GameState::changeGameState("Settings"); });
 		tgui::BitmapButton::Ptr buttonQuit = tgui::BitmapButton::create();
 		data->gui.add(buttonQuit, "QuitterButton");
 		buttonQuit = data->gui.get<tgui::BitmapButton>("QuitterButton");
 		buttonQuit->setSize(450, 100);
-		buttonQuit->setPosition(390, 450);
+		buttonQuit->setPosition(300, 500);
 		buttonQuit->setImage("GameCode/Images/Quitter.png");
 		buttonQuit->connect("Pressed", [&]() { data->window.close(); });
 #pragma endregion MainMenu
@@ -268,7 +275,7 @@ void GameState::changeGameState(std::string state)
 		data->gui.add(buttonBack, "ButtonBack");
 		buttonBack = data->gui.get<tgui::Button>("ButtonBack");
 		buttonBack->setSize(200, 100);
-		buttonBack->setPosition(440, 900);
+		buttonBack->setPosition(440, 850);
 		buttonBack->setTextSize(68);
 		buttonBack->setText("Back");
 		buttonBack->connect("Pressed", [&]() { GameState::changeGameState("MainMenu"); });
