@@ -11,6 +11,7 @@
 #include "Input/KeyboardMap.h"
 #include "Map.h"
 #include "Utils/Objects.h"
+#include "./Manager/AudioManager.h"
 
 using namespace sf;
 

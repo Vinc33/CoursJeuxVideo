@@ -48,6 +48,16 @@ void Game::init()
 	map->setBackground("Assets/Background/placeholder.jpg");
 	//testing map
 	map->addMapEntity(new Ladder(100, 0, false));
+
+	AudioManager::loadBuffer("RightClick", "../Sons/001-System01.ogg");
+	AudioManager::loadSound("RightClick");
+	AudioManager::loadBuffer("LeftClick", "../Sons/002-System02.ogg");
+	AudioManager::loadSound("LeftClick");
+	AudioManager::loadMusic("musiqueDeFond", "../Sons/061-Thunderclap01.ogg");
+
+	AudioManager::music["musiqueDeFond"].play();
+	AudioManager::music["musiqueDeFond"].setLoop(true);
+
 }
 
 void Game::updateEvent()
@@ -84,10 +94,14 @@ void Game::updateEvent()
 		}
 		if (event.type == Event::MouseButtonPressed)
 		{
-			if (InputManager::isMouseButtonPressed(event, sf::Mouse::Button::Left))
+			if (InputManager::isMouseButtonPressed(event, sf::Mouse::Button::Left)) {
+				AudioManager::sound["LeftClick"].play();
 				std::cout << "Le bouton gauche a ete appuyee" << std::endl;
-			if (InputManager::isMouseButtonPressed(event, sf::Mouse::Button::Right))
+			}
+			if (InputManager::isMouseButtonPressed(event, sf::Mouse::Button::Right)) {
+				AudioManager::sound["RightClick"].play();
 				std::cout << "Le bouton droit a ete appuyee" << std::endl;
+			}
 			if (InputManager::isMouseButtonPressed(event, sf::Mouse::Button::Middle))
 				std::cout << "Le bouton milieu a ete appuyee" << std::endl;
 		}
