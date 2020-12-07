@@ -28,7 +28,7 @@ void GameState::changeGameState(std::string state)
 		buttonSettings->setSize(250, 100);
 		buttonSettings->setPosition(390, 250);
 		buttonSettings->setText("Paramètres");
-		buttonSettings->connect("Pressed", [&]() { state = "Settings"; GameState::changeGameState("Settings"); });
+		buttonSettings->connect("Pressed", [&]() { GameState::changeGameState("Settings"); });
 		tgui::BitmapButton::Ptr buttonQuit = tgui::BitmapButton::create();
 		data->gui.add(buttonQuit, "QuitterButton");
 		buttonQuit = data->gui.get<tgui::BitmapButton>("QuitterButton");
