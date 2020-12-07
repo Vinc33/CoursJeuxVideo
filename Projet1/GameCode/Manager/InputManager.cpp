@@ -62,7 +62,15 @@ sf::Keyboard::Key InputManager::getPressedKeyCodeInInput(sf::Event event) //Reto
 	else if (event.key.code >= 48 && event.key.code <= 57)
 		return static_cast<sf::Keyboard::Key>(event.key.code - 22); // Chiffres de 0 - 9
 	else if (event.key.code == 32)
-		return static_cast<sf::Keyboard::Key>(event.key.code + 15); // Barre Espace
+		return sf::Keyboard::Space;
+	else if (event.key.code == 94)
+		return sf::Keyboard::Up;
+	else if (event.key.code == 46)
+		return sf::Keyboard::Down;
+	else if (event.key.code == 60)
+		return sf::Keyboard::Left;
+	else if (event.key.code == 62)
+		return sf::Keyboard::Right;
 	return static_cast<sf::Keyboard::Key>(event.key.code);
 }
 
@@ -76,6 +84,14 @@ bool InputManager::validateInput(sf::Event event) //Valide si la key appuyée es
 		return true; // Chiffres de 0 - 9
 	else if (event.key.code == 32)
 		return true; // Barre Espace
+	else if (event.key.code == 94)
+		return true; // ^ ou flèche du haut
+	else if (event.key.code == 46)
+		return true; // . ou flèche du bas
+	else if (event.key.code == 60)
+		return true; // < ou flèche de gauche
+	else if (event.key.code == 62)
+		return true; // > ou flèche de droite
 	return false;
 }
 
