@@ -1,4 +1,9 @@
 Assets/Sprite/SteamMan/SteamMan.png steamMan|
 Assets/Sprite/SteamMan/SteamMan_idle.png steamManIdle|
 Assets/Sprite/SteamMan/SteamMan_walk.png steamManWalk|
-Assets/Sprite/SteamMan/SteamMan.png barrel
+Assets/Sprite/SteamMan/SteamMan.png barrel|
+Assets/Background/Tycoon_BackgroundFinal.png mapTycoon|
+Assets/Background/StandBasic.png standBasic|
+Assets/Background/Stand_Cuisine.png standCuisine|
+Assets/Background/Stand_Research.png standResearch|
+Assets/Background/Stand_Medic.png standMedic
