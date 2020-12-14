@@ -131,7 +131,6 @@ void Game::signalHandler()
 void Game::update()
 {
 	currentGameState->changeGameState("MainMenu");
-
 	while (data->window.isOpen())
 	{
 		map->update();
@@ -142,7 +141,7 @@ void Game::update()
 			timeManager.update();
 
 			//	currentState->updateInput();
-			//	currentState->update();
+			currentGameState->update();
 			updateEvent();
 
 			render(); //Animations

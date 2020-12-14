@@ -96,9 +96,6 @@
     <ClCompile Include="GameCode\Game\Tycoon\FactoryUsine.cpp">
       <Filter>Engine\Tycoon</Filter>
     </ClCompile>
-    <ClCompile Include="GameCode\Game\GameStateTycoon.cpp">
-      <Filter>Engine\Tycoon</Filter>
-    </ClCompile>
     <ClCompile Include="GameCode\Game\Tycoon\MainTycoon.cpp">
       <Filter>Engine\Tycoon</Filter>
     </ClCompile>
@@ -213,9 +210,6 @@
       <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\FactoryUsine.h">
-      <Filter>Engine\Tycoon</Filter>
-    </ClInclude>
-    <ClInclude Include="GameCode\Game\GameStateTycoon.h">
       <Filter>Engine\Tycoon</Filter>
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\MainTycoon.h">

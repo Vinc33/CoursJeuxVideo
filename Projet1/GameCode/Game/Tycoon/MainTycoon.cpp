@@ -1,24 +1,26 @@
 #include "MainTycoon.h"
-#include "FactoryUsine.h"
-#include <SFML\System\Clock.hpp>
 
-Banque* porteFeuille = new Banque();
-Usine* standMenager[15];
 
  MainTycoon::MainTycoon()
 {
-   
+     for each (Usine* usine in standMenager)
+     {
+         usine = FactoryUsine::CreerUsine();
+     }
 }
+
  MainTycoon::~MainTycoon() {
      delete porteFeuille;
      delete standMenager;
      
  }
+
  void MainTycoon::init() {
+     porteFeuille = new Banque();
      standMenager[0] = FactoryUsine::CreerUsine();
      standMenager[1] = FactoryUsine::CreerUsine(standMenager[0]->getNumUsine());
-   
  }
+
 void MainTycoon::ameliorer(int valeur) {
     if (standMenager[valeur]->getAcheter() == false && standMenager[valeur-1]->getNiveau() >= 15 && standMenager[valeur]->getCoutAmelioration() <= porteFeuille->getSomme()) {
         

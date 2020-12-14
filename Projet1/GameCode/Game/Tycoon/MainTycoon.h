@@ -1,24 +1,23 @@
 #pragma once
-#include "Banque.h"
-#include "Usine.h"
-#include <SFML\System\Time.hpp>
-
-
+#include "FactoryUsine.h"
 
 class MainTycoon
 {
 private:
-    
-  
-  
+
+	Banque* porteFeuille;
+
 public:
-    MainTycoon();
-    ~MainTycoon();
-    void init();
-    static void ameliorer(int valeur);
-    void ajouter();
-   static std::string AfficherUsine(int value);
-   static std::string AfficherBanque();
+
+	MainTycoon();
+	~MainTycoon();
+	void init();
+	Usine* standMenager[15];
+
+	void ameliorer(int valeur);
+	void ajouter();
+	std::string AfficherUsine(int value);
+	std::string AfficherBanque();
 
 };
 
