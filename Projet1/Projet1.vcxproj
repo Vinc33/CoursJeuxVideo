@@ -163,6 +163,7 @@
     <ClCompile Include="GameCode\Game\Tycoon\Usine.cpp" />
     <ClCompile Include="GameCode\Input\KeyboardMap.cpp" />
     <ClCompile Include="GameCode\Manager\AssetManager.cpp" />
+    <ClCompile Include="GameCode\Manager\AudioManager.cpp" />
     <ClCompile Include="GameCode\Manager\InputManager.cpp" />
     <ClCompile Include="GameCode\Manager\TimeManager.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -200,6 +201,7 @@
     <ClInclude Include="GameCode\Game\Tycoon\Usine.h" />
     <ClInclude Include="GameCode\Input\KeyboardMap.h" />
     <ClInclude Include="GameCode\Manager\AssetManager.h" />
+    <ClInclude Include="GameCode\Manager\AudioManager.h" />
     <ClInclude Include="GameCode\Manager\InputManager.h" />
     <ClInclude Include="GameCode\Manager\TimeManager.h" />
     <ClInclude Include="GameCode\Utils\Consts.h" />

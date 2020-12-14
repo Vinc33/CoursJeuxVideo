@@ -105,6 +105,9 @@
     <ClCompile Include="GameCode\Game\Tycoon\Usine.cpp">
       <Filter>Engine\Tycoon</Filter>
     </ClCompile>
+    <ClCompile Include="GameCode\Manager\AudioManager.cpp">
+      <Filter>Engine\Manager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameCode\Game\GameState.h">
@@ -217,6 +220,9 @@
     </ClInclude>
     <ClInclude Include="GameCode\Game\Tycoon\MainTycoon.h">
       <Filter>Engine\Tycoon</Filter>
+    </ClInclude>
+    <ClInclude Include="GameCode\Manager\AudioManager.h">
+      <Filter>Engine\Manager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
