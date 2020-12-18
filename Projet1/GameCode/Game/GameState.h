@@ -5,12 +5,16 @@
 #include "./Manager/TimeManager.h"
 #include "Input/KeyboardMap.h"
 #include "GameDef.h"
+#include "Game/Tycoon/MainTycoon.h"
 
 class GameState
 {
 public:
 
 	GameState(std::string state, std::shared_ptr<GameDef::GameData> data, Event* event, KeyboardMap* keyboardMap);
+
+	void AfficherMenuStand(int valeurStand); // test alex
+
 
 	enum State { Pause, Platformer, Tycoon, MainMenu, Settings };
 
@@ -23,10 +27,11 @@ public:
 
 private:
 
+	MainTycoon* main = new MainTycoon();
 	std::string state;
 	std::shared_ptr<GameDef::GameData> data;
 	Event* event;
-	KeyboardMap* keyboardMap;
+	KeyboardMap* keyboardMap;	
 
 };
 

@@ -6,4 +6,7 @@ Assets/Background/Tycoon_BackgroundFinal.png mapTycoon|
 Assets/Background/StandBasic.png standBasic|
 Assets/Background/Stand_Cuisine.png standCuisine|
 Assets/Background/Stand_Research.png standResearch|
-Assets/Background/Stand_Medic.png standMedic
+Assets/Background/Stand_Medic.png standMedic|
+Assets/Background/Stand_Menage.png standMenage|
+Assets/Background/Stand_Divertissement.png standDivertissement|
+Assets/Background/StandMilitaire.png standMilitaire
