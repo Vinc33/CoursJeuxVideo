@@ -13,6 +13,9 @@ public:
 
 	GameState(std::string state, std::shared_ptr<GameDef::GameData> data, Event* event, KeyboardMap* keyboardMap);
 
+	void AfficherMenuStand(int valeurStand); // test alex
+
+
 	enum State { Pause, Platformer, Tycoon, MainMenu, Settings };
 
 	virtual void updateEvent(sf::Event event) {}
@@ -28,7 +31,7 @@ private:
 	std::string state;
 	std::shared_ptr<GameDef::GameData> data;
 	Event* event;
-	KeyboardMap* keyboardMap;
+	KeyboardMap* keyboardMap;	
 
 };
 
