@@ -130,6 +130,8 @@ void Game::signalHandler()
 
 void Game::update()
 {
+	int i = 0;
+	int event = 0;
 	currentGameState->changeGameState("MainMenu");
 	while (data->window.isOpen())
 	{
@@ -139,12 +141,21 @@ void Game::update()
 		{
 			//boucle de jeu
 			timeManager.update();
-
+			
 			//	currentState->updateInput();
 			currentGameState->update();
 			updateEvent();
-
+			
 			render(); //Animations
+			i++;
+			event++;
+			if (i == 120) {
+				currentGameState->ajouterArgent();
+				i = 0;
+			}
+			if (event == 10000) {
+
+			}
 		}
 	}
 }

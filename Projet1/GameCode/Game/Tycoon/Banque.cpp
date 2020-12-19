@@ -12,9 +12,10 @@ Banque::Banque()
 {
     argent -= retrait;
 }
-std::string Banque::to_String()
+std::string Banque::AfficherPortefeuille()
 {
-    return "Somme : " + argent;
+    std::string message = "Somme : " + std::to_string(argent);
+    return message; 
 }
 
 int Banque::getSomme() {

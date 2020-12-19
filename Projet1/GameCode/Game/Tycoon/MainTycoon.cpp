@@ -3,10 +3,11 @@
 
  MainTycoon::MainTycoon()
 {
-     for each (Usine* usine in standMenager)
-     {
-         usine = FactoryUsine::CreerUsine();
-     }
+     porteFeuille = new Banque();
+     
+     for (int i = 0; i < 30; i++) {
+         standMenager[i] = FactoryUsine::CreerUsine(i);
+    }
 }
 
  MainTycoon::~MainTycoon() {
@@ -15,51 +16,38 @@
      
  }
 
- void MainTycoon::init() {
-     porteFeuille = new Banque();
-     standMenager[0] = FactoryUsine::CreerUsine();
-     standMenager[1] = FactoryUsine::CreerUsine(standMenager[0]->getNumUsine());
- }
 
 void MainTycoon::ameliorer(int valeur) {
-    if (standMenager[valeur]->getAcheter() == false && standMenager[valeur-1]->getNiveau() >= 15 && standMenager[valeur]->getCoutAmelioration() <= porteFeuille->getSomme()) {
-        
-        porteFeuille->enleverArgent(standMenager[valeur]->getCoutAmelioration());
-        standMenager[valeur]->amelioration();
-        standMenager[valeur + 1] = FactoryUsine::CreerUsine(standMenager[valeur]->getNumUsine());;
-    }
-    else if (standMenager[valeur]->getCoutAmelioration() <= porteFeuille->getSomme() && standMenager[valeur]->getAcheter() == true)
+    if (standMenager[valeur]->getCoutAmelioration() <= porteFeuille->getSomme() && standMenager[valeur]->getAcheter() == true) // améliore
     {
+    porteFeuille->enleverArgent(standMenager[valeur]->getCoutAmelioration());
+    standMenager[valeur]->amelioration();
+    }
+    else if (standMenager[valeur]->getAcheter() == false && standMenager[valeur-1]->getNiveau() >= 15 && standMenager[valeur]->getCoutAmelioration() <= porteFeuille->getSomme()) { // Achat de l'husine
+        
         porteFeuille->enleverArgent(standMenager[valeur]->getCoutAmelioration());
         standMenager[valeur]->amelioration();
-       
         
-       
     }
+    
 }
 
 void MainTycoon::ajouter()
 {
-//    if (increment.asMilliseconds() <= 0)
-//    {
-///*        increment = standMenager[0]->getTempdeProduction()*/
-//        porteFeuille->ajouterArgent(standMenager[0]->getGainArgent());
-//       
-//    }
-//    if (standMenager[1]->getAcheter() == true)
-//    {
-//        if (increment.asMilliseconds() <= 0)
-//        {
-//            /*increment = standMenager[1]->getTempdeProduction();*/
-//            porteFeuille->ajouterArgent(standMenager[1]->getGainArgent());
-//            
-//        }
-//    }
+    int i = 0;
+    while (standMenager[i]->getAcheter() == true) {
 
-}
+        porteFeuille->ajouterArgent(standMenager[i]->getGainArgent());
+        i++;
+    }
+  }
+
+
 std::string MainTycoon::AfficherUsine(int value) {
     return standMenager[value]->to_string();
 }
+
 std::string MainTycoon::AfficherBanque() {
-    return porteFeuille->to_String();
+    std::string message = porteFeuille->AfficherPortefeuille();
+    return  message;
 }

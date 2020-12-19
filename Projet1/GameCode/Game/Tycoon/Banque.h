@@ -9,7 +9,7 @@ public:
     Banque();
     void ajouterArgent(int ajout);
     void enleverArgent(int retrait);
-    std::string to_String();
+    std::string AfficherPortefeuille();
     int getSomme();
 };
 

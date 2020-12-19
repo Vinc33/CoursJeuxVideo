@@ -1,8 +1,17 @@
 #include "Usine.h"
 
 Usine::Usine() {
-	debloquer = false;
+	
 	valeurRevente = 0;
+}
+Usine::Usine( std::string nom, int coutAmelioration, std::string prerequis, int numUsine, int gainArgent) {
+    this->nom = nom;
+    this->coutAmelioration = coutAmelioration;
+    acheter = false;
+    this->prerequis = prerequis;
+    this->numUsine = numUsine;
+    this->gainArgent = gainArgent;
+    valeurRevente = 0;
 }
 
 void Usine::amelioration() {
@@ -25,7 +34,7 @@ void Usine::amelioration() {
     }
 }
 std::string Usine::to_string() {
-    if (acheter == false)
+    if (getAcheter() == false)
     {
         return nom + "\n Prix :" + std::to_string(coutAmelioration) + "\nPrerequis : " + prerequis;
     }

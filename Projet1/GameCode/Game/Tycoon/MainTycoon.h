@@ -11,8 +11,7 @@ public:
 
 	MainTycoon();
 	~MainTycoon();
-	void init();
-	Usine* standMenager[15];
+	Usine* standMenager[30];
 
 	void ameliorer(int valeur);
 	void ajouter();

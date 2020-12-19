@@ -15,18 +15,18 @@ public:
 
 	void AfficherMenuStand(int valeurStand); // test alex
 
-
 	enum State { Pause, Platformer, Tycoon, MainMenu, Settings };
 
 	virtual void updateEvent(sf::Event event) {}
 	virtual void updateInput() {}
 	void update();
 	virtual void draw() {}
-
+	void ajouterArgent();
 	void changeGameState(std::string state);
 
 private:
 
+	tgui::TextBox::Ptr TextPortefeuille = tgui::TextBox::create();
 	MainTycoon* main = new MainTycoon();
 	std::string state;
 	std::shared_ptr<GameDef::GameData> data;
