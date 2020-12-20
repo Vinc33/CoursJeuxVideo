@@ -147,6 +147,18 @@ void GameState::changeGameState(std::string state)
 		TextPortefeuille->setSize(160, 35);
 		TextPortefeuille->setText(main->AfficherBanque());
 
+		// button Event
+		
+		data->gui.add(ButtonEvent, "ButtonEvent");
+		ButtonEvent = data->gui.get<tgui::Button>("ButtonEvent");
+		ButtonEvent->setText("EVENT ! ");		
+		ButtonEvent->setPosition(50, 50);
+		ButtonEvent->setSize(160, 35);
+		ButtonEvent->setVisible(false);
+
+		
+		
+
 		// Button pour l'image des Stands
 		tgui::Button::Ptr cyborgMenage = tgui::Button::create();
 		data->gui.add(cyborgMenage, "cyborgMenage");
@@ -946,4 +958,8 @@ void GameState::AfficherMenuStand(int valeurStand)
 void GameState::ajouterArgent() {
 	main->ajouter();
 	TextPortefeuille->setText(main->AfficherBanque());
+}
+void GameState::AfficherEvent(bool eventNow)
+{
+	ButtonEvent->setVisible(eventNow);
 }

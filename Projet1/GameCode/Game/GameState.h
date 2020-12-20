@@ -20,6 +20,7 @@ public:
 	virtual void updateEvent(sf::Event event) {}
 	virtual void updateInput() {}
 	void update();
+	void AfficherEvent(bool eventNow);
 	virtual void draw() {}
 	void ajouterArgent();
 	void changeGameState(std::string state);
@@ -27,6 +28,7 @@ public:
 private:
 
 	tgui::TextBox::Ptr TextPortefeuille = tgui::TextBox::create();
+	tgui::Button::Ptr ButtonEvent = tgui::Button::create();
 	MainTycoon* main = new MainTycoon();
 	std::string state;
 	std::shared_ptr<GameDef::GameData> data;

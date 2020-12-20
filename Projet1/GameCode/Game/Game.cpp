@@ -154,7 +154,13 @@ void Game::update()
 				i = 0;
 			}
 			if (event == 10000) {
-
+				currentGameState->AfficherEvent(true);
+				
+				
+			}
+			if (event == 11000) {
+				currentGameState->AfficherEvent(false);
+				event = 0;
 			}
 		}
 	}
